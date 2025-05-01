@@ -22,7 +22,7 @@
 ```
 .
 ├── index.html         # 網站主頁（法規總覽）
-├── act01.html         # 法規頁面範例（可複製此結構新增更多法規頁面）
+├── act01.html         # 組織章程
 ├── _header.html       # 共用的頁首 HTML 片段
 ├── _footer.html       # 共用的頁尾 HTML 片段
 ├── style.css          # 主要的 CSS 樣式表
