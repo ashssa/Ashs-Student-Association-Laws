@@ -4,8 +4,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- 常數定義 ---
-    const HEADER_FILE = '/_header.html'; // 頁首檔案路徑
-    const FOOTER_FILE = '/footer.html'; // 頁尾檔案路徑
+    const HEADER_FILE = '_header.html'; // 頁首檔案路徑
+    const FOOTER_FILE = '_footer.html'; // 頁尾檔案路徑
     const HEADER_PLACEHOLDER_ID = 'main-header'; // 頁首佔位符 ID
     const FOOTER_PLACEHOLDER_ID = 'main-footer'; // 頁尾佔位符 ID
     const CURRENT_YEAR_SPAN_ID = 'current-year'; // 頁尾年份 span ID
