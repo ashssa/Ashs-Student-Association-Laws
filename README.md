@@ -19,7 +19,17 @@
 
 ## 檔案結構
 
-.├── index.html         # 網站主頁（法規總覽）├── act01.html         # 法規頁面範例（可複製此結構新增更多法規頁面）├── _header.html       # 共用的頁首 HTML 片段├── _footer.html       # 共用的頁尾 HTML 片段├── style.css          # 主要的 CSS 樣式表├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript└── img/└── icon.ico       # 網站圖示 (Favicon)
+```
+.
+├── index.html         # 網站主頁（法規總覽）
+├── act01.html         # 法規頁面範例（可複製此結構新增更多法規頁面）
+├── _header.html       # 共用的頁首 HTML 片段
+├── _footer.html       # 共用的頁尾 HTML 片段
+├── style.css          # 主要的 CSS 樣式表
+├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
+└── img/└── icon.ico       # 網站圖示 (Favicon)
+```
+
 ## 主要功能
 
 * **靜態網站:** 無需後端伺服器或資料庫，可部署於任何支援靜態檔案的空間。
