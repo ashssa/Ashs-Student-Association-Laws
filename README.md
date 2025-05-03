@@ -22,16 +22,21 @@
 .
 ├── index.html         # 網站主頁（法規總覽）
 ├── act01.html         # 組織章程
+├── act02.html         # 學生代表法
+├── act03.html         # 行政中心組織及運作法
+├── act04.html         # 學生議會組織及運作法
+├── act05.html         # 選舉及罷免法
+├── act06.html         # 經費法
+├── act07.html         # 自治法規標準法
+├── act08.html         # 學生政黨法
 ├── _header.html       # 共用的頁首 HTML 片段
 ├── _footer.html       # 共用的頁尾 HTML 片段
 ├── style.css          # 主要的 CSS 樣式表
 ├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
-└── img/└── icon.ico       # 網站圖示 (Favicon)
+└── img/└── icon.ico   # 網站圖示 (Favicon)
 ```
 
-## 主要功能
+## 聲明
 
-* **靜態網站:** 無需後端伺服器或資料庫，可部署於任何支援靜態檔案的空間。
-* **共用頁首/頁尾:** 只需修改 `_header.html` 和 `_footer.html` 即可更新所有頁面的對應區塊。
-* **基本響應式設計:** 在不同螢幕尺寸下提供基本的可用性。
-* **網站圖示 (Favicon):** 在瀏覽器頁籤和書籤中顯示學生會的圖示。
+* 本會自治法規，將於整理後陸續公告上網。
+* 尚未上傳之法規，歡迎點擊[本會學生議會網站](https://sites.google.com/a/stu.nknush.kh.edu.tw/ashs_sp)查詢。
