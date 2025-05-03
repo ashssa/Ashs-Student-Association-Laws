@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,700;1,62.5,700&display=swap');
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,GRAD@8..144,0,150&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 /* --- 基本重設與全域樣式 --- */
 *, *::before, *::after {
     box-sizing: border-box; /* 更直觀的寬度計算 */
@@ -32,6 +33,10 @@ p {
     text-align: center; 
     border-radius: 0px 0px 0 0; /** was 8px 8px 0 0 before*/
 } 
+
+.banner h1{
+    font-weight: 780;
+}
 
 .site-header h1 { 
     margin: 0; 

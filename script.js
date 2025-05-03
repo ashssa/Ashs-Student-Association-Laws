@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- 常數定義 ---
-    const HEADER_FILE = './header.html'; // 頁首檔案路徑
+    const HEADER_FILE = './test.html'; // 頁首檔案路徑
     const FOOTER_FILE = './footer.html'; // 頁尾檔案路徑
     const HEADER_PLACEHOLDER_ID = 'main-header'; // 頁首佔位符 ID
     const FOOTER_PLACEHOLDER_ID = 'main-footer'; // 頁尾佔位符 ID
