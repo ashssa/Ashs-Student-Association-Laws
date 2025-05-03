@@ -21,8 +21,9 @@
 ├── act06.html         # 經費法
 ├── act07.html         # 自治法規標準法
 ├── act08.html         # 學生政黨法
-├── _header.html       # 共用的頁首 HTML 片段
-├── _footer.html       # 共用的頁尾 HTML 片段
+├── header.html        # 共用的頁首 HTML 片段
+├── footer.html        # 共用的頁尾 HTML 片段
+├── 404.html           # 重新導向頁面
 ├── style.css          # 主要的 CSS 樣式表
 ├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
 └── img/└── icon.ico   # 網站圖示 (Favicon)
