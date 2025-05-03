@@ -1,7 +1,8 @@
 /* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,500;1,62.5,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,700;1,62.5,700&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,GRAD@8..144,0,150&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 /* --- 基本重設與全域樣式 --- */
 *, *::before, *::after {
     box-sizing: border-box; /* 更直觀的寬度計算 */
@@ -88,6 +89,7 @@ nav ul li a:hover, nav ul li a:focus {
     padding: 1.5rem 1rem;
     margin-top: auto; /* 將頁尾推到 flex 容器底部 */
     font-size: 0.9em;
+    /* font-family:"Roboto Flex", "Noto Sans TC", sans-serif;*/ 
 }
 .site-footer a {
     text-decoration: none;
@@ -231,6 +233,7 @@ nav ul li a:hover, nav ul li a:focus {
     left: -2rem;
     margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
     position: relative;
+    font-family: "Reddit Sans","Noto Sans TC", sans-serif;
 }
 
 .item{
