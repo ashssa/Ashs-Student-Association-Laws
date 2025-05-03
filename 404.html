@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <title>找不到頁面 - 重新導向中... - 高師大附中學生會自治法規共用系統</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* 深色背景 */
+            color: #ffffff; /* 白色文字 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: "Noto Sans";
+            font-size: 9rem;
+            margin-top: 0rem;
+            margin-bottom: 0em;
+            color: #99a15d; /* 藍色標題 */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: -2.5rem;
+            margin-bottom: 0.5em;
+            color: #99a15d; /* 藍色標題 */
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            color: #bdbdbd; /* 灰色段落文字 */
+        }
+
+        .container {
+            background-color: #1e1e1e; /* 稍亮的深色容器背景 */
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>404</h2>
+        <h2>找不到頁面</h2>
+        <p>您試圖存取的頁面錯誤或不存在，將在 1 秒後自動重新導向首頁……</p>
+    </div>
+</body>
+</html>
+
+<script>
+    // 使用 setTimeout 延遲重新導向，給使用者一點時間看到 "找不到頁面" 的訊息
+    setTimeout(function() {
+        window.location.href = "/index.html";
+    }, 1300); // 延遲 1.3 秒 (1300 毫秒)
+</script>
+
+
+
