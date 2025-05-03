@@ -19,7 +19,9 @@ body {
     color: #333; /* 主要文字顏色 */
 }
 
-
+p {
+    margin: 0rem;
+}
 
 /* --- 頁首樣式 --- */
 .site-header .banner {
@@ -167,11 +169,11 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .art-data {
-    margin: 0 0 0 0.3rem;
+    margin: 0 0 0.4rem 0.3rem;
 }
 
 .art-note {
-    margin: 0 ;
+    margin: inherit;
 }
 
 .par {
@@ -181,9 +183,17 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .par-or {
+    margin: inherit;
     margin-left: 0rem;
     counter-reset: sub-counter; /* Reset the Subparagraph list */
 
+}
+
+.par-or p {
+    margin: inherit;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    background-color: red;
 }
 
 .par-or::before{
@@ -205,8 +215,10 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .sub{
+    margin-top: inherit;
+    margin-bottom: inherit;
+    counter-increment: sub-counter; /* 增加計數器 */
     margin-left: 2rem;
-    counter-increment:(sub-counter);
     counter-reset: item-counter; /* Reset the Item list */
 
 }
@@ -214,7 +226,6 @@ nav ul li a:hover, nav ul li a:focus {
 .sub::before {
     content: counter(sub-counter, decimal); /* set Subparagraph counter */
     /*content: "(" counter(sub-counter) ")"; /* 自訂前置字元和計數器 */
-    counter-increment: sub-counter; /* 增加計數器 */
     display: inline-block ;
     width: 1rem;
     left: -2rem;
