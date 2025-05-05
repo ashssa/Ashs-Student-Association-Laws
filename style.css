@@ -170,10 +170,10 @@ nav ul li a:hover, nav ul li a:focus {
     content: "※"; /* 設定偽元素的內容為「※」 */
     position: absolute; /* 相對於 li 元素定位 */
     left: 0; /* 將符號定位在最左邊 */
-    top: 0; /* 將符號定位在頂部，可以根據需要調整垂直對齊 */
+    /* top: 0; /* 將符號定位在頂部，可以根據需要調整垂直對齊 */
     /* 如果需要更精確的垂直對齊，可以使用 line-height 或 transform: translateY() */
     line-height: inherit; /* 簡單地與文字行高對齊 */
-    margin-right: 1rem; /* 設定符號與文字之間的間距 */
+    margin-right: 0.5rem; /* 設定符號與文字之間的間距 */
 }
 
 
