@@ -163,7 +163,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 .remarks li {
     position: relative; /* 建立定位上下文，方便絕對定位偽元素 */
-    padding-left: 2rem; /* 為文字內容預留空間 */
+    padding-left: 1.5rem; /* 為文字內容預留空間 */
 }
 
 .remarks li::before {
@@ -172,8 +172,8 @@ nav ul li a:hover, nav ul li a:focus {
     left: 0; /* 將符號定位在最左邊 */
     top: 0; /* 將符號定位在頂部，可以根據需要調整垂直對齊 */
     /* 如果需要更精確的垂直對齊，可以使用 line-height 或 transform: translateY() */
-    line-height: 1.5; /* 簡單地與文字行高對齊 */
-    margin-right: 1.5rem; /* 設定符號與文字之間的間距 */
+    line-height: inherit; /* 簡單地與文字行高對齊 */
+    margin-right: 1rem; /* 設定符號與文字之間的間距 */
 }
 
 
