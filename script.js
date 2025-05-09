@@ -3,9 +3,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- 常數定義 ---
-    const HEADER_FILE = './header.html'; // 頁首檔案路徑
-    const FOOTER_FILE = './footer.html'; // 頁尾檔案路徑
-    const BUTTONS_FILE = './buttons.html'; // **按鈕檔案路徑**
+    const HEADER_FILE = './_header.html'; // 頁首檔案路徑
+    const FOOTER_FILE = './_footer.html'; // 頁尾檔案路徑
+    const BUTTONS_FILE = './_buttons.html'; // **按鈕檔案路徑**
     const HEADER_PLACEHOLDER_ID = 'main-header'; // 頁首佔位符 ID
     const FOOTER_PLACEHOLDER_ID = 'main-footer'; // 頁尾佔位符 ID
     const BUTTONS_PLACEHOLDER_ID = 'button-container'; // **按鈕佔位符 ID**
