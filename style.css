@@ -10,6 +10,16 @@
     box-sizing: border-box; /* 更直觀的寬度計算 */
 }
 
+:root {
+    --main-color: #99a15d; /* 主要顏色，例如：藍色 */
+    --text-color: #333; /* 主要文字顏色 */
+    --background-color: #f8f9fa; /* 頁面背景顏色 */
+    /*--secondary-color: #6c757d; /* 次要顏色，例如：灰色 */
+    /*--accent-color: #28a745; /* 強調色，例如：綠色 */
+
+}
+
+
 body {
     font-family: 'Noto Sans TC', sans-serif; /* 使用思源黑體 */
     line-height: 1.7; /* 增加行高以提高可讀性 */
@@ -19,7 +29,7 @@ body {
     flex-direction: column; /* 垂直排列 header, main, footer */
     min-height: 100vh; /* 確保 body 至少和視窗一樣高 */
     background-color: #f4f7f6; /* 淡雅的背景色 */
-    color: #333; /* 主要文字顏色 */
+    color: var(--text-color); /* 主要文字顏色 */
 }
 
 p {
@@ -121,11 +131,11 @@ nav ul li a:hover, nav ul li a:focus {
     margin: 1rem 0;
     border-style: inset;
     size: 4px;
-    color: #333;
+    color: var(--text-color);
 }
 .page-title {
-    color: #99a15d; /* 標題顏色與頁首橫幅呼應 */
-    border-bottom: 3px solid #99a15d;
+    color: var(--main-color); /* 標題顏色與頁首橫幅呼應 */
+    border-bottom: 3px solid var(--main-color);
     padding-bottom: 0.6rem;
     margin-top: 0; /* 移除預設的上邊距 */
     margin-bottom: 1.5rem;
@@ -144,14 +154,14 @@ nav ul li a:hover, nav ul li a:focus {
 .main-content a,
 .regulation-list li a {
     text-decoration: none;
-    color: #99a15d;
+    color: var(--main-color);
     transition: color 0.2s ease;
 }
 
 .main-content a:hover,
 .regulation-list li a:hover,
 .regulation-list li a:focus {
-    color: #99a15d;
+    color: var(--main-color);
     text-decoration: underline; /* 懸停時加底線 */
 }
 
@@ -292,7 +302,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 /*
 .article-content {
-    color: #333;
+    color: var(--text-color);
     margin-left: 4rem;  內容左側縮排 4rem 
     text-indent: -4rem;  將第一行往左縮排負 4rem，與條號對齊 
     line-height: 1.7;  增加行高以提高可讀性 
@@ -369,7 +379,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 .amendment-history li {
     margin-bottom: 0.15rem;
-    color: #333;
+    color: var(--text-color);
     padding-left: 2rem;
     /*display: flex; /* 使用 Flexbox 方便對齊日期和描述 */
     /*gap: 1rem; /* 日期和描述之間的間距 */
@@ -383,7 +393,7 @@ nav ul li a:hover, nav ul li a:focus {
 /*}*/
 
 /*.amendment-description {
-    color: #333;
+    color: var(--text-color);
 }*/
 
 
@@ -394,7 +404,7 @@ nav ul li a:hover, nav ul li a:focus {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 500;
-    border-left: 4px solid #99a15d; /* 左側裝飾線 */
+    border-left: 4px solid var(--main-color); /* 左側裝飾線 */
     padding-left: 0.8rem;
     font-weight: 600;
     color: #555;
@@ -411,7 +421,7 @@ nav ul li a:hover, nav ul li a:focus {
 .regulation-content h4::before {
     font-family: "Noto Sans";
     content: "• "; /* 這裡的 "• " 就是你要加的點和一個空格 */
-    color: #99a15d;
+    color: var(--main-color);
     font-weight: 900;
     margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
 
