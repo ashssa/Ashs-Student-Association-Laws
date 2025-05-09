@@ -105,19 +105,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- 加入複製連結的程式碼 ---
-    const copyLinkButtons = document.querySelectorAll('button[type="copy_link"]');
-    copyLinkButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            navigator.clipboard.writeText(window.location.href)
-                .then(() => {
-                    alert('網址已複製到剪貼簿！');
-                })
-                .catch(err => {
-                    console.error('複製網址失敗:', err);
-                    alert('複製網址失敗，請手動複製。');
+        if (buttonsPlaceholder) {
+            const copyLinkButtons = buttonsPlaceholder.querySelectorAll('button[type="copy_link"]');
+            console.log('找到的複製連結按鈕 (在容器內):', copyLinkButtons);
+            copyLinkButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(window.location.href)
+                            .then(() => {
+                                alert('網址已複製到剪貼簿！');
+                            })
+                            .catch(err => {
+                                console.error('複製網址失敗:', err);
+                                alert('複製網址失敗，請手動複製。');
+                            });
+                    } else {
+                        alert('您的瀏覽器不支援複製到剪貼簿的功能，請手動複製。');
+                    }
                 });
-        });
+            });
+        } else {
+            console.warn('找不到按鈕容器元素！');
+        }
+        // --- 複製連結的程式碼結束 ---
+
+        console.log('頁首、頁尾與功能列表載入流程完成。');
+        // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
     });
-    // --- 複製連結的程式碼結束 ---
-    
-});
