@@ -473,6 +473,18 @@ nav ul li a:hover, nav ul li a:focus {
     text-align: justify; /* 左右對齊 */
 }
 
+.attachments {
+    color: var(--text-color);
+    font-family: "Reddit Sans";
+}
+
+.attachments a {
+    color: var(--text-color);
+}
+
+.attachments a:hover {
+    text-decoration: none; /* 懸停時不加底線 */
+}
 
 /* --- 響應式調整 (可選) --- */
 @media (max-width: 768px) {
