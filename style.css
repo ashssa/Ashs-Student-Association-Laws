@@ -258,21 +258,19 @@ nav ul li a:hover, nav ul li a:focus {
     counter-reset: sub-counter; /* Reset the Subparagraph list */
 }
 
-.par-or {
-    margin: inherit;
-    margin-left: 0rem;
-    counter-reset: sub-counter; /* Reset the Subparagraph list */
 
+.art-data > .par.only-one-par::before {
+    content: none !important;
 }
 
-.par-or p {
+.par p {
     margin: inherit;
     margin-top: 0rem;
     margin-bottom: 0rem;
     background-color: red;
 }
 
-.par-or::before{
+.par::before{
     content: counter(roman-counter, upper-roman); /* 顯示大寫羅馬數字 */
     counter-increment: roman-counter; /* 增加計數器 */
     /* padding-left: 1.5em; /* 增加左內邊距 */

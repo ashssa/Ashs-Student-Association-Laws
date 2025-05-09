@@ -131,4 +131,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
+
+        const artDataElements = document.querySelectorAll('.art-data');
+            artDataElements.forEach(artData => {
+            const parElements = artData.querySelectorAll('.par');
+            const firstPar = artData.querySelector('.par');
+            
+            if (parElements.length === 1 && firstPar) {
+                firstPar.classList.add('only-one-par');
+            } else if (firstPar) {
+                firstPar.classList.remove('only-one-par');
+            }
+            });
+
     });
