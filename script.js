@@ -104,4 +104,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
     });
 
+    // --- 加入複製連結的程式碼 ---
+    const copyLinkButtons = document.querySelectorAll('button[type="copy_link"]');
+    copyLinkButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            navigator.clipboard.writeText(window.location.href)
+                .then(() => {
+                    alert('網址已複製到剪貼簿！');
+                })
+                .catch(err => {
+                    console.error('複製網址失敗:', err);
+                    alert('複製網址失敗，請手動複製。');
+                });
+        });
+    });
+    // --- 複製連結的程式碼結束 ---
+    
 });

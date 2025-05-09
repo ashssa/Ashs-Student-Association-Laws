@@ -221,7 +221,7 @@ nav ul li a:hover, nav ul li a:focus {
 .law-functions ul li button:hover {
     background-color: #505430;
     color: white;
-    text-decoration: none; /* 懸停時加底線 */
+    text-decoration: none; /* 懸停時不加底線 */
 }
 
 /* 法規內容樣式調整 */
