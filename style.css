@@ -396,8 +396,29 @@ nav ul li a:hover, nav ul li a:focus {
     font-weight: 500;
     border-left: 4px solid #99a15d; /* 左側裝飾線 */
     padding-left: 0.8rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.3rem;
 }
 
+.regulation-content h4 {
+    margin: 1.5rem auto 1.3rem;
+    color: #555;
+    font-weight: 550;
+    font-size: 1.15rem;
+}
+
+.regulation-content h4::before {
+    content: "• "; /* 這裡的 "• " 就是你要加的點和一個空格 */
+    color: #99a15d; /* 繼承 h4 的文字顏色，你也可以設定其他顏色 */
+    font-weight: 900;
+    /* 其他你可能需要的樣式，例如：
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    */
+  }
+  
 .regulation-content p {
     /*margin-bottom: 1rem;*/
     text-align: justify; /* 左右對齊 */
