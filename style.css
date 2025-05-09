@@ -186,6 +186,43 @@ nav ul li a:hover, nav ul li a:focus {
     margin-right: 0.5rem; /* 設定符號與文字之間的間距 */
 }
 
+/* 法規功能列表 */
+.law-functions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 使用 Flexbox 進行橫向排列 */
+    gap: 0.75rem; /* 設定按鈕之間的間距 */
+    justify-content: center; /* 水平置中所有按鈕 */
+}
+
+.law-functions ul li a,
+.law-functions ul li button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0px solid #68605c;
+    border-radius: 3px; /* 設定圓角 */
+    background-color: var(--main-color);
+    color: white; /* 使用您定義的主要顏色 */
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease; /* 添加一些平滑的過渡效果 */
+}
+
+.law-functions ul li button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 100%;
+}
+
+.law-functions ul li a:hover,
+.law-functions ul li button:hover {
+    background-color: #505430;
+    color: white;
+    text-decoration: none; /* 懸停時加底線 */
+}
 
 /* 法規內容樣式調整 */
 .row {
@@ -194,6 +231,7 @@ nav ul li a:hover, nav ul li a:focus {
     margin-bottom: 0.8rem; /* 調整條文間距 */
     counter-reset: roman-counter; /* Reset the par-or list */
 }
+
 
 .art {
     color: #555;
