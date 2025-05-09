@@ -413,7 +413,7 @@ nav ul li a:hover, nav ul li a:focus {
     content: "• "; /* 這裡的 "• " 就是你要加的點和一個空格 */
     color: #99a15d;
     font-weight: 900;
-    margin-right: 0.5rem; /* 在編號和內容之間添加一些間距 */    
+    margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
 
     /* 其他你可能需要的樣式，例如：
     font-size: 1.2em;
