@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 常數定義 ---
     const HEADER_FILE = './header.html'; // 頁首檔案路徑
     const FOOTER_FILE = './footer.html'; // 頁尾檔案路徑
-    const BUTTONS_FILE = './buttons.html'; // **按鈕檔案路徑**
+    const BUTTONS_FILE = './buttons.html'; // **功能列表檔案路徑**
     const HEADER_PLACEHOLDER_ID = 'main-header'; // 頁首佔位符 ID
     const FOOTER_PLACEHOLDER_ID = 'main-footer'; // 頁尾佔位符 ID
-    const BUTTONS_PLACEHOLDER_ID = 'button-container'; // **按鈕佔位符 ID**
+    const BUTTONS_PLACEHOLDER_ID = 'button-container'; // **功能列表佔位符 ID**
     const CURRENT_YEAR_SPAN_ID = 'current-year'; // 頁尾年份 span ID
     const LAST_UPDATED_SPAN_ID = 'last-updated'; // 頁尾更新日期 span ID
 
     // --- 取得元素 ---
     const headerPlaceholder = document.getElementById(HEADER_PLACEHOLDER_ID);
     const footerPlaceholder = document.getElementById(FOOTER_PLACEHOLDER_ID);
-    const buttonsPlaceholder = document.getElementById(BUTTONS_PLACEHOLDER_ID); // **取得按鈕佔位符**
+    const buttonsPlaceholder = document.getElementById(BUTTONS_PLACEHOLDER_ID); // **取得功能列表佔位符**
 
     // --- 函數：載入 HTML 片段 ---
     /**
@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 執行載入 ---
-    // 使用 Promise.allSettled 來並行載入頁首、頁尾和按鈕，並等待它們都完成 (無論成功或失敗)
+    // 使用 Promise.allSettled 來並行載入頁首、頁尾和功能列表，並等待它們都完成 (無論成功或失敗)
     Promise.allSettled([
         loadHtmlFragment(HEADER_FILE, headerPlaceholder, '頁首'),
         loadHtmlFragment(FOOTER_FILE, footerPlaceholder, '頁尾'),
-        loadHtmlFragment(BUTTONS_FILE, buttonsPlaceholder, '按鈕') // **載入按鈕**
+        loadHtmlFragment(BUTTONS_FILE, buttonsPlaceholder, '功能列表') // **載入功能列表**
     ]).then(results => {
         // 檢查頁尾是否成功載入
         const footerResult = results[1]; // 獲取載入頁尾的結果
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
             updateFooterInfo(footerPlaceholder);
         }
 
-        console.log('頁首、頁尾與按鈕載入流程完成。');
-        // 在這裡可以執行其他需要在頁首/頁尾/按鈕載入後執行的程式碼
+        console.log('頁首、頁尾與功能列表載入流程完成。');
+        // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
     });
 
 });
