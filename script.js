@@ -1,6 +1,5 @@
 // script.js
 
-// 使用 DOMContentLoaded 事件確保 HTML 完全載入並解析後再執行腳本
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- 常數定義 ---
