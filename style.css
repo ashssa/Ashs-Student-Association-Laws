@@ -276,8 +276,8 @@ nav ul li a:hover, nav ul li a:focus {
     left: -2rem;
     margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
     position: relative;
-
 }
+
 /*.par-or{
     list-style-type: upper-roman ;
     margin-block-start: 0.3em;
@@ -422,5 +422,27 @@ nav ul li a:hover, nav ul li a:focus {
     .site-header h1 {
         font-size: 1.35em;
     } 
+}
 
+@media (max-width: 576px) {
+    .sub{
+        margin-left: 1.3rem;
+    }
+    
+    .sub::before {
+        width: 1rem;
+        left: -1.3rem;
+        margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
+    }
+    
+    .item{
+        margin-left: 3rem;
+    }
+    
+    .item::before{
+        width: 1rem;
+        left: -1.5rem;
+        margin-right: -0.5rem; /* 在編號和內容之間添加一些間距 */    
+    }
+    
 }
