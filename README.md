@@ -23,6 +23,7 @@
 ├── act08.html         # 學生政黨法
 ├── header.html        # 共用的頁首 HTML 片段
 ├── footer.html        # 共用的頁尾 HTML 片段
+├── buttons.html       # 共用的功能列表 HTML 片段
 ├── 404.html           # 重新導向頁面
 ├── style.css          # 主要的 CSS 樣式表
 ├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
