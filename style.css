@@ -407,15 +407,20 @@ nav ul li a:hover, nav ul li a:focus {
 /* --- 響應式調整 (可選) --- */
 @media (max-width: 768px) {
     .main-content {
-    width: 95%; /* 在更小的螢幕上寬度更大 */
-    margin: 1.5rem auto;
-    padding: 1.5rem 1rem;
+        width: 95%; /* 在更小的螢幕上寬度更大 */
+        margin: 1.5rem auto;
+        padding: 1.5rem 1rem;
     }
 
     .page-title {
-    font-size: 1.5em;
+        font-size: 1.5em;
     }
 
     /* 調整導覽列在小螢幕上的樣式 (如果需要) */
     .site-header nav ul li { display: block; margin: 0.5rem 0; } 
+
+    .site-header h1 {
+        font-size: 1.2em;
+    } 
+
 }
