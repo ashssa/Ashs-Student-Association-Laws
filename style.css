@@ -211,6 +211,7 @@ nav ul li a:hover, nav ul li a:focus {
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.3s ease; /* 添加一些平滑的過渡效果 */
+    font-family: inherit;
 }
 
 .law-functions ul li button {
@@ -518,8 +519,7 @@ nav ul li a:hover, nav ul li a:focus {
     line-height: inherit; /* 簡單地與文字行高對齊 */
     margin-right: 0.75rem; /* 設定符號與文字之間的間距 */
     vertical-align: top;
-    margin-right: 0; /* 移除原本的右邊距 */
-
+    margin-right: 0.5rem; /* 移除原本的右邊距 */
 }
 
 .att-no {
@@ -584,6 +584,10 @@ nav ul li a:hover, nav ul li a:focus {
 
     .attachments-list{
         padding: 1rem 0.75rem;
+    }
+
+    .attachments-list h3{
+        padding-left: 0.75rem;
     }
 
     .attachments li::before {
