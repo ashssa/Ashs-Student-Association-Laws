@@ -476,7 +476,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 .attachments {
     color: var(--text-color);
-    font-family: "Reddit Sans", inherit;
+    font-family: "Reddit Sans","Noto Sans TC";
 }
 
 .attachments a {
@@ -493,13 +493,12 @@ nav ul li a:hover, nav ul li a:focus {
     font-family: "Noto Sans";
     color: var(--main-color);
     font-weight: 900;
-    content: "• "; /* 設定偽元素的內容為「※」 */
+    content: "• "; 
     position: relative; /* 相對於 li 元素定位 */
     line-height: inherit; /* 簡單地與文字行高對齊 */
     margin-right: 0.75rem; /* 設定符號與文字之間的間距 */
     vertical-align: top;
 }
-
 
 .att-no {
     display: inline-block;
