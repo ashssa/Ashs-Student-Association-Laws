@@ -14,7 +14,7 @@
     --main-color: #99a15d; /* 主要顏色，例如：藍色 */
     --text-color: #333; /* 主要文字顏色 */
     --background-color: #f8f9fa; /* 頁面背景顏色 */
-    /*--secondary-color: #6c757d; /* 次要顏色，例如：灰色 */
+    --secondary-color: #68605c; /* 次要顏色，例如：灰色 */
     /*--accent-color: #28a745; /* 強調色，例如：綠色 */
 
 }
@@ -38,7 +38,7 @@ p {
 
 /* --- 頁首樣式 --- */
 .site-header .banner {
-    background-color: #68605c; 
+    background-color: var(--secondary-color); 
     color: white; 
     padding: 1rem 2rem; 
     text-align: center; 
@@ -84,7 +84,7 @@ p {
 
 .site-header nav ul li a { 
     text-decoration: none; 
-    color: #68605c; 
+    color: var(--secondary-color); 
     Font-weight: 500; 
     padding: 0.5rem 1rem; 
     border-radius: 5px; 
@@ -94,12 +94,12 @@ p {
 /* 導覽列連結懸停效果 */
 nav ul li a:hover, nav ul li a:focus {
     background-color: #e9ecef;
-    color: #68605c;
+    color: var(--secondary-color);
 }
 
 /* --- 頁尾樣式 --- */
 .site-footer {
-    background-color: #68605c; /* 頁尾背景 */
+    background-color: var(--secondary-color); /* 頁尾背景 */
     color: white; /* 頁尾文字顏色 */
     text-align: center;
     padding: 1.5rem 1rem;
@@ -200,7 +200,7 @@ nav ul li a:hover, nav ul li a:focus {
 .law-functions ul li button {
     display: inline-block;
     padding: 0.5rem 1rem;
-    border: 0px solid #68605c;
+    border: 0px solid var(--secondary-color);
     border-radius: 3px; /* 設定圓角 */
     background-color: var(--main-color);
     color: white; /* 使用您定義的主要顏色 */
@@ -389,7 +389,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 
 /* 修法歷程樣式 */
-.amendment-history {
+.amendment-history, .attachments-list {
     background-color: #f9f9f9; /* 淺灰色背景，與主要內容區隔 */
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
@@ -398,7 +398,7 @@ nav ul li a:hover, nav ul li a:focus {
     font-size: 0.95em;
 }
 
-.amendment-history h3 {
+.amendment-history h3, .attachments-list h3 {
     color: #6c757d; /* 較柔和的標題顏色 */
     margin-top: 0;
     margin-bottom: 0.8rem;
@@ -474,9 +474,17 @@ nav ul li a:hover, nav ul li a:focus {
     text-align: justify; /* 左右對齊 */
 }
 
+
+/* 附件清單樣式 */
 .attachments {
     color: var(--text-color);
     font-family: "Reddit Sans","Noto Sans TC";
+    padding-left: 0.5rem;
+}
+
+.attachments li {
+    list-style: none; 
+    padding-left: 0rem;
 }
 
 .attachments a {
@@ -485,13 +493,12 @@ nav ul li a:hover, nav ul li a:focus {
 
 .attachments a:hover {
     text-decoration: none; /* 懸停時不加底線 */
+    color: #b4a69f;
 }
-.attachments li {
-    list-style: none; 
-}
+
 .attachments li::before {
     font-family: "Noto Sans";
-    color: var(--main-color);
+    color: #b4a69f;
     font-weight: 900;
     content: "• "; 
     position: relative; /* 相對於 li 元素定位 */
@@ -513,6 +520,7 @@ nav ul li a:hover, nav ul li a:focus {
     /*margin-left: 3.5em;*/
     font-family: inherit;
 }
+
 
 /* --- 響應式調整 (可選) --- */
 @media (max-width: 768px) {
