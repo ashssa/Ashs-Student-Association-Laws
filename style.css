@@ -113,6 +113,9 @@ nav ul li a:hover, nav ul li a:focus {
     transition: color 0.2s ease;
 }
 
+.footer-block{
+    display: none;
+}
 
 /* --- 主要內容區域 --- */
 .main-content {
@@ -533,7 +536,7 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 
-/* --- 響應式調整 (可選) --- */
+/* --- 響應式調整 (手機橫向或小平板) --- */
 @media (max-width: 768px) {
     .main-content {
         width: 95%; /* 在更小的螢幕上寬度更大 */
@@ -545,7 +548,7 @@ nav ul li a:hover, nav ul li a:focus {
         font-size: 1.5em;
     }
 
-    /* 調整導覽列在小螢幕上的樣式 (如果需要) */
+    /* 調整導覽列在小螢幕上的樣式 */
     .site-header nav ul li { display: block; margin: 0.5rem 0; } 
 
     .site-header h1 {
@@ -553,30 +556,31 @@ nav ul li a:hover, nav ul li a:focus {
     } 
 }
 
+/* --- 響應式調整 (手機直向) --- */
 @media (max-width: 576px) {
     .sub{
         margin-left: 1.3rem;
     }
-    
+
     .sub::before {
         width: 1rem;
         left: -1.3rem;
         margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
     }
-    
+
     .item{
         margin-left: 3rem;
     }
-    
+
     .item::before{
         width: 1rem;
         left: -1.5rem;
         margin-right: -1rem; /* 在編號和內容之間添加一些間距 */    
     }
-    
+
     .attachments {
     padding-left: 0;
-}
+    }
 
     .attachments-list{
         padding: 1rem 0.75rem;
@@ -584,6 +588,9 @@ nav ul li a:hover, nav ul li a:focus {
 
     .attachments li::before {
     content: ""; 
-}
+    }
 
+    .footer-block{
+        display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
+    }
 }
