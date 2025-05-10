@@ -482,9 +482,10 @@ nav ul li a:hover, nav ul li a:focus {
     padding-left: 0.5rem;
 }
 
-.attachments li {
+.attachments li, a {
     list-style: none; 
     padding-left: 0rem;
+    display: flex; /* 使用 Flexbox 進行橫向排列 */
 }
 
 .attachments a {
@@ -519,6 +520,7 @@ nav ul li a:hover, nav ul li a:focus {
     /*text-indent: -3.5rem;*/
     /*margin-left: 3.5em;*/
     font-family: inherit;
+    word-break: break-word;
 }
 
 
@@ -563,4 +565,16 @@ nav ul li a:hover, nav ul li a:focus {
         margin-right: -1rem; /* 在編號和內容之間添加一些間距 */    
     }
     
+    .attachments {
+    padding-left: 0;
+}
+
+    .attachments-list{
+        padding: 1rem 0.75rem;
+    }
+
+    .attachments li::before {
+    content: ""; 
+}
+
 }
