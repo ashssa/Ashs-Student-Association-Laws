@@ -476,16 +476,25 @@ nav ul li a:hover, nav ul li a:focus {
 
 
 /* 附件清單樣式 */
+
 .attachments {
     color: var(--text-color);
     font-family: "Reddit Sans","Noto Sans TC";
     padding-left: 0.5rem;
 }
-
-.attachments li, .attachments a {
-    list-style: none; 
+.attachments li {
+    list-style: none;
     padding-left: 0rem;
-    display: flex; /* 使用 Flexbox 進行橫向排列 */
+    display: flex; /* 使用 Flexbox */
+    align-items: flex-start; /* 垂直方向頂部對齊 */
+}
+
+.attachments a {
+    color: var(--text-color);
+    display: flex; /* 讓 a 成為 flex 容器 */
+    flex-direction: row; /* 水平排列子元素 */
+    align-items: flex-start; /* 垂直方向頂部對齊 */
+    width: 100%; /* 佔滿 li 的寬度 */
 }
 
 .attachments a {
@@ -506,21 +515,21 @@ nav ul li a:hover, nav ul li a:focus {
     line-height: inherit; /* 簡單地與文字行高對齊 */
     margin-right: 0.75rem; /* 設定符號與文字之間的間距 */
     vertical-align: top;
+    margin-right: 0; /* 移除原本的右邊距 */
+
 }
 
 .att-no {
-    display: inline-block;
-    width: 3.5rem;
-    vertical-align: top;
-    font-family: inherit;
+    width: 3.5rem; /* 固定寬度 */
+    flex-shrink: 0; /* 防止被壓縮 */
+    margin-right: 0.75rem; /* 與標題間距 */
+    display: inline-block !important; /* 覆蓋之前的 display */
 }
 
 .att-title {
-    display: inline-block;
-    /*text-indent: -3.5rem;*/
-    /*margin-left: 3.5em;*/
-    font-family: inherit;
+    flex-grow: 1; /* 標題佔用剩餘空間 */
     word-break: break-word;
+    display: inline-block !important; /* 覆蓋之前的 display */
 }
 
 
