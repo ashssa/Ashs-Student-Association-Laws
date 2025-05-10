@@ -482,7 +482,7 @@ nav ul li a:hover, nav ul li a:focus {
     padding-left: 0.5rem;
 }
 
-.attachments li, a {
+.attachments li, .attachments a {
     list-style: none; 
     padding-left: 0rem;
     display: flex; /* 使用 Flexbox 進行橫向排列 */
