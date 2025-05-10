@@ -452,6 +452,7 @@ nav ul li a:hover, nav ul li a:focus {
     color: #555;
     font-weight: 550;
     font-size: 1.15rem;
+    word-break: keep-all; 
 }
 
 .regulation-content h4::before {
@@ -475,7 +476,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 .attachments {
     color: var(--text-color);
-    font-family: "Reddit Sans";
+    font-family: "Reddit Sans", inherit;
 }
 
 .attachments a {
@@ -484,6 +485,21 @@ nav ul li a:hover, nav ul li a:focus {
 
 .attachments a:hover {
     text-decoration: none; /* 懸停時不加底線 */
+}
+
+.att-no {
+    display: inline-block;
+    width: 3.5rem;
+    vertical-align: top;
+    font-family: inherit;
+
+}
+
+.att-title {
+    display: inline-block;
+    text-indent: -3.5rem;
+    margin-left: 3.5em;
+    font-family: inherit;
 }
 
 /* --- 響應式調整 (可選) --- */
