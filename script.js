@@ -105,6 +105,24 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('頁首、頁尾與功能列表載入流程完成。');
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
 
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right", // 設定顯示位置
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "2000", // 顯示 2 秒
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
             // --- 加入複製連結的程式碼 ---
         if (buttonsPlaceholder) {
             const copyLinkButtons = buttonsPlaceholder.querySelectorAll('button[type="copy_link"]');
@@ -114,12 +132,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText(window.location.href)
                             .then(() => {
-                                alert('網址已複製到剪貼簿！');
+                                toastr.success('網址已複製到剪貼簿！');
                             })
                             .catch(err => {
                                 console.error('複製網址失敗:', err);
-                                alert('複製網址失敗，請手動複製。');
+                                toastr.error('複製網址失敗，請手動複製。');
                             });
+
                     } else {
                         alert('您的瀏覽器不支援複製到剪貼簿的功能，請手動複製。');
                     }
