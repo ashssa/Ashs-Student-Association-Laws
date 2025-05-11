@@ -21,7 +21,7 @@
 
 
 body {
-    font-family: 'Noto Sans TC', sans-serif; /* 使用思源黑體 */
+    font-family: "Noto Sans TC", sans-serif; /* 使用思源黑體 */
     line-height: 1.7; /* 增加行高以提高可讀性 */
     margin: 0;
     padding: 0;
@@ -241,7 +241,7 @@ nav ul li a:hover, nav ul li a:focus {
 .art {
     color: #555;
     font-weight: bold;
-    font-family: "Noto Sans" ;
+    font-family: "Noto Sans", "Noto Sans TC";
     letter-spacing: 0.05em;
     word-spacing: 0.5em;
     width: 3.5em; /* 縮小條號寬度，以便容納更長的縮排 */
