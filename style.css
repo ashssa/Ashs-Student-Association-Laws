@@ -537,6 +537,20 @@ nav ul li a:hover, nav ul li a:focus {
     display: inline-block !important; /* 覆蓋之前的 display */
 }
 
+/* --- toast 通知樣式設定 --- */
+.toast-success {
+    background-color: var(--main-color) !important;
+    color: white !important;
+    /*opacity: 1 !important;*/
+}
+
+.toast-success .toast-title {
+    color: white !important;
+}
+
+.toast-success .toast-message {
+    color: white !important;
+}
 
 /* --- 響應式調整 (手機橫向或小平板) --- */
 @media (max-width: 768px) {

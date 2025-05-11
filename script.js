@@ -106,21 +106,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
 
         toastr.options = {
-            "closeButton": false,
+            "closeButton": false, // 是否在通知上顯示一個關閉按鈕
             "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
+            "newestOnTop": false, // 新的通知是否顯示在舊的通知之上。
+            "progressBar": false, // 是否在通知上顯示一個進度條，倒數計時通知的顯示時間。
             "positionClass": "toast-top-right", // 設定顯示位置
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "2000", // 顯示 2 秒
-            "extendedTimeOut": "1000",
+            "preventDuplicates": true, // 是否阻止顯示重複的通知。
+            "onclick": null, // 設定當使用者點擊通知時要執行的 JavaScript 函數。可以將一個函數賦值給這個屬性。
+            "showDuration": "300", // 通知出現的動畫持續時間，單位是毫秒（ms）。
+            "hideDuration": "1500", // 通知消失的動畫持續時間，單位是毫秒。
+            "timeOut": "1500", // 顯示 1.5 秒
+            "extendedTimeOut": "0", // 當滑鼠懸停在通知上時，通知保持顯示的額外時間，單位是毫秒。
             "showEasing": "swing",
             "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
+            "showMethod": "slideDown",
+            "hideMethod": "fadeOut",
+            "onShown": function() {
+                const toastElement = this; // 'this' 指向當前顯示的 toast 元素
+                toastElement.style.opacity = '1';}
         }
 
             // --- 加入複製連結的程式碼 ---
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText(window.location.href)
                             .then(() => {
-                                toastr.success('網址已複製到剪貼簿！');
+                                toastr.success('網址已複製！');
                             })
                             .catch(err => {
                                 console.error('複製網址失敗:', err);
