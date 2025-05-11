@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    console.log('DOMContentLoaded 事件已觸發，程式碼開始執行。')
+
     // --- 常數定義 ---
     const HEADER_FILE = './header.html'; // 頁首檔案路徑
     const FOOTER_FILE = './footer.html'; // 頁尾檔案路徑
@@ -102,9 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
-    });
 
-    // --- 加入複製連結的程式碼 ---
+            // --- 加入複製連結的程式碼 ---
         if (buttonsPlaceholder) {
             const copyLinkButtons = buttonsPlaceholder.querySelectorAll('button[type="copy_link"]');
             console.log('找到的複製連結按鈕 (在容器內):', copyLinkButtons);
@@ -128,6 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.warn('找不到按鈕容器元素！');
         }
         // --- 複製連結的程式碼結束 ---
+    });
+
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
@@ -143,5 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 firstPar.classList.remove('only-one-par');
             }
             });
+
+        console.log('DOMContentLoaded 事件中的程式碼執行完畢。');
 
     });
