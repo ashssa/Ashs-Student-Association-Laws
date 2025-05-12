@@ -136,6 +136,7 @@ nav ul li a:hover, nav ul li a:focus {
     size: 4px;
     color: var(--text-color);
 }
+
 .page-title {
     color: var(--main-color); /* 標題顏色與頁首橫幅呼應 */
     border-bottom: 3px solid var(--main-color);
@@ -143,6 +144,19 @@ nav ul li a:hover, nav ul li a:focus {
     margin-top: 0; /* 移除預設的上邊距 */
     margin-bottom: 1.5rem;
     font-weight: 700; /* 標題加粗 */
+}
+
+.page-subtitle {
+    color: #555;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 2px solid #555;
+    padding-bottom: 0.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    /* border-left: 4px solid var(--main-color); 左側裝飾線 */
+    /* padding-left: 0.8rem; */ 
 }
 
 .regulation-list {
@@ -169,7 +183,11 @@ nav ul li a:hover, nav ul li a:focus {
     text-decoration: underline; /* 懸停時加底線 */
 }
 
-/* 備註星號列點 */
+/* --- 備註星號列點 --- */
+.remarks-content{
+    margin: 0 1.5rem 0;
+}
+
 .remarks {
     list-style-type: none; /* 移除預設的列表符號 */
     padding-left: 0; /* 移除預設的左邊內距 */
@@ -190,7 +208,7 @@ nav ul li a:hover, nav ul li a:focus {
     margin-right: 0.5rem; /* 設定符號與文字之間的間距 */
 }
 
-/* 法規功能列表 */
+/* --- 法規功能列表 --- */
 .law-functions ul {
     list-style: none;
     padding: 0;
@@ -229,7 +247,7 @@ nav ul li a:hover, nav ul li a:focus {
     text-decoration: none; /* 懸停時不加底線 */
 }
 
-/* 法規內容樣式調整 */
+/* --- 法規內容樣式調整 --- */
 .row {
     display: flex; /* 使用 Flexbox 進行條號和內容的排版 */
     align-items: flex-start; /* 讓條號和內容頂部對齊 */
@@ -393,7 +411,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 
 
-/* 修法歷程樣式 */
+/* --- 修法歷程樣式 --- */
 .amendment-history, .attachments-list {
     background-color: #f9f9f9; /* 淺灰色背景，與主要內容區隔 */
     padding: 1rem 1.5rem;
@@ -437,9 +455,33 @@ nav ul li a:hover, nav ul li a:focus {
     color: var(--text-color);
 }*/
 
+/* --- 法規注意事項樣式 --- */
+.notice {
+    color: #a42f0e; /* 較深色的文字顏色 */
+    background-color: #fdece8; /* 淺橘色背景，與主要內容區隔 */
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #ef572e; /* 左側橘色標示線 */
+    border-radius: 4px;
+    font-size: 0.95rem;
+    /* font-weight: 440; */
+}
+
+.notice h3 {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 650;
+    padding-left: 0; /* 移除原本 h3 的左側裝飾線 */
+    border-left: none;
+}
+
+.notice p {
+    margin-left: 1rem; /* 內容左側縮排 */
+}
 
 
-/* 法規內容樣式 */
+/* --- 法規內容樣式 --- */
 .regulation-content h3 {
     color: #343a40;
     margin-top: 2rem;

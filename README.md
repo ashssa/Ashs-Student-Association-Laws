@@ -21,6 +21,7 @@
 ├── act06.html         # 經費法
 ├── act07.html         # 自治法規標準法
 ├── act08.html         # 學生政黨法
+├── directions01.html  # 本校會議旁聽要點
 ├── header.html        # 共用的頁首 HTML 片段
 ├── footer.html        # 共用的頁尾 HTML 片段
 ├── buttons.html       # 共用的功能列表 HTML 片段
@@ -28,7 +29,7 @@
 ├── style.css          # 主要的 CSS 樣式表
 ├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
 └── img/└── icon.ico   # 網站圖示 (Favicon)
-└── attachments/      # 自治法規附件資料夾
+└── attachments/       # 自治法規附件資料夾
 ```
 
 ## 聲明
