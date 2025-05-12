@@ -312,8 +312,8 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 .sub{
-    margin-top: inherit;
-    margin-bottom: inherit;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
     counter-increment: sub-counter; /* 增加計數器 */
     margin-left: 2rem;
     counter-reset: item-counter; /* Reset the Item list */
