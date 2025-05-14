@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自治法規架構圖 - 高師大附中學生會自治法規</title>
+    <meta property="og:title" content="高師大附中學生會自治法規共用系統 - 彙編高師大附中學生會自治法規">
+    <meta property="og:description" content="高師大附中自治法規共用系統，彙編高師大附中學生會所有自治法規的展示網站，在這裡可以找到高師大附中附中的所有學生會相關規定。">
+    <meta property="og:image" content="https://ashssa.github.io/Ashs-Student-Association-Laws/img/Preview%203.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <!--插入Toastr以顯示複製連結的通知-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <style>
+        /* Vis.js 容器樣式 */
+        #vis-tree-container {
+            margin: 2rem 0rem;
+            width: 100%;
+            height: 85vh;
+            border: 2px solid lightgray;
+            border-radius: 8px; /* 圓角 */
+        }
+        .vis-network .vis-edge-text {
+            font-size: 10px;
+            color: #555;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 5px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        canvas {
+            font-family: "Noto Sans", "Noto Sans TC", sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/standalone/umd/vis-network.min.css" type="text/css" />
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+
+<header id="main-header" class="site-header">
+    <p>頁首載入中...</p>
+</header>
+
+<body>
+<main class="main-content">
+    <h2 class="page-title">國立高雄師範大學附屬高級中學學生會自治法規架構圖</h2>
+
+    <section class="amendment-history">
+        <h3>繪製日期</h3>
+        <ul>
+            <li>114.05.14 學生會繪製</li>
+        </ul>
+    </section>
+
+    <div id="button-container">
+        <p>功能列表載入中……</p>
+    </div>
+    <article class="regulation-content">
+        <h3>法規架構圖</h3>
+        <p>以下為國立高雄師範大學附屬高級中學學生會自治法規的樹狀圖，顯示了各法規之間的關係。</p>
+    <div id="vis-tree-container"></div>
+
+    <script>
+        // 固定樹狀圖資料
+        const fixedTreeData = {
+            "name": "高級中等教育法 第53條",
+            "children": [
+                {
+                    "name": "學生會組織章程\n(根本大法，所有子法規的授權依據)",
+                    "law_reference": "",
+                    "children": [
+                        {
+                            "name": "學生會自治法規標準法 [cite: 1]\n(法規制定的程序法，所有法規均須遵循)",
+                            "law_reference": ""
+                        },
+                        {
+                            "name": "行政中心組織及運作法\n(依據章程第10、13、15條制定，規範行政中心)",
+                            "law_reference": "章程第10、13、15條"
+                        },
+                        {
+                            "name": "學生會學生議會組織及運作法\n(依據章程第18、21、25、27條制定，規範學生議會)",
+                            "law_reference": "章程第18、21、25、27條"
+                        },
+                        {
+                            "name": "學生會選舉及罷免法\n(依據章程第8、14、21、34條制定，規範選舉罷免)",
+                            "law_reference": "章程第8、14、21、34條"
+                        },
+                        {
+                            "name": "學生會經費法\n(依據章程第42條制定，規範經費)",
+                            "law_reference": "章程第42條"
+                        },
+                        {
+                            "name": "學生會學生代表法\n(依據章程第34、36、38條制定，規範學生代表)",
+                            "law_reference": "章程第34、36、38條"
+                        },
+                        {
+                            "name": "學生會學生政黨法\n(依據章程第2條制定，規範學生政黨)",
+                            "law_reference": "章程第2條"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        function convertToVisData(data, parentId = null, nodes = [], edges = []) {
+            const nodeId = data.name.replace(/[^a-zA-Z0-9\[\]\(\)]/g, '_') + Math.random().toString(36).substring(7);
+            const nodeLabel = data.name.replace(/國立高雄師範大學附屬高級中學/g, '學生會');
+            nodes.push({ id: nodeId, label: nodeLabel });
+            if (parentId) {
+                const edgeLabel = data.law_reference || "";
+                let edgeDashes = false;
+                let labelAlign = 'middle';
+
+                if (parentId === 'node2' || parentId === 'node3' || parentId === 'node4' || parentId === 'node5'  || parentId === 'node6' || parentId === 'node7' ) {
+                    labelAlign = 'side';
+                }
+
+                if (edgeLabel === "") {
+                    edgeDashes = [5, 5];
+                }
+
+                edges.push({
+                    from: parentId,
+                    to: nodeId,
+                    label: edgeLabel,
+                    arrows: {
+                        to: {
+                            enabled: true,
+                            type: 'arrow'
+                        }
+                    },
+                    smooth: {
+                        type: 'stepped'
+                    },
+                    length: 200,
+                    width: 2,
+                    font: {
+                        size: 10,
+                        align: labelAlign
+                    },
+                    dashes: edgeDashes,
+
+                });
+            }
+            if (data.children) {
+                data.children.forEach(child => convertToVisData(child, nodeId, nodes, edges));
+            }
+            return { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
+        }
+
+        const visData = convertToVisData(fixedTreeData);
+        const visContainer = document.getElementById('vis-tree-container');
+        const visOptions = {
+            layout: {
+                hierarchical: {
+                    direction: 'UD',
+                    sortMethod: 'directed',
+                    nodeSpacing: 200,
+                    levelSeparation: 250,
+                    tree: {
+                        blockShifting: 2,
+                        branchLength: 150,
+                    }
+                }
+            },
+            edges: {
+                arrows: {
+                    to: {
+                        enabled: true,
+                        type: 'stepped'
+                    },
+                },
+                smooth: {
+                    type: 'stepped',
+                },
+                length: 200,
+                width: 2,
+                font: {
+                    size: 10,
+                    align: 'middle'
+                }
+            },
+            physics: {
+                enabled: false
+            },
+            nodes: {
+                shape: 'box',
+                margin: 10,
+                widthConstraint: 200
+            }
+        };
+        const visNetwork = new vis.Network(visContainer, visData, visOptions);
+    </script>
+</main>
+
+<footer id="main-footer" class="site-footer">
+    <p>頁尾載入中...</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
