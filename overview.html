@@ -24,20 +24,30 @@
             width: 100%;
             height: 85vh;
             border: 2px solid lightgray;
-            border-radius: 8px; /* 圓角 */
+            border-radius: 8px;
         }
+
+        /* Vis.js 節點樣式 */
+        .vis-network .vis-node {
+            font-family: "Reddit Sans","Noto Sans TC", sans-serif;
+        }
+        .vis-network .vis-node.root {
+            font-weight: 500;
+        }
+
+        /* Vis.js 邊文字樣式 */
         .vis-network .vis-edge-text {
             font-size: 10px;
             color: #555;
             background-color: #f0f0f0;
             padding: 2px 5px;
             border-radius: 5px;
-            pointer-events: none;
+            pointer-events: none; /* 禁止滑鼠事件穿透，避免影響節點點擊 */
             white-space: nowrap;
         }
-        canvas {
+        /* canvas {
             font-family: "Noto Sans", "Noto Sans TC", sans-serif;
-        }
+        } */
     </style>
 
     <link rel="stylesheet" href="https://unpkg.com/vis-network/standalone/umd/vis-network.min.css" type="text/css" />
@@ -65,7 +75,7 @@
     </div>
     <article class="regulation-content">
         <h3>法規架構圖</h3>
-        <p>以下為國立高雄師範大學附屬高級中學學生會自治法規的樹狀圖，顯示了各法規之間的關係。</p>
+        <p>以下為高師大附中學生會自治法規樹狀架構圖，展示本會自治法規之依據、授權關係。</p>
     <div id="vis-tree-container"></div>
 
     <script>
@@ -74,35 +84,35 @@
             "name": "高級中等教育法 第53條",
             "children": [
                 {
-                    "name": "學生會組織章程\n(根本大法，所有子法規的授權依據)",
+                    "name": "學生會組織章程",
                     "law_reference": "",
                     "children": [
                         {
-                            "name": "學生會自治法規標準法 [cite: 1]\n(法規制定的程序法，所有法規均須遵循)",
+                            "name": "學生會自治法規標準法",
                             "law_reference": ""
                         },
                         {
-                            "name": "行政中心組織及運作法\n(依據章程第10、13、15條制定，規範行政中心)",
+                            "name": "行政中心組織及運作法",
                             "law_reference": "章程第10、13、15條"
                         },
                         {
-                            "name": "學生會學生議會組織及運作法\n(依據章程第18、21、25、27條制定，規範學生議會)",
+                            "name": "學生議會組織及運作法",
                             "law_reference": "章程第18、21、25、27條"
                         },
                         {
-                            "name": "學生會選舉及罷免法\n(依據章程第8、14、21、34條制定，規範選舉罷免)",
+                            "name": "學生會選舉及罷免法",
                             "law_reference": "章程第8、14、21、34條"
                         },
                         {
-                            "name": "學生會經費法\n(依據章程第42條制定，規範經費)",
+                            "name": "學生會經費法",
                             "law_reference": "章程第42條"
                         },
                         {
-                            "name": "學生會學生代表法\n(依據章程第34、36、38條制定，規範學生代表)",
+                            "name": "學生代表法",
                             "law_reference": "章程第34、36、38條"
                         },
                         {
-                            "name": "學生會學生政黨法\n(依據章程第2條制定，規範學生政黨)",
+                            "name": "學生會學生政黨法",
                             "law_reference": "章程第2條"
                         }
                     ]
@@ -110,17 +120,34 @@
             ]
         };
 
+        // 資料轉換函式：將樹狀結構資料轉換為 Vis.js 可用的節點 (nodes) 和邊 (edges) 陣列
         function convertToVisData(data, parentId = null, nodes = [], edges = []) {
             const nodeId = data.name.replace(/[^a-zA-Z0-9\[\]\(\)]/g, '_') + Math.random().toString(36).substring(7);
             const nodeLabel = data.name.replace(/國立高雄師範大學附屬高級中學/g, '學生會');
-            nodes.push({ id: nodeId, label: nodeLabel });
+            const isRoot = parentId === null;
+            nodes.push({
+                id: nodeId,
+                label: nodeLabel,
+                color: isRoot ? '#99a15d' : '#99a15d',
+                shape: 'box',
+                font: {
+                    size: isRoot ? 18 : 18,
+                    face: 'Reddit Sans, Noto Sans TC',
+                    color: '#fff',
+                    lineHeight: 1.5  // 設定節點文字行高為 1.5
+                },
+                borderWidth: 0,
+                borderWidthSelected: 0,
+                shadow: false,
+                class: isRoot ? 'root' : ''
+            });
             if (parentId) {
                 const edgeLabel = data.law_reference || "";
                 let edgeDashes = false;
                 let labelAlign = 'middle';
 
-                if (parentId === 'node2' || parentId === 'node3' || parentId === 'node4' || parentId === 'node5'  || parentId === 'node6' || parentId === 'node7' ) {
-                    labelAlign = 'side';
+                if (parentId === 'node2' || parentId === 'node3' || parentId === 'node4' || parentId === 'node5'  || parentId === 'node6' || parentId === 'node7' ) {
+                    labelAlign = 'middle';
                 }
 
                 if (edgeLabel === "") {
@@ -135,19 +162,29 @@
                         to: {
                             enabled: true,
                             type: 'arrow'
+                        },
+                        from: {
+                            enabled: false
                         }
                     },
                     smooth: {
-                        type: 'stepped'
+                        type: 'stepped',
+                        forceDirection: 'vertical',
+                        roundness: 0
                     },
                     length: 200,
-                    width: 2,
+                    width: 0,
+                    color: '#888',
                     font: {
-                        size: 10,
-                        align: labelAlign
+                        size: 12,
+                        align: labelAlign, // 使用上面判斷後的 labelAlign
+                        face: 'Noto Sans TC',
+                        color: '#555'
                     },
                     dashes: edgeDashes,
-
+                    hoverWidth: 3,
+                    selectionWidth: 3,
+                    physics: false
                 });
             }
             if (data.children) {
@@ -156,6 +193,7 @@
             return { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
         }
 
+        // 初始化 Vis.js 網路圖
         const visData = convertToVisData(fixedTreeData);
         const visContainer = document.getElementById('vis-tree-container');
         const visOptions = {
@@ -163,8 +201,8 @@
                 hierarchical: {
                     direction: 'UD',
                     sortMethod: 'directed',
-                    nodeSpacing: 200,
-                    levelSeparation: 250,
+                    nodeSpacing: 250,
+                    levelSeparation: 300,
                     tree: {
                         blockShifting: 2,
                         branchLength: 150,
@@ -182,11 +220,16 @@
                     type: 'stepped',
                 },
                 length: 200,
-                width: 2,
+                width: 0,
                 font: {
-                    size: 10,
-                    align: 'middle'
-                }
+                    size: 12,
+                    align: 'middle', // 預設值
+                    face: 'Noto Sans TC'
+                },
+                color: '#888',
+                hoverWidth: 0,
+                selectionWidth: 0,
+                physics: false
             },
             physics: {
                 enabled: false
@@ -194,11 +237,22 @@
             nodes: {
                 shape: 'box',
                 margin: 10,
-                widthConstraint: 200
+                widthConstraint: 200,
+                font: {
+                    face: 'Reddit Sans, Noto Sans TC',
+                    lineHeight: 1.5 // 設定節點文字行高
+                },
+                borderWidth: 0,
+                borderWidthSelected: 0,
+                shadow: true,
+                shadowColor: 'rgba(0, 0, 0, 0.3)',
+                shadowOffset: { x: 2, y: 2 },
+                shadowRadius: 5
             }
         };
         const visNetwork = new vis.Network(visContainer, visData, visOptions);
     </script>
+    </article>
 </main>
 
 <footer id="main-footer" class="site-footer">
