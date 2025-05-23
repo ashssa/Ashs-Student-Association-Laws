@@ -8,9 +8,9 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/Ashs-Student-Association-Laws/img/icon-194.jpg", // 圖示路徑
+      "src": "/Ashs-Student-Association-Laws/img/icon-194.png", // 圖示路徑
       "sizes": "194x194",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
       "src": "/Ashs-Student-Association-Laws/img/icon-512.png", // 圖示路徑
