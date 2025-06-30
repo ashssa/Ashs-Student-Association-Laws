@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const CURRENT_YEAR_SPAN_ID = 'current-year'; // 頁尾年份 span ID
     const LAST_UPDATED_SPAN_ID = 'last-updated'; // 頁尾更新日期 span ID
 
+    // 返回頂部按鈕的 ID 常數
+    const SCROLL_TO_TOP_BTN_ID = 'scrollToTopBtn';
+
     // --- 取得元素 ---
     const headerPlaceholder = document.getElementById(HEADER_PLACEHOLDER_ID);
     const footerPlaceholder = document.getElementById(FOOTER_PLACEHOLDER_ID);
@@ -170,5 +173,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
         console.log('DOMContentLoaded 事件中的程式碼執行完畢。');
+        });
 
-    });
+    // --- **新增：返回頂部按鈕的邏輯** ---
+    // 檢查按鈕是否存在，避免在找不到元素時產生錯誤
+    if (scrollToTopBtn) {
+        // 當用戶滾動頁面時，執行這個函數
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            // 如果頁面滾動超過 20 像素，顯示按鈕
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // 當用戶點擊按鈕時，滾動到頁面頂部
+        scrollToTopBtn.addEventListener("click", function() {
+            // 平滑滾動到頂部
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+        console.log('「返回頂部」按鈕功能已初始化。');
+    }
