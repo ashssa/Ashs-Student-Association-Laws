@@ -99,7 +99,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 /* --- 回到最上方按鈕 --- */
 #scrollToTopBtn {
-    /* display: none; 預設隱藏按鈕 */
+    display: none; /* 預設隱藏按鈕 */
     position: fixed; /* 固定位置 */
     bottom: 30px; /* 距離底部 30px */
     right: 30px; /* 距離右側 30px */
@@ -112,6 +112,7 @@ nav ul li a:hover, nav ul li a:focus {
     color: var(--background-color); /* 文字顏色 */
     border: none; /* 無邊框 */
     border-radius: 50%; /* 圓形按鈕 */
+    opacity: 0.75; /* 調整不透明度 */
     outline: none; /* 移除點擊時的外框 */
     cursor: pointer; /* 鼠標變成手形 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 陰影效果 */
@@ -121,6 +122,7 @@ nav ul li a:hover, nav ul li a:focus {
 #scrollToTopBtn:hover {
     background-color: #505430; /* 鼠標懸停時的顏色 */
     transform: scale(1.05); /* 鼠標懸停時稍微放大 */
+    opacity: 1; /* 調整不透明度 */
 }
 
 /* --- 頁尾樣式 --- */

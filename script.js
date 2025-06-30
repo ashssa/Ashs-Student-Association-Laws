@@ -173,9 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
         console.log('DOMContentLoaded 事件中的程式碼執行完畢。');
-        });
 
-    // --- **新增：返回頂部按鈕的邏輯** ---
+    // --- 返回頂部按鈕的邏輯 ---
     // 檢查按鈕是否存在，避免在找不到元素時產生錯誤
     if (scrollToTopBtn) {
         // 當用戶滾動頁面時，執行這個函數
@@ -184,8 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         function scrollFunction() {
-            // 如果頁面滾動超過 20 像素，顯示按鈕
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            // 如果頁面滾動超過 200 像素，顯示按鈕
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 scrollToTopBtn.style.display = "block";
             } else {
                 scrollToTopBtn.style.display = "none";
@@ -202,3 +201,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         console.log('「返回頂部」按鈕功能已初始化。');
     }
+});
+
