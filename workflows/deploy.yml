@@ -19,9 +19,10 @@ jobs:
       - name: Update date in HTML
         run: |
           sed -i "s|<span id=\"last-updated-date\">.*</span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./footer.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main' # 確保只在主分支上部署
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # 你的網站靜態檔案目錄，例如 . 或 _site
+          publish_dir: . # 你的網站靜態檔案目錄，通常是倉庫根目錄
