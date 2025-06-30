@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 主要分支名稱
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get current date
+        id: date
+        run: echo "DATE=$(date +'%Y年%m月%d日 %H:%M:%S')" >> $GITHUB_OUTPUT
+
+      - name: Update date in HTML
+        run: |
+          # 替換你網站檔案的路徑，例如 index.html 或所有 .html 檔案
+          sed -i "s|<span id=\"last-updated-date\"></span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ../footer.html
+          # 如果你有其他檔案也需要更新，可以新增類似的 sed 指令
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main' # 確保只在主分支上部署
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ../ # 你的網站靜態檔案目錄，例如 . 或 _site

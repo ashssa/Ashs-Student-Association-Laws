@@ -60,33 +60,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // --- 函數：更新頁尾資訊 ---
-    /**
-     * 更新頁尾中的動態內容 (目前年份和最後更新日期)
-     * @param {HTMLElement} footerElement - 頁尾容器元素
-     */
-    function updateFooterInfo(footerElement) {
-        if (!footerElement) return; // 如果頁尾元素不存在，則不執行
+    // // --- 函數：更新頁尾資訊 ---
+    // /**
+    //  * 更新頁尾中的動態內容 (目前年份和最後更新日期)
+    //  * @param {HTMLElement} footerElement - 頁尾容器元素
+    //  */
+    // function updateFooterInfo(footerElement) {
+    //     if (!footerElement) return; // 如果頁尾元素不存在，則不執行
 
-        // 找到頁尾內的年份 span 並更新
-        const yearSpan = footerElement.querySelector(`#${CURRENT_YEAR_SPAN_ID}`);
-        if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear(); // 設定為當前年份
-        } else {
-            console.warn(`在頁尾中找不到 ID 為 "${CURRENT_YEAR_SPAN_ID}" 的年份 span 元素。`);
-        }
+    //     // 找到頁尾內的年份 span 並更新
+    //     const yearSpan = footerElement.querySelector(`#${CURRENT_YEAR_SPAN_ID}`);
+    //     if (yearSpan) {
+    //         yearSpan.textContent = new Date().getFullYear(); // 設定為當前年份
+    //     } else {
+    //         console.warn(`在頁尾中找不到 ID 為 "${CURRENT_YEAR_SPAN_ID}" 的年份 span 元素。`);
+    //     }
 
-        // 找到頁尾內的最後更新日期 span 並更新
-        const lastUpdatedSpan = footerElement.querySelector(`#${LAST_UPDATED_SPAN_ID}`);
-        if (lastUpdatedSpan) {
-            // 顯示頁面載入時的日期和時間
-            const now = new Date();
-            const formattedDateTime = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
-            lastUpdatedSpan.textContent = formattedDateTime;
-        } else {
-            console.warn(`在頁尾中找不到 ID 為 "${LAST_UPDATED_SPAN_ID}" 的最後更新日期 span 元素。`);
-        }
-    }
+    //     // 找到頁尾內的最後更新日期 span 並更新
+    //     const lastUpdatedSpan = footerElement.querySelector(`#${LAST_UPDATED_SPAN_ID}`);
+    //     if (lastUpdatedSpan) {
+    //         // 顯示頁面載入時的日期和時間
+    //         const now = new Date();
+    //         const formattedDateTime = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+    //         lastUpdatedSpan.textContent = formattedDateTime;
+    //     } else {
+    //         console.warn(`在頁尾中找不到 ID 為 "${LAST_UPDATED_SPAN_ID}" 的最後更新日期 span 元素。`);
+    //     }
+    // }
 
     // --- 執行載入 ---
     // 使用 Promise.allSettled 來並行載入頁首、頁尾和功能列表，並等待它們都完成 (無論成功或失敗)
