@@ -29,7 +29,8 @@
 ├── 404.html           # 重新導向頁面
 ├── style.css          # 主要的 CSS 樣式表
 ├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
-└── img/└── icon.ico   # 網站圖示 (Favicon)
+└── img/               # 圖示資料夾
+    └── icon.ico       # 網站圖示 (Favicon)
 └── attachments/       # 自治法規附件資料夾
 ```
 
