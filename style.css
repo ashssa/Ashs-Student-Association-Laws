@@ -287,7 +287,7 @@ a[target="_blank"]::after {
     font-size: 1.2rem; /* 調整圖標大小，使其與文字協調 */
     line-height: 0rem; /* 使按鈕文字不改變 */
     margin-left: 0.1em; /* 與文字的間距 */
-    vertical-align: baseline; /* middle: 垂直對齊 / super: 稍微抬高位置 */
+    vertical-align: middle; /* middle: 垂直對齊 / super: 稍微抬高位置 */
     color: inherit; /* 圖標顏色 */
     font-variation-settings:
         'FILL' 0,
