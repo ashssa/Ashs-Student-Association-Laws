@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const CURRENT_YEAR_SPAN_ID = 'current-year'; // 頁尾年份 span ID
     const LAST_UPDATED_SPAN_ID = 'last-updated'; // 頁尾更新日期 span ID
 
-    // 返回頂部按鈕的 ID 常數
+    // 返回頂部按鈕的 ID 常數**
     const SCROLL_TO_TOP_BTN_ID = 'scrollToTopBtn';
 
     // --- 取得元素 ---
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "positionClass": "toast-top-right", // 設定顯示位置
             "preventDuplicates": true, // 是否阻止顯示重複的通知。
             "onclick": null, // 設定當使用者點擊通知時要執行的 JavaScript 函數。可以將一個函數賦值給這個屬性。
-            "showDuration": "300", // 通知出現的動畫持續時間，單位是毫秒（ms）。
+            "showDuration": "250", // 通知出現的動畫持續時間，單位是毫秒（ms）。
             "hideDuration": "1500", // 通知消失的動畫持續時間，單位是毫秒。
             "timeOut": "1500", // 顯示 1.5 秒
             "extendedTimeOut": "0", // 當滑鼠懸停在通知上時，通知保持顯示的額外時間，單位是毫秒。
@@ -156,15 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // --- 複製連結的程式碼結束 ---
     });
 
-        // 呼叫初始化返回頂部按鈕函數
-        const headerResult = results[0]; // 獲取載入頁首的結果
-        if (headerResult.status === 'fulfilled' && headerResult.value !== null) {
-            initializeScrollToTopButton();
-        } else {
-            // 如果頁首載入失敗，也警告一下無法初始化按鈕
-            console.warn('頁首載入失敗，無法初始化「返回頂部」按鈕功能。');
-        }
-
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
@@ -182,8 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
         console.log('DOMContentLoaded 事件中的程式碼執行完畢。');
+        });
 
-    // --- 返回頂部按鈕的邏輯 ---
+    // --- **新增：返回頂部按鈕的邏輯** ---
     // 檢查按鈕是否存在，避免在找不到元素時產生錯誤
     if (scrollToTopBtn) {
         // 當用戶滾動頁面時，執行這個函數
@@ -192,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         function scrollFunction() {
-            // 如果頁面滾動超過 200 像素，顯示按鈕
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            // 如果頁面滾動超過 250 像素，顯示按鈕
+            if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
                 scrollToTopBtn.style.display = "block";
             } else {
                 scrollToTopBtn.style.display = "none";
@@ -210,5 +202,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         console.log('「返回頂部」按鈕功能已初始化。');
     }
-});
-
