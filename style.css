@@ -247,6 +247,26 @@ nav ul li a:hover, nav ul li a:focus {
     text-decoration: none; /* 懸停時不加底線 */
 }
 
+/* --- 開新視窗連結之偽元素 --- */
+a[target="_blank"]::after {
+    content: "\e89e"; /* 新視窗開啟網站符號 */
+    font-family: 'Material Symbols Outlined'; /* Google Material Symbols */
+    font-weight: normal; 
+    font-style: normal; 
+    font-size: 1.2rem; /* 調整圖標大小，使其與文字協調 */
+     margin-left: 0.1em; /* 與文字的間距 */
+    vertical-align: middle; /* middle: 垂直對齊 / super: 稍微抬高位置 */
+    color: inherit; /* 圖標顏色 */
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 350,
+        'GRAD' 0,
+        'opsz' 20;
+    /* font-size: inherit; */
+
+    }
+
+
 /* --- 法規內容樣式調整 --- */
 .row {
     display: flex; /* 使用 Flexbox 進行條號和內容的排版 */
