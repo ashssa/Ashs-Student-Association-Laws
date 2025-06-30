@@ -19,7 +19,7 @@ jobs:
       - name: Update date in HTML
         run: |
           # 替換你網站檔案的路徑，例如 index.html 或所有 .html 檔案
-          sed -i "s|<span id=\"last-updated-date\"></span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./footer.html
+          sed -i "s|<span id=\"last-updated-date\">.*</span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./footer.html
           # 如果你有其他檔案也需要更新，可以新增類似的 sed 指令
 
       - name: Deploy to GitHub Pages
