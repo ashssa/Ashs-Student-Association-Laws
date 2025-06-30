@@ -608,6 +608,11 @@ a[target="_blank"]::after {
     color: var(--text-color);
 }
 
+.attachments a::after {
+    vertical-align: bottom;
+    line-height: 1rem;
+}
+
 .attachments a:hover {
     text-decoration: none; /* 懸停時不加底線 */
     color: #b4a69f;
