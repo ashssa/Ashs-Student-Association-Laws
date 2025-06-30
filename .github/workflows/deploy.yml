@@ -8,6 +8,11 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions: # <-- 添加這一段
+      contents: write # 讓它可以寫入內容 (包括 gh-pages 分支)
+      pages: write    # 專門用於 GitHub Pages 的寫入權限
+      id-token: write # 如果未來需要 OIDC (OpenID Connect) 身份驗證，也預先設定
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
