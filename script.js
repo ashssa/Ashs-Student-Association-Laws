@@ -156,6 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // --- 複製連結的程式碼結束 ---
     });
 
+        // 呼叫初始化返回頂部按鈕函數
+        const headerResult = results[0]; // 獲取載入頁首的結果
+        if (headerResult.status === 'fulfilled' && headerResult.value !== null) {
+            initializeScrollToTopButton();
+        } else {
+            // 如果頁首載入失敗，也警告一下無法初始化按鈕
+            console.warn('頁首載入失敗，無法初始化「返回頂部」按鈕功能。');
+        }
+
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
         // 在這裡可以執行其他需要在頁首/頁尾/功能列表載入後執行的程式碼
