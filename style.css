@@ -106,6 +106,8 @@ nav ul li a:hover, nav ul li a:focus {
     z-index: 99; /* 確保按鈕在其他內容之上 */
     font-size: 24px; /* 箭頭大小 */
     font-family: "Noto Sans", "Noto Sans TC";
+    font-weight: 900;
+    /* font-width: 62.5; */
     width: 50px; /* 按鈕寬度 */
     height: 50px; /* 按鈕高度 */
     background-color: var(--main-color); /* 背景顏色 */
@@ -719,6 +721,12 @@ a[target="_blank"]::after {
     .footer-block{
         display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
     }
+    #scrollToTopBtn:hover {
+        background-color: var(--main-color); /* 鼠標懸停時的顏色 */
+        transform: scale(1); /* 鼠標懸停時稍微放大 */
+        opacity: 0.75; /* 調整不透明度 */
+}
+
 }
 
 @media (max-width: 387px) {
