@@ -255,6 +255,7 @@ nav ul li a:hover, nav ul li a:focus {
     border-radius: 3px; /* 設定圓角 */
     background-color: var(--main-color);
     color: white; /* 使用您定義的主要顏色 */
+    line-height: 1.65rem; /* 調整行距使按鈕、連結高度不變 */
     text-decoration: none;
     cursor: pointer;
     font-size: 0.9rem;
@@ -632,7 +633,7 @@ a[target="_blank"]::after {
 }
 
 .att-title {
-    flex-grow: 1; /* 標題佔用剩餘空間 */
+    flex-grow: 0; /* 標題佔用剩餘空間 */
     word-break: break-word;
     display: inline-block !important; /* 覆蓋之前的 display */
 }
