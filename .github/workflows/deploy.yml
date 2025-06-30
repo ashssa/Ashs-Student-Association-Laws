@@ -3,18 +3,25 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # 主要分支名稱
+      - main # 主要分支
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get current date
+      - name: Get current date (UTC+8)
         id: date
-        run: echo "DATE=$(date +'%Y年%m月%d日 %H:%M:%S')" >> $GITHUB_OUTPUT
+        env: # 設定時區為台北時間 (UTC+8)
+          TZ: Asia/Taipei
+        run: echo "DATE=$(date +'%Y年%m月%d日 %H:%M:%S') (UTC+8)" >> $GITHUB_OUTPUT 
 
       - name: Update date in HTML
         run: |
@@ -25,4 +32,4 @@ jobs:
         if: github.ref == 'refs/heads/main' # 確保只在主分支上部署
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # 你的網站靜態檔案目錄，通常是倉庫根目錄
+          publish_dir: . # 網站靜態檔案目錄
