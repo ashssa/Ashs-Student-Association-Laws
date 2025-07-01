@@ -17,6 +17,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # --- 開始新增 Service Worker 相關步驟 ---
+
+      - name: Generate Service Worker cache version
+        id: generate_sw_version # 為這個步驟指定一個 ID
+        run: |
+          # 使用提交的短 SHA 作為 Service Worker 版本號
+          SW_VERSION=$(git rev-parse --short HEAD)
+          echo "Generated Service Worker cache version: $SW_VERSION"
+          echo "SW_VERSION=$SW_VERSION" >> $GITHUB_ENV # 將版本號設定為環境變數
+
+      - name: Update Service Worker cache name
+        run: |
+          # 替換 sw.js 中的佔位符
+          # 確保你的 sw.js 中 CACHE_NAME 的定義為 const CACHE_NAME = 'my-pwa-cache-v-%%VERSION%%';
+          sed -i "s/%%VERSION%%/${{ env.SW_VERSION }}/g" sw.js
+          echo "Updated sw.js with cache version ${{ env.SW_VERSION }}"
+
+      # --- 結束新增 Service Worker 相關步驟 ---
+
       - name: Get current date (UTC+8)
         id: date
         env: # 設定時區為台北時間 (UTC+8)

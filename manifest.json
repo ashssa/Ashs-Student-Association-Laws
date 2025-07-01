@@ -17,5 +17,14 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+        "name": "組織章程",
+        "short_name": "組織章程",
+        "description": "閱讀本會組織章程",
+        "url": "/Ashs-Student-Association-Laws/act02.html",
+        "icons": [{ "src": "/Ashs-Student-Association-Laws/img/icon.png", "sizes": "48x48" }]
+    }
+]
 }
