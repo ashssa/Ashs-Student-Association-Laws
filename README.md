@@ -31,7 +31,11 @@
 ├── script.js          # 用於載入頁首/頁尾及其他互動功能的 JavaScript
 └── img/               # 圖示資料夾
     └── icon.ico       # 網站圖示 (Favicon)
+    └── icon-xxx.png   # PWA 縮圖（xxx 表示尺寸）
+    └── Preview 3.png  # 網站預覽縮圖
 └── attachments/       # 自治法規附件資料夾
+└── manifest.json      # PWA 資訊清單
+└── sw.js              # PWA 緩存設定
 ```
 
 ## 聲明
