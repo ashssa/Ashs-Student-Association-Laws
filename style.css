@@ -204,6 +204,7 @@ nav ul li a:hover, nav ul li a:focus {
     text-decoration: none;
     color: var(--main-color);
     transition: color 0.2s ease;
+    font-weight: 500;
 }
 
 .main-content a:hover,
@@ -263,6 +264,7 @@ nav ul li a:hover, nav ul li a:focus {
     font-size: 0.9rem;
     transition: background-color 0.3s ease; /* 添加一些平滑的過渡效果 */
     font-family: inherit;
+    font-weight: 450;
     vertical-align: middle; /* 垂直對齊 */
 }
 
