@@ -27,11 +27,11 @@
       "icons": [{ "src": "/Ashs-Student-Association-Laws/img/shortcuts01-512.png", "sizes": "512x512" }]
     },
     {
-      "name": "PLACEHOLDER_NAME",
-      "short_name": "PLACEHOLDER_SHORT_NAME",
-      "description": "PLACEHOLDER_DESCRIPTION",
-      "url": "PLACEHOLDER_URL",
-      "icons": [{ "src": "PLACEHOLDER_ICON_PATH", "sizes": "512x512" }]
+      "name": "學生會官網",
+      "short_name": "SA 官網",
+      "description": "前往學生會官方網站！",
+      "url": "https://sites.google.com/stu.nknush.kh.edu.tw/ashssa",
+      "icons": [{ "src": "/Ashs-Student-Association-Laws/img/shortcuts02-512.png", "sizes": "512x512" }]
     }
-]
+  ]
 }
