@@ -20,11 +20,18 @@
   ],
   "shortcuts": [
     {
-        "name": "組織章程",
-        "short_name": "組織章程",
-        "description": "閱讀本會組織章程",
-        "url": "/Ashs-Student-Association-Laws/act02.html",
-        "icons": [{ "src": "/Ashs-Student-Association-Laws/img/icon.png", "sizes": "48x48" }]
+      "name": "組織章程",
+      "short_name": "組織章程",
+      "description": "閱讀本會組織章程",
+      "url": "/Ashs-Student-Association-Laws/act01.html",
+      "icons": [{ "src": "/Ashs-Student-Association-Laws/img/shortcuts01-512.png", "sizes": "512x512" }]
+    },
+    {
+      "name": "學生會官網",
+      "short_name": "SA 官網",
+      "description": "前往學生會官方網站！",
+      "url": "https://sites.google.com/stu.nknush.kh.edu.tw/ashssa",
+      "icons": [{ "src": "/Ashs-Student-Association-Laws/img/shortcuts02-512.png", "sizes": "512x512" }]
     }
-]
+  ]
 }
