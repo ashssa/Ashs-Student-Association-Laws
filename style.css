@@ -606,6 +606,7 @@ a[target="_blank"]::after {
     flex-direction: row; /* 水平排列子元素 */
     align-items: flex-start; /* 垂直方向頂部對齊 */
     width: 100%; /* 佔滿 li 的寬度 */
+    font-weight: inherit; /* 主要內容中曾經指定連結文字較粗 */
 }
 
 .attachments a {
