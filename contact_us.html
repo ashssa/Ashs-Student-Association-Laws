@@ -60,15 +60,35 @@
 <main class="main-content">
     <h2 class="page-title">聯絡我們</h2>
     <div class="form-container">
-        <p>如有任何問題或建議，請填寫<a href="https://forms.gle/pDARKCbsx5ug3hSz7" target="_blank">以下表單</a>與我們聯繫：</p>
-        <iframe 
+        <p>如有任何問題或建議，請填寫<a class="link link-primary link-hover" href="https://forms.gle/pDARKCbsx5ug3hSz7" target="_blank">以下表單</a>與我們聯繫：</p>
+        <div class="flex w-full flex-col gap-4" id="loading-message" height="100%">
+                <div class="skeleton h-32 w-full"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-full"></div>
+        </div>
+        <iframe
+        id="form"
+        style="display: none;"
         src="https://docs.google.com/forms/d/e/1FAIpQLSdzD5iWMhkP-sneCuMYsv3IG_gMWhuNAfSPg123u6wpotxC4A/viewform?embedded=true" 
         width="100%" 
         height="100%" 
         frameborder="0" 
         marginheight="0" 
         marginwidth="0">
-            載入中……
         </iframe>
     </div>
 </main>
@@ -80,5 +100,17 @@
 </footer>
 
 <script src="script.js" defer></script>
+<script>
+    const iframe = document.getElementById('form');
+    const loadingMessage = document.getElementById('loading-message');
+
+    // 當 iframe 載入完成時
+    iframe.onload = function() {
+        // 隱藏載入訊息
+        loadingMessage.style.display = 'none';
+        // 顯示 iframe
+        iframe.style.display = 'block';
+    };
+</script>
 </body>
 </html>
