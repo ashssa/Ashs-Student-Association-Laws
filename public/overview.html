@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自治法規架構圖 - 高師大附中學生會自治法規</title>
+    <meta property="og:title" content="高師大附中學生會自治法規共用系統 - 彙編高師大附中學生會自治法規">
+    <meta property="og:description" content="高師大附中自治法規共用系統，彙編高師大附中學生會所有自治法規的展示網站，在這裡可以找到高師大附中附中的所有學生會相關規定。">
+    <meta property="og:image" content="https://ashssa.github.io/Ashs-Student-Association-Laws/img/Preview%203.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <!--插入Toastr以顯示複製連結的通知-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <style>
+        /* Vis.js 容器樣式 */
+        #vis-tree-container {
+            margin: 2rem 0rem;
+            width: 100%;
+            height: 85vh;
+            border: 2px solid lightgray;
+            border-radius: 8px;
+        }
+
+        /* Vis.js 節點樣式 */
+        .vis-network .vis-node {
+            font-family: "Reddit Sans","Noto Sans TC", sans-serif;
+        }
+        .vis-network .vis-node.root {
+            font-weight: 500;
+        }
+
+        /* Vis.js 邊文字樣式 */
+        .vis-network .vis-edge-text {
+            font-size: 10px;
+            color: #555;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 5px;
+            pointer-events: none; /* 禁止滑鼠事件穿透，避免影響節點點擊 */
+            white-space: nowrap;
+        }
+        /* canvas {
+            font-family: "Noto Sans", "Noto Sans TC", sans-serif;
+        } */
+
+    /* --- 響應式調整 (手機橫向或小平板) --- */
+    @media (max-width: 768px) {
+        #vis-tree-container {
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            height: 60vh;
+        }
+    }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/standalone/umd/vis-network.min.css" type="text/css" />
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+
+<header id="main-header" class="site-header">
+    <p>頁首載入中...</p>
+</header>
+
+<body>
+<main class="main-content">
+    <h2 class="page-title">國立高雄師範大學附屬高級中學學生會自治法規架構圖</h2>
+
+    <section class="amendment-history bg-base-200 text-base-content">
+        <h3>繪製日期</h3>
+        <ul>
+            <li>114.05.14 學生會繪製</li>
+        </ul>
+    </section>
+
+    <div id="button-container">
+        <p>功能列表載入中……</p>
+    </div>
+    <article class="regulation-content">
+        <h3>法規架構圖</h3>
+        <p>以下為高師大附中學生會自治法規樹狀架構圖，展示本會自治法規之依據、授權關係。</p>
+    <div id="vis-tree-container"></div>
+
+    <script>
+        // 固定樹狀圖資料
+        const fixedTreeData = {
+            "name": "高級中等教育法 第53條",
+            "children": [
+                {
+                    "name": "學生會組織章程",
+                    "law_reference": "",
+                    "children": [
+                        {
+                            "name": "學生會自治法規標準法",
+                            "law_reference": ""
+                        },
+                        {
+                            "name": "行政中心組織及運作法",
+                            "law_reference": "章程第10、13、15條"
+                        },
+                        {
+                            "name": "學生議會組織及運作法",
+                            "law_reference": "章程第18、21、25、27條"
+                        },
+                        {
+                            "name": "學生會選舉及罷免法",
+                            "law_reference": "章程第8、14、21、34條"
+                        },
+                        {
+                            "name": "學生會經費法",
+                            "law_reference": "章程第42條"
+                        },
+                        {
+                            "name": "學生代表法",
+                            "law_reference": "章程第34、36、38條"
+                        },
+                        {
+                            "name": "學生會學生政黨法",
+                            "law_reference": "章程第2條"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // 資料轉換函式：將樹狀結構資料轉換為 Vis.js 可用的節點 (nodes) 和邊 (edges) 陣列
+        function convertToVisData(data, parentId = null, nodes = [], edges = []) {
+            const nodeId = data.name.replace(/[^a-zA-Z0-9\[\]\(\)]/g, '_') + Math.random().toString(36).substring(7);  // 產生唯一節點 ID，避免名稱重複
+            const nodeLabel = data.name.replace(/國立高雄師範大學附屬高級中學/g, '學生會');  // 將節點名稱中的"國立高雄師範大學附屬高級中學"替換為"學生會"
+            const isRoot = parentId === null;  // 判斷目前節點是否為根節點
+            nodes.push({  // 將節點資訊加入到 nodes 陣列中
+                id: nodeId,
+                label: nodeLabel,
+                // 節點樣式設定
+                color: isRoot ? '#99a15d' : '#99a15d',  // 根節點設定為深綠色，其他節點為淺綠色
+                shape: 'box',                       // 節點形狀設定為矩形
+                font: {
+                    size: isRoot ? 18 : 18,          // 根節點的字體大小設定為 18，其他節點為 14
+                    face: 'Reddit Sans, Noto Sans TC',           // 節點的字體設定為 'Noto Sans TC'
+                    color: '#fff',                     // 節點文字顏色設定為白色
+                    lineHeight: 1.5                   // 設定節點文字行高為 1.5
+                },
+                borderWidth: 0,
+                borderWidthSelected: 0,
+                shadow: false,
+                class: isRoot ? 'root' : ''       // 根節點添加 'root' class
+            });
+            if (parentId) {  // 如果目前節點有父節點，表示它是子節點，需要建立邊 (edge)
+                const edgeLabel = data.law_reference || "";  // 取得法規依據，如果沒有則設為空字串
+                let edgeDashes = false; // 實線
+                let labelAlign = 'middle';
+
+                if (parentId === 'node2' || parentId === 'node3' || parentId === 'node4' || parentId === 'node5'  || parentId === 'node6' || parentId === 'node7' ) {
+                    labelAlign = 'side';
+                }
+
+                if (edgeLabel === "") {
+                    edgeDashes = [5, 5]; // 設定為虛線
+                }
+
+                edges.push({  // 將邊的資訊加入到 edges 陣列中
+                    from: parentId,  // 設定邊的起點 (父節點 ID)
+                    to: nodeId,      // 設定邊的終點 (目前節點 ID)
+                    label: edgeLabel,  // 設定邊的標籤 (顯示法規依據)
+                    arrows: {       // 設定邊的箭頭
+                        to: {
+                            enabled: true,       // 啟用箭頭
+                            type: 'arrow'      // 使用標準箭頭樣式
+                        },
+                        from: {
+                            enabled: false
+                        }
+                    },
+                    smooth: {      // 設定邊的平滑度
+                        type: 'stepped',  // 使用直角連接線
+                        forceDirection: 'vertical', // 強制垂直方向
+                        roundness: 0
+                    },
+                    length: 200,    // 設定邊的長度
+                    width: 0,      // 設定邊的寬度
+                    color: '#888',  // 設定邊的顏色
+                    font: {       // 設定邊的文字樣式
+                        size: 12,
+                        align: labelAlign,  // 邊文字對齊方式
+                        face: 'Noto Sans TC',
+                        color: '#555'
+                    },
+                    dashes: edgeDashes,
+                    hoverWidth: 3,
+                    selectionWidth: 3,
+                    physics: false  // 關閉邊的物理效果
+                });
+            }
+            if (data.children) {  // 如果目前節點有子節點，則遞迴呼叫自己，處理子節點
+                data.children.forEach(child => convertToVisData(child, nodeId, nodes, edges));
+            }
+            return { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };  // 回傳 Vis.js 格式的節點和邊資料
+        }
+
+        // 初始化 Vis.js 網路圖
+        const visData = convertToVisData(fixedTreeData);  // 將樹狀結構資料轉換為 Vis.js 可用的格式
+        const visContainer = document.getElementById('vis-tree-container');  // 取得 HTML 中用於顯示圖表的容器元素
+        const visOptions = {  // 設定 Vis.js 圖表的各種選項
+            layout: {  // 設定圖表的整體佈局
+                hierarchical: {  // 使用層級式佈局
+                    direction: 'UD',         // 設定層級方向為上下 (Up-Down)
+                    sortMethod: 'directed',  // 設定節點排序方式
+                    nodeSpacing: 250,      // 設定節點之間的間距
+                    levelSeparation: 250,    // 設定層級之間的距離
+                    tree: {
+                        blockShifting: 2,
+                        branchLength: 150,
+                    }
+                }
+            },
+            edges: {  // 設定邊的樣式
+                arrows: {  // 設定箭頭
+                    to: {
+                        enabled: true,       // 啟用箭頭
+                        type: 'stepped'    // 使用直角箭頭
+                    },
+                },
+                smooth: {  // 設定邊的平滑度
+                    type: 'stepped',  // 使用直角
+                },
+                length: 200,    // 設定邊的長度
+                width: 0,      // 設定邊的寬度
+                font: {       // 設定邊的文字樣式
+                    size: 12,
+                    align: 'middle',  // 將文字置於邊的中間
+                    face: 'Noto Sans TC'  // 設定文字的字體
+                },
+                color: '#888',  // 設定邊的顏色
+                hoverWidth: 0,
+                selectionWidth: 0,
+                physics: false  // 關閉邊的物理效果
+            },
+            physics: {
+                enabled: false  // 關閉整個圖的物理效果，使節點位置固定
+            },
+            nodes: {  // 設定節點的樣式
+                shape: 'box',    // 設定節點的形狀為矩形
+                margin: 10,     // 設定節點的邊距
+                widthConstraint: 200,
+                font: {       // 設定節點的文字樣式
+                    face: 'Reddit Sans, Noto Sans TC',  // 設定文字的字體
+                    lineHeight: 1.5                   // 設定節點文字的行高
+                },
+                borderWidth: 0,
+                borderWidthSelected: 0,
+                shadow: true,
+                shadowColor: 'rgba(0, 0, 0, 0.3)',
+                shadowOffset: { x: 2, y: 2 },
+                shadowRadius: 5
+            }
+        };
+        const visNetwork = new vis.Network(visContainer, visData, visOptions);  // 創建 Vis.js 的網路圖實例
+    </script>
+    </article>
+</main>
+
+<footer id="main-footer" class="site-footer">
+    <p>頁尾載入中...</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

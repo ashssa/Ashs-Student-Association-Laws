@@ -1,4 +1,55 @@
 # 高師大附中學生會自治法規共用系統
+> 專案架構重新調整中
+
+## 檔案架構（持續調整）
+
+```
+Ashs-Student-Association-Laws/
+├── .git/
+├── .github/
+├── node_modules/
+├── public/                         # 對外提供的靜態網站內容
+│   ├── index.html
+│   ├── 404.html
+│   ├── contact_us.html
+│   ├── buttons.html
+│   ├── directions01.html
+│   ├── overview.html
+│   ├── test.html
+│   ├── act/                        # 存放所有法規獨立頁面
+│   │   ├── act01.html
+│   │   ├── act02.html
+│   │   ├── act03.html
+│   │   ├── act04.html
+│   │   ├── act05.html
+│   │   ├── act06.html
+│   │   ├── act07.html
+│   │   └── act08.html
+│   ├── components/                # 可重複使用的 HTML 元件
+│   │   ├── header.html
+│   │   └── footer.html
+│   ├── css/                       # 所有 CSS 文件（Tailwind 原始與編譯）
+│   │   ├── input.css              # Tailwind 的輸入
+│   │   └── style.css              # 最終產出或自訂樣式
+│   ├── js/
+│   │   └── script.js
+│   ├── fonts/
+│   ├── img/
+│   └── assets/                    # 其他靜態資源（如 PDF、附件）
+│       └── ...（來自 attachments/）
+├── config/                        # 站點設定檔與 SEO、PWA 等
+│   ├── manifest.json
+│   ├── sitemap.xml
+│   ├── robot.txt
+│   └── sw.js
+├── package.json
+├── package-lock.json
+├── README.md
+```
+
+
+
+# 舊版說明（2025 / 07 / 31 前）
 
 這是一個使用純 HTML、CSS 和 JavaScript 建置的靜態網站，用於展示高師大附中學生會（以下簡稱本會）自治法規。
 本網站透過 JavaScript 動態載入共用的頁首 (Header) 和頁尾 (Footer)，方便統一管理和更新。

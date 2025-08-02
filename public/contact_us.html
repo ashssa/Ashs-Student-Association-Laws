@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自治法規標準法 - 高師大附中學生會自治法規</title>
+    <meta property="og:title" content="高師大附中學生會自治法規共用系統 - 彙編高師大附中學生會自治法規">
+    <meta property="og:description" content="高師大附中自治法規共用系統，彙編高師大附中學生會所有自治法規的展示網站，在這裡可以找到高師大附中附中的所有學生會相關規定。">
+    <meta property="og:image" content="https://ashssa.github.io/Ashs-Student-Association-Laws/img/Preview%203.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+    <!--插入Toastr以顯示複製連結的通知-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+        .form-container {
+            height: 75vh; 
+            display: flex; 
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 100%; 
+            border: none;
+        }
+
+        .form-container p {
+            margin:auto 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .form-container {
+                height: 80vh; 
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .form-container {
+                height: 85vh; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header id="main-header" class="site-header">
+    <p>頁首載入中...</p>
+</header>
+
+<button class="btn btn-circle btn-neutral" id="scrollToTopBtn" title="回到頂部">TOP</button>
+
+<main class="main-content">
+    <h2 class="page-title">聯絡我們</h2>
+    <div class="form-container">
+        <p>如有任何問題或建議，請填寫<a class="link link-primary link-hover" href="https://forms.gle/pDARKCbsx5ug3hSz7" target="_blank">以下表單</a>與我們聯繫：</p>
+        <div class="flex w-full flex-col gap-4" id="loading-message" height="100%">
+                <div class="skeleton h-32 w-full"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-3/5"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-2/5"></div>
+                <div class="skeleton h-4 w-full"></div>
+                <div class="skeleton h-4 w-full"></div>
+        </div>
+        <iframe
+        id="form"
+        style="display: none;"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdzD5iWMhkP-sneCuMYsv3IG_gMWhuNAfSPg123u6wpotxC4A/viewform?embedded=true" 
+        width="100%" 
+        height="100%" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        </iframe>
+    </div>
+</main>
+
+
+
+<footer id="main-footer" class="site-footer">
+    <p>頁尾載入中...</p>
+</footer>
+
+<script src="script.js" defer></script>
+<script>
+    const iframe = document.getElementById('form');
+    const loadingMessage = document.getElementById('loading-message');
+
+    // 當 iframe 載入完成時
+    iframe.onload = function() {
+        // 隱藏載入訊息
+        loadingMessage.style.display = 'none';
+        // 顯示 iframe
+        iframe.style.display = 'block';
+    };
+</script>
+</body>
+</html>
