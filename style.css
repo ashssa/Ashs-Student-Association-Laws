@@ -55,11 +55,9 @@ p {
     /* font-width: 62.5; */
     width: 50px; /* 按鈕寬度 */
     height: 50px; /* 按鈕高度 */
-    background-color: var(--main-color); /* 背景顏色 */
-    color: var(--background-color); /* 文字顏色 */
     border: none; /* 無邊框 */
-    border-radius: 50%; /* 圓形按鈕 */
-    opacity: 0.75; /* 調整不透明度 */
+    /* border-radius: 50%; 圓形按鈕 */
+    /* opacity: 0.75; 調整不透明度 */
     outline: none; /* 移除點擊時的外框 */
     cursor: pointer; /* 鼠標變成手形 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 陰影效果 */
@@ -67,7 +65,7 @@ p {
 }
 
 #scrollToTopBtn:hover {
-    background-color: #505430; /* 鼠標懸停時的顏色 */
+    /* background-color: #505430; 鼠標懸停時的顏色 */
     transform: scale(1.05); /* 鼠標懸停時稍微放大 */
     opacity: 1; /* 調整不透明度 */
 }
@@ -613,8 +611,8 @@ a[target="_blank"]::after {
         display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
     }
     #scrollToTopBtn:hover {
-        background-color: var(--main-color); /* 鼠標懸停時的顏色 */
+        /* background-color: var(--main-color); 鼠標懸停時的顏色 */
         transform: scale(1); /* 鼠標懸停時稍微放大 */
-        opacity: 0.75; /* 調整不透明度 */
+        /* opacity: 0.75; 調整不透明度 */
 }
 }
