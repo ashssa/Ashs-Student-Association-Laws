@@ -1,0 +1,27 @@
+{
+  "name": "ashs-student-association-laws",
+  "version": "1.0.0",
+  "description": "這是一個使用純 HTML、CSS 和 JavaScript 建置的靜態網站，用於展示高師大附中學生會（以下簡稱本會）自治法規。\r 本網站透過 JavaScript 動態載入共用的頁首 (Header) 和頁尾 (Footer)，方便統一管理和更新。",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashssa/Ashs-Student-Association-Laws.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ashssa/Ashs-Student-Association-Laws/issues"
+  },
+  "homepage": "https://github.com/ashssa/Ashs-Student-Association-Laws#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "daisyui": "^5.0.50",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
