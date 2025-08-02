@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaisyUI 範例</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        tailwind.config = {
+            plugins: [require("daisyui")],
+        }
+    </script>
+</head>
+<body>
+
+    <div class="p-8">
+        <h1 class="text-3xl font-bold mb-4">Hello DaisyUI!</h1>
+
+        <button class="btn btn-primary">點我</button>
+    </div>
+
+</body>
+</html>
