@@ -11,7 +11,9 @@
 @source "../act/*.{html,js}";
 @source "../components/*.{html,js}";
 @source "../*.{html,js}";
-@plugin "daisyui" ;
+@plugin "daisyui" {
+    themes: corporate --default, dracula --prefersdark;
+}
 /* 
 .btn-ghost{
     color: inherit
