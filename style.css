@@ -34,7 +34,7 @@ body {
     display: flex;
     flex-direction: column; /* 垂直排列 header, main, footer */
     min-height: 100vh; /* 確保 body 至少和視窗一樣高 */
-    background-color: #f4f7f6; /* 淡雅的背景色 */
+    /* background-color: #f4f7f6; 背景色 */
     /* color: var(--text-color); 主要文字顏色 */ /* 改用tailwind控制。 */
 }
 
@@ -71,10 +71,6 @@ p {
 }
 
 
-.footer-block{
-    display: none;
-}
-
 /* --- 主要內容區域 --- */
 .main-content {
     flex-grow: 1; /* 讓 main 填滿 header 和 footer 之間的剩餘空間 */
@@ -83,9 +79,9 @@ p {
     width: 90%; /* 在較小螢幕上佔用 90% 寬度 */
     margin: 2rem auto; /* 上下邊距 2rem，左右自動 (實現水平置中) */
     margin-top: 6rem;
-    background-color: #ffffff; /* 內容區塊白色背景 */
+    /* background-color: #ffffff; 內容區塊白色背景 */
     border-radius: 8px; /* 圓角 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 細緻的陰影 */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 細緻的陰影 */
 }
 
 .main-content hr {
@@ -93,7 +89,7 @@ p {
     margin: 1rem 0;
     border-style: inset;
     size: 4px;
-    color: var(--text-color);
+    /* color: var(--text-color); */
 }
 
 .page-title {
@@ -106,7 +102,7 @@ p {
 }
 
 .page-subtitle {
-    color: #555;
+    /* color: #555; */
     font-size: 1.3rem;
     font-weight: 600;
     border-bottom: 2px solid #555;
@@ -198,7 +194,7 @@ a[target="_blank"]::after {
 
 
 .art {
-    color: #555;
+    /* color: #555; */
     font-weight: bold;
     font-family: "Noto Sans", "Noto Sans TC";
     letter-spacing: 0.05em;
@@ -361,7 +357,7 @@ a[target="_blank"]::after {
 
 /* --- 修法歷程樣式 --- */
 .amendment-history, .attachments-list {
-    background-color: #f9f9f9; /* 淺灰色背景，與主要內容區隔 */
+    /* background-color: #f9f9f9; 淺灰色背景，與主要內容區隔 */
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
     border-left: 4px solid #b4a69f; /* 左側灰色標示線 */
@@ -370,7 +366,7 @@ a[target="_blank"]::after {
 }
 
 .amendment-history h3, .attachments-list h3 {
-    color: #6c757d; /* 較柔和的標題顏色 */
+    /* color: #6c757d; 較柔和的標題顏色 */
     margin-top: 0;
     margin-bottom: 0.8rem;
     font-size: 1.1em;
@@ -386,7 +382,7 @@ a[target="_blank"]::after {
 
 .amendment-history li {
     margin-bottom: 0.15rem;
-    color: var(--text-color);
+    /* color: var(--text-color); */
     padding-left: 2rem;
     /*display: flex; /* 使用 Flexbox 方便對齊日期和描述 */
     /*gap: 1rem; /* 日期和描述之間的間距 */
@@ -431,20 +427,20 @@ a[target="_blank"]::after {
 
 /* --- 法規內容樣式 --- */
 .regulation-content h3 {
-    color: #343a40;
+    /* color: #343a40; */
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 500;
     border-left: 4px solid var(--main-color); /* 左側裝飾線 */
     padding-left: 0.8rem;
     font-weight: 600;
-    color: #555;
+    /* color: #555; */
     font-size: 1.3rem;
 }
 
 .regulation-content h4 {
     margin: 1.7rem auto 1.15rem;
-    color: #555;
+    /* color: #555; */
     font-weight: 550;
     font-size: 1.15rem;
     word-break: keep-all; 
@@ -473,7 +469,7 @@ a[target="_blank"]::after {
 /* 附件清單樣式 */
 
 .attachments {
-    color: var(--text-color);
+    /* color: var(--text-color); */
     font-family: "Reddit Sans","Noto Sans TC";
     padding-left: 0.5rem;
     line-height: 1.3rem; 
@@ -487,7 +483,7 @@ a[target="_blank"]::after {
 }
 
 .attachments a {
-    color: var(--text-color);
+    /* color: var(--text-color); */
     display: flex; /* 讓 a 成為 flex 容器 */
     flex-direction: row; /* 水平排列子元素 */
     align-items: flex-start; /* 垂直方向頂部對齊 */
@@ -496,7 +492,8 @@ a[target="_blank"]::after {
 }
 
 .attachments a {
-    color: var(--text-color);
+    /* color: var(--text-color); */
+    font-family: inherit;
 }
 
 .attachments a::after {
@@ -506,12 +503,12 @@ a[target="_blank"]::after {
 
 .attachments a:hover {
     text-decoration: none; /* 懸停時不加底線 */
-    color: #b4a69f;
+    /* color: #b4a69f; */
 }
 
 .attachments li::before {
     font-family: "Noto Sans";
-    color: #b4a69f;
+    /* color: #b4a69f; */
     font-weight: 900;
     content: "• "; 
     position: relative; /* 相對於 li 元素定位 */
