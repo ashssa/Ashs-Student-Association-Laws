@@ -44,7 +44,7 @@ jobs:
 
       - name: Update date in HTML
         run: |
-          sed -i "s|<span id=\"last-updated-date\">.*</span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./public/conponents/footer.html
+          sed -i "s|<span id=\"last-updated-date\">.*</span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./public/components/footer.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
