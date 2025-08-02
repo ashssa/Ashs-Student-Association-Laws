@@ -31,7 +31,7 @@ jobs:
         run: |
           # 替換 sw.js 中的佔位符
           # 確保你的 sw.js 中 CACHE_NAME 的定義為 const CACHE_NAME = 'my-pwa-cache-v-%%VERSION%%';
-          sed -i "s/%%VERSION%%/${{ env.SW_VERSION }}/g" sw.js
+          sed -i "s/%%VERSION%%/${{ env.SW_VERSION }}/g" ./config/sw.js
           echo "Updated sw.js with cache version ${{ env.SW_VERSION }}"
 
       # --- 結束新增 Service Worker 相關步驟 ---
