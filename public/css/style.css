@@ -466,6 +466,7 @@ a[target="_blank"]::after {
 }
 .attachments li::before {
   font-family: "Noto Sans";
+  color: var(--color-secondary-content);
   font-weight: 900;
   content: "• ";
   position: relative;
