@@ -19,7 +19,7 @@
 }
 
 :root {
-    --main-color: #99a15d; /* 主要顏色，例如：藍色 */
+    /* --color-primary	: #99a15d; 主要顏色，例如：藍色 */
     --text-color: #333; /* 主要文字顏色 */
     --background-color: #f8f9fa; /* 頁面背景顏色 */
     --secondary-color: #68605c; /* 次要顏色，例如：灰色 */
@@ -113,7 +113,7 @@ p {
     margin-top: 2.5rem;
     margin-bottom: 0.6rem;
     font-weight: 500;
-    /* border-left: 4px solid var(--main-color); 左側裝飾線 */
+    /* border-left: 4px solid var(--color-primary	); 左側裝飾線 */
     /* padding-left: 0.8rem; */ 
 }
 
@@ -130,7 +130,7 @@ p {
 /* .main-content a, */
 .regulation-list li a {
     text-decoration: none;
-    color: var(--main-color);
+    color: var(--color-primary	);
     transition: color 0.2s ease;
     font-weight: 500;
 }
@@ -138,7 +138,7 @@ p {
 /* .main-content a:hover, */
 .regulation-list li a:hover,
 .regulation-list li a:focus {
-    color: var(--main-color);
+    color: var(--color-primary	);
     text-decoration: underline; /* 懸停時加底線 */
 }
 
@@ -248,7 +248,8 @@ a[target="_blank"]::after {
     margin-left: -1rem;
     left: -2rem;
     display: inline-block ;
-    color: #999;
+    /* color: #999; */
+    color: var(--color-neutral);
     font-family: "Noto Sans", serif;
     font-style: italic;
     /*font-weight: bold;*/
@@ -361,15 +362,17 @@ a[target="_blank"]::after {
 /* --- 修法歷程樣式 --- */
 .amendment-history, .attachments-list {
     /* background-color: #f9f9f9; 淺灰色背景，與主要內容區隔 */
+    background-color: var(--color-secondary-content	);
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
-    border-left: 4px solid #b4a69f; /* 左側灰色標示線 */
+    border-left: 4px solid var(--color-secondary); /* 左側灰色標示線 */
     border-radius: 4px;
     font-size: 0.95em;
 }
 
 .amendment-history h3, .attachments-list h3 {
     /* color: #6c757d; 較柔和的標題顏色 */
+    color: var(--color-secondary); 
     margin-top: 0;
     margin-bottom: 0.8rem;
     font-size: 1.1em;
@@ -404,8 +407,10 @@ a[target="_blank"]::after {
 
 /* --- 法規注意事項樣式 --- */
 .notice {
-    color: #a42f0e; /* 較深色的文字顏色 */
-    background-color: #fdece8; /* 淺橘色背景，與主要內容區隔 */
+    /* color: #a42f0e; 較深色的文字顏色 */
+    color: var(--color-error);
+    /* background-color: #fdece8; 淺橘色背景，與主要內容區隔 */
+    background-color: var(--color-error-content);
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
     border-left: 4px solid #ef572e; /* 左側橘色標示線 */
@@ -415,6 +420,7 @@ a[target="_blank"]::after {
 }
 
 .notice h3 {
+    color: var(--color-error);
     margin-top: 0;
     margin-bottom: 0.3rem;
     font-size: 0.95rem;
@@ -434,7 +440,7 @@ a[target="_blank"]::after {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 500;
-    border-left: 4px solid var(--main-color); /* 左側裝飾線 */
+    border-left: 4px solid var(--color-primary	); /* 左側裝飾線 */
     padding-left: 0.8rem;
     font-weight: 600;
     /* color: #555; */
@@ -452,7 +458,7 @@ a[target="_blank"]::after {
 .regulation-content h4::before {
     font-family: "Noto Sans";
     content: "• "; /* 這裡的 "• " 就是你要加的點和一個空格 */
-    color: var(--main-color);
+    color: var(--color-primary	);
     font-weight: 900;
     margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
 
@@ -536,7 +542,7 @@ a[target="_blank"]::after {
 
 /* --- toast 通知樣式設定 --- */
 .toast-success {
-    background-color: var(--main-color) !important;
+    background-color: var(--color-primary	) !important;
     color: white !important;
     /*opacity: 1 !important;*/
 }
@@ -612,7 +618,7 @@ a[target="_blank"]::after {
         display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
     }
     #scrollToTopBtn:hover {
-        /* background-color: var(--main-color); 鼠標懸停時的顏色 */
+        /* background-color: var(--color-primary	); 鼠標懸停時的顏色 */
         transform: scale(1); /* 鼠標懸停時稍微放大 */
         /* opacity: 0.75; 調整不透明度 */
 }
