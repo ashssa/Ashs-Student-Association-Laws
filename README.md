@@ -52,7 +52,7 @@ Ashs-Student-Association-Laws/
 # 舊版說明（2025 / 07 / 31 前）
 
 這是一個使用純 HTML、CSS 和 JavaScript 建置的靜態網站，用於展示高師大附中學生會（以下簡稱本會）自治法規。
-本網站透過 JavaScript 動態載入共用的頁首 (Header) 和頁尾 (Footer)，方便統一管理和更新。
+本網站透過 JavaScript 動態載入共用的頁首 (Header) 和頁尾 (Footer)，方便統一管理和更新。 
 
 ## 專案目的
 
