@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded 事件已觸發，程式碼開始執行。');
 
     // --- 常數定義 ---
-    const HEADER_FILE = './header.html'; // 頁首檔案路徑
-    const FOOTER_FILE = './footer.html'; // 頁尾檔案路徑
-    const BUTTONS_FILE = './buttons.html'; // **功能列表檔案路徑**
+    const HEADER_FILE = '/Ashs-Student-Association-Laws/public/components/header.html'; // 頁首檔案路徑
+    const FOOTER_FILE = '/Ashs-Student-Association-Laws/public/components/footer.html'; // 頁尾檔案路徑
+    const BUTTONS_FILE = '/Ashs-Student-Association-Laws/public/components/buttons.html'; // **功能列表檔案路徑**
     const HEADER_PLACEHOLDER_ID = 'main-header'; // 頁首佔位符 ID
     const FOOTER_PLACEHOLDER_ID = 'main-footer'; // 頁尾佔位符 ID
     const BUTTONS_PLACEHOLDER_ID = 'button-container'; // **功能列表佔位符 ID**
