@@ -1,5 +1,66 @@
 /* 已棄用樣式 */
 
+/* --- 頁首樣式 --- */
+.site-header .banner {
+    background-color: var(--secondary-color); 
+    color: white; 
+    padding: 1rem 2rem; 
+    text-align: center; 
+    border-radius: 0px 0px 0 0; /** was 8px 8px 0 0 before*/
+} 
+
+.banner h1{
+    font-weight: 780;
+}
+
+.site-header h1 { 
+    margin: 0; 
+    font-size: 1.8em;
+    word-break: keep-all; 
+} 
+
+.site-header h1 a:hover { 
+    color: #dac9c0;
+} 
+
+.site-header h1 a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease;
+}
+
+.site-header nav { 
+    background-color: #f8f9fa; 
+    padding: 0.75rem 0; 
+    border-bottom: 1px solid #dee2e6; 
+} 
+
+.site-header nav ul { 
+    list-style: none; 
+    padding: 0; margin: 0; 
+    text-align: center; 
+}
+
+.site-header nav ul li { 
+    display: inline-block; 
+    margin: 0 1rem; 
+}
+
+.site-header nav ul li a { 
+    text-decoration: none; 
+    color: var(--secondary-color); 
+    Font-weight: 500; 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+    transition: background-color 0.2s ease; 
+}
+
+/* 導覽列連結懸停效果 */
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #e9ecef;
+    /* color: var(--secondary-color); */
+}
+
 /* --- 頁尾樣式 --- */
 .site-footer {
     background-color: var(--secondary-color); /* 頁尾背景 */
