@@ -2,18 +2,18 @@
   "name": "高師大附中學生會自治法規共用系統",
   "short_name": "SA Law",
   "description": "高師大附中自治法規共用系統，彙編高師大附中學生會所有自治法規的展示網站，在這裡可以找到高師大附中附中的所有學生會自治法規。",
-  "start_url": "/Ashs-Student-Association-Laws/",
+  "start_url": "/Ashs-Student-Association-Laws/public/",
   "display": "standalone", // 或 "fullscreen", "minimal-ui", "browser"
   "background_color": "#99a15d",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/Ashs-Student-Association-Laws/img/icon-194.png", // 圖示路徑
+      "src": "/Ashs-Student-Association-Laws/public/img/icon-194.png", // 圖示路徑
       "sizes": "194x194",
       "type": "image/png"
     },
     {
-      "src": "/Ashs-Student-Association-Laws/img/icon-512.png", // 圖示路徑
+      "src": "/Ashs-Student-Association-Laws/public/img/icon-512.png", // 圖示路徑
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -24,14 +24,14 @@
       "short_name": "組織章程",
       "description": "閱讀本會組織章程",
       "url": "/Ashs-Student-Association-Laws/act01.html",
-      "icons": [{ "src": "/Ashs-Student-Association-Laws/img/shortcuts01-512.png", "sizes": "512x512" }]
+      "icons": [{ "src": "/Ashs-Student-Association-Laws/public/img/shortcuts01-512.png", "sizes": "512x512" }]
     },
     {
       "name": "學生會官網",
       "short_name": "SA 官網",
       "description": "前往學生會官方網站！",
       "url": "https://sites.google.com/stu.nknush.kh.edu.tw/ashssa",
-      "icons": [{ "src": "/Ashs-Student-Association-Laws/img/shortcuts02-512.png", "sizes": "512x512" }]
+      "icons": [{ "src": "/Ashs-Student-Association-Laws/public/img/shortcuts02-512.png", "sizes": "512x512" }]
     }
   ]
 }
