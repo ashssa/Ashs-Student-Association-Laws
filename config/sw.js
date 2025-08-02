@@ -2,19 +2,19 @@
 const CACHE_NAME = 'my-pwa-cache-v-%%VERSION%%'; // 注意這裡的 %%VERSION%%
 const urlsToCache = [
 '/Ashs-Student-Association-Laws/',
-'/Ashs-Student-Association-Laws/index.html',
-'/Ashs-Student-Association-Laws/styles.css',
-'/Ashs-Student-Association-Laws/script.js',
-'/Ashs-Student-Association-Laws/act01.html',
-'/Ashs-Student-Association-Laws/act02.html',
-'/Ashs-Student-Association-Laws/act03.html',
-'/Ashs-Student-Association-Laws/act04.html',
-'/Ashs-Student-Association-Laws/act05.html',
-'/Ashs-Student-Association-Laws/act06.html',
-'/Ashs-Student-Association-Laws/act07.html',
-'/Ashs-Student-Association-Laws/act08.html',
-'/Ashs-Student-Association-Laws/directions01.html',
-'/Ashs-Student-Association-Laws/overview.html',
+'/Ashs-Student-Association-Laws/public/public/index.html',
+'/Ashs-Student-Association-Laws/public/css/styles.css',
+'/Ashs-Student-Association-Laws/public/js/script.js',
+'/Ashs-Student-Association-Laws/public/act/act01.html',
+'/Ashs-Student-Association-Laws/public/act/act02.html',
+'/Ashs-Student-Association-Laws/public/act/act03.html',
+'/Ashs-Student-Association-Laws/public/act/act04.html',
+'/Ashs-Student-Association-Laws/public/act/act05.html',
+'/Ashs-Student-Association-Laws/public/act/act06.html',
+'/Ashs-Student-Association-Laws/public/act/act07.html',
+'/Ashs-Student-Association-Laws/public/act/act08.html',
+'/Ashs-Student-Association-Laws/public/directions/directions01.html',
+'/Ashs-Student-Association-Laws/public/directions/overview.html',
 ];
 
 // 安裝 Service Worker
