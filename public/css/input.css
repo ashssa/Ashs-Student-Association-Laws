@@ -10,7 +10,9 @@
 @source "../*.{html,js}";
 @source "../act/*.{html,js}";
 @source "../components/*.{html,js}";
-@plugin "daisyui";
+@plugin "daisyui" {
+    themes: light --default, dark --prefersdark, cupcake;
+}
 /* 
 .btn-ghost{
     color: inherit
