@@ -10,7 +10,7 @@
 @source "../*.{html,js}";
 @source "../act/*.{html,js}";
 @source "../components/*.{html,js}";
-@source "../*.{html,js}";
+@source "../assets/*.{html,js}";
 @plugin "daisyui" {
     themes: corporate --default, dracula --prefersdark;
 }
