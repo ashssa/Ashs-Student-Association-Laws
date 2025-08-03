@@ -1611,6 +1611,43 @@
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
   }
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(0.25rem * 1.5);
+    white-space: nowrap;
+    color: currentColor;
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, currentColor 60%, transparent);
+    }
+    &:has(input) {
+      cursor: pointer;
+    }
+    &:is(.input > *, .select > *) {
+      display: flex;
+      height: calc(100% - 0.5rem);
+      align-items: center;
+      padding-inline: calc(0.25rem * 3);
+      white-space: nowrap;
+      font-size: inherit;
+      &:first-child {
+        margin-inline-start: calc(0.25rem * -3);
+        margin-inline-end: calc(0.25rem * 3);
+        border-inline-end: var(--border) solid currentColor;
+        @supports (color: color-mix(in lab, red, red)) {
+          border-inline-end: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+        }
+      }
+      &:last-child {
+        margin-inline-start: calc(0.25rem * 3);
+        margin-inline-end: calc(0.25rem * -3);
+        border-inline-start: var(--border) solid currentColor;
+        @supports (color: color-mix(in lab, red, red)) {
+          border-inline-start: var(--border) solid color-mix(in oklab, currentColor 10%, #0000);
+        }
+      }
+    }
+  }
   .modal-action {
     margin-top: calc(0.25rem * 6);
     display: flex;
@@ -1734,6 +1771,9 @@
   }
   .block {
     display: block;
+  }
+  .contents {
+    display: contents;
   }
   .flex {
     display: flex;
@@ -2736,6 +2776,204 @@ a[target="_blank"]::after {
     --size-field: 0.25rem;
     --border: 1px;
     --depth: 0;
+    --noise: 0;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=retro]:checked),[data-theme=retro] {
+    color-scheme: light;
+    --color-base-100: oklch(91.637% 0.034 90.515);
+    --color-base-200: oklch(88.272% 0.049 91.774);
+    --color-base-300: oklch(84.133% 0.065 90.856);
+    --color-base-content: oklch(41% 0.112 45.904);
+    --color-primary: oklch(80% 0.114 19.571);
+    --color-primary-content: oklch(39% 0.141 25.723);
+    --color-secondary: oklch(92% 0.084 155.995);
+    --color-secondary-content: oklch(44% 0.119 151.328);
+    --color-accent: oklch(68% 0.162 75.834);
+    --color-accent-content: oklch(41% 0.112 45.904);
+    --color-neutral: oklch(44% 0.011 73.639);
+    --color-neutral-content: oklch(86% 0.005 56.366);
+    --color-info: oklch(58% 0.158 241.966);
+    --color-info-content: oklch(96% 0.059 95.617);
+    --color-success: oklch(51% 0.096 186.391);
+    --color-success-content: oklch(96% 0.059 95.617);
+    --color-warning: oklch(64% 0.222 41.116);
+    --color-warning-content: oklch(96% 0.059 95.617);
+    --color-error: oklch(70% 0.191 22.216);
+    --color-error-content: oklch(40% 0.123 38.172);
+    --radius-selector: 0.25rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=cyberpunk]:checked),[data-theme=cyberpunk] {
+    color-scheme: light;
+    --color-base-100: oklch(94.51% 0.179 104.32);
+    --color-base-200: oklch(91.51% 0.179 104.32);
+    --color-base-300: oklch(85.51% 0.179 104.32);
+    --color-base-content: oklch(0% 0 0);
+    --color-primary: oklch(74.22% 0.209 6.35);
+    --color-primary-content: oklch(14.844% 0.041 6.35);
+    --color-secondary: oklch(83.33% 0.184 204.72);
+    --color-secondary-content: oklch(16.666% 0.036 204.72);
+    --color-accent: oklch(71.86% 0.217 310.43);
+    --color-accent-content: oklch(14.372% 0.043 310.43);
+    --color-neutral: oklch(23.04% 0.065 269.31);
+    --color-neutral-content: oklch(94.51% 0.179 104.32);
+    --color-info: oklch(72.06% 0.191 231.6);
+    --color-info-content: oklch(0% 0 0);
+    --color-success: oklch(64.8% 0.15 160);
+    --color-success-content: oklch(0% 0 0);
+    --color-warning: oklch(84.71% 0.199 83.87);
+    --color-warning-content: oklch(0% 0 0);
+    --color-error: oklch(71.76% 0.221 22.18);
+    --color-error-content: oklch(0% 0 0);
+    --radius-selector: 0rem;
+    --radius-field: 0rem;
+    --radius-box: 0rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=valentine]:checked),[data-theme=valentine] {
+    color-scheme: light;
+    --color-base-100: oklch(97% 0.014 343.198);
+    --color-base-200: oklch(94% 0.028 342.258);
+    --color-base-300: oklch(89% 0.061 343.231);
+    --color-base-content: oklch(52% 0.223 3.958);
+    --color-primary: oklch(65% 0.241 354.308);
+    --color-primary-content: oklch(100% 0 0);
+    --color-secondary: oklch(62% 0.265 303.9);
+    --color-secondary-content: oklch(97% 0.014 308.299);
+    --color-accent: oklch(82% 0.111 230.318);
+    --color-accent-content: oklch(39% 0.09 240.876);
+    --color-neutral: oklch(40% 0.153 2.432);
+    --color-neutral-content: oklch(89% 0.061 343.231);
+    --color-info: oklch(86% 0.127 207.078);
+    --color-info-content: oklch(44% 0.11 240.79);
+    --color-success: oklch(84% 0.143 164.978);
+    --color-success-content: oklch(43% 0.095 166.913);
+    --color-warning: oklch(75% 0.183 55.934);
+    --color-warning-content: oklch(26% 0.079 36.259);
+    --color-error: oklch(63% 0.237 25.331);
+    --color-error-content: oklch(97% 0.013 17.38);
+    --radius-selector: 1rem;
+    --radius-field: 2rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=aqua]:checked),[data-theme=aqua] {
+    color-scheme: dark;
+    --color-base-100: oklch(37% 0.146 265.522);
+    --color-base-200: oklch(28% 0.091 267.935);
+    --color-base-300: oklch(22% 0.091 267.935);
+    --color-base-content: oklch(90% 0.058 230.902);
+    --color-primary: oklch(85.661% 0.144 198.645);
+    --color-primary-content: oklch(40.124% 0.068 197.603);
+    --color-secondary: oklch(60.682% 0.108 309.782);
+    --color-secondary-content: oklch(96% 0.016 293.756);
+    --color-accent: oklch(93.426% 0.102 94.555);
+    --color-accent-content: oklch(18.685% 0.02 94.555);
+    --color-neutral: oklch(27% 0.146 265.522);
+    --color-neutral-content: oklch(80% 0.146 265.522);
+    --color-info: oklch(54.615% 0.215 262.88);
+    --color-info-content: oklch(90.923% 0.043 262.88);
+    --color-success: oklch(62.705% 0.169 149.213);
+    --color-success-content: oklch(12.541% 0.033 149.213);
+    --color-warning: oklch(66.584% 0.157 58.318);
+    --color-warning-content: oklch(27% 0.077 45.635);
+    --color-error: oklch(73.95% 0.19 27.33);
+    --color-error-content: oklch(14.79% 0.038 27.33);
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=lemonade]:checked),[data-theme=lemonade] {
+    color-scheme: light;
+    --color-base-100: oklch(98.71% 0.02 123.72);
+    --color-base-200: oklch(91.8% 0.018 123.72);
+    --color-base-300: oklch(84.89% 0.017 123.72);
+    --color-base-content: oklch(19.742% 0.004 123.72);
+    --color-primary: oklch(58.92% 0.199 134.6);
+    --color-primary-content: oklch(11.784% 0.039 134.6);
+    --color-secondary: oklch(77.75% 0.196 111.09);
+    --color-secondary-content: oklch(15.55% 0.039 111.09);
+    --color-accent: oklch(85.39% 0.201 100.73);
+    --color-accent-content: oklch(17.078% 0.04 100.73);
+    --color-neutral: oklch(30.98% 0.075 108.6);
+    --color-neutral-content: oklch(86.196% 0.015 108.6);
+    --color-info: oklch(86.19% 0.047 224.14);
+    --color-info-content: oklch(17.238% 0.009 224.14);
+    --color-success: oklch(86.19% 0.047 157.85);
+    --color-success-content: oklch(17.238% 0.009 157.85);
+    --color-warning: oklch(86.19% 0.047 102.15);
+    --color-warning-content: oklch(17.238% 0.009 102.15);
+    --color-error: oklch(86.19% 0.047 25.85);
+    --color-error-content: oklch(17.238% 0.009 25.85);
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=abyss]:checked),[data-theme=abyss] {
+    color-scheme: dark;
+    --color-base-100: oklch(20% 0.08 209);
+    --color-base-200: oklch(15% 0.08 209);
+    --color-base-300: oklch(10% 0.08 209);
+    --color-base-content: oklch(90% 0.076 70.697);
+    --color-primary: oklch(92% 0.2653 125);
+    --color-primary-content: oklch(50% 0.2653 125);
+    --color-secondary: oklch(83.27% 0.0764 298.3);
+    --color-secondary-content: oklch(43.27% 0.0764 298.3);
+    --color-accent: oklch(43% 0 0);
+    --color-accent-content: oklch(98% 0 0);
+    --color-neutral: oklch(30% 0.08 209);
+    --color-neutral-content: oklch(90% 0.076 70.697);
+    --color-info: oklch(74% 0.16 232.661);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(79% 0.209 151.711);
+    --color-success-content: oklch(26% 0.065 152.934);
+    --color-warning: oklch(84.8% 0.1962 84.62);
+    --color-warning-content: oklch(44.8% 0.1962 84.62);
+    --color-error: oklch(65% 0.1985 24.22);
+    --color-error-content: oklch(27% 0.1985 24.22);
+    --radius-selector: 2rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
     --noise: 0;
   }
 }

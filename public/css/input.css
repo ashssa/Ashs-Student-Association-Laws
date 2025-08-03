@@ -6,14 +6,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 /* import Daisy UI */
-@import "tailwindcss" source(none);
+@import "tailwindcss" ;
+/* @source "./node_modules/daisyui/*.{html,js}"; */
 @source "../*.{html,js}";
 @source "../act/*.{html,js}";
 @source "../components/*.{html,js}";
 @source "../assets/*.{html,js}";
-@source ".../node_modules/daisyui/";
+@source "../assets/*.{html,js}";
 @plugin "daisyui" {
-    themes: corporate --default, dracula --prefersdark;
+    themes: corporate --default, dracula --prefersdark, retro, cyberpunk, valentine, aqua, lemonade, abyss, all;
 }
 /* 
 .btn-ghost{
