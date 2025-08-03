@@ -79,6 +79,14 @@ p {
     opacity: 1; /* 調整不透明度 */
 }
 
+/* --- 共用模組載入動畫 --- */
+.site-header p{
+    @apply skeleton px-2 h-18 w-full my-2 fixed
+}
+#button-container p{
+    text-align: center;
+    @apply loading loading-ring loading-md h-10 mx-auto 
+}
 
 /* --- 主要內容區域 --- */
 .main-content {
