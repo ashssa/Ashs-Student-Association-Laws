@@ -406,7 +406,9 @@ a[target="_blank"]::after {
     list-style: none;
     padding-left: 0;
 }
-
+.amendment-history *, .attachments-list * {
+    color: var(--color-secondary); 
+}
 .amendment-history li {
     margin-bottom: 0.15rem;
     /* color: var(--text-color); */
