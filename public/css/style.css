@@ -2069,9 +2069,6 @@
   .text-base-content {
     color: var(--color-base-content);
   }
-  .text-gray-600 {
-    color: var(--color-gray-600);
-  }
   .text-neutral-content {
     color: var(--color-neutral-content);
   }
