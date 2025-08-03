@@ -108,68 +108,111 @@
                             <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
                         </svg><!-- 下箭頭，「v」形的那個 -->
                     </div>
-                    <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-auto p-2 shadow-2xl right-0"><!-- 選單在這裡 -->
+                    <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-auto p-2 shadow-2xl right-0" id="themeMenu"><!-- 選單在這裡 -->
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Default"
-                                value="default" />
+                                value="default" 
+                                id="theme01"/>
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Retro"
-                                value="retro" />
+                                value="retro" 
+                                id="theme02"/>
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Cyberpunk"
-                                value="cyberpunk" />
+                                value="cyberpunk" 
+                                id="theme03"/>
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Valentine"
-                                value="valentine" />
+                                value="valentine" 
+                                id="theme04"/>
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Aqua"
-                                value="aqua" />
+                                value="aqua" 
+                                id="theme05"/>
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Lemonade"
-                                value="lemonade" />
+                                value="lemonade" 
+                                id="theme06"/>
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="theme-dropdown"
-                                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
                                 aria-label="Abyss"
-                                value="abyss" />
+                                value="abyss" 
+                                id="theme07"/>
                         </li>
                     </ul>
                 </div>
         </div>
     </nav>
 </div>
+
+<!-- 記憶主題樣式 -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const themeRadios = document.querySelectorAll('.theme-controller');
+    const localStorageKey = 'selectedTheme';
+    const dropdownButton = document.querySelector('.dropdown > .btn');
+
+    // 1. 檢查 localStorage，並自動設定上次選擇的主題
+    const savedTheme = localStorage.getItem(localStorageKey);
+    if (savedTheme) {
+        // 尋找並勾選對應的 radio 按鈕
+        const savedRadio = document.querySelector(`input[value="${savedTheme}"]`);
+        if (savedRadio) {
+            savedRadio.checked = true;
+            // 同時更新按鈕文字
+            dropdownButton.textContent = savedRadio.getAttribute('aria-label');
+        }
+    }
+
+    // 2. 監聽每個 radio 按鈕的變更事件
+    themeRadios.forEach(radio => {
+        radio.addEventListener('change', (event) => {
+            // 取得被選中的 radio 按鈕的值
+            const selectedValue = event.target.value;
+            const selectedLabel = event.target.getAttribute('aria-label');
+
+            // 儲存被選中的值到 localStorage
+            localStorage.setItem(localStorageKey, selectedValue);
+
+            // 更新下拉選單按鈕的文字
+            dropdownButton.textContent = selectedLabel;
+        });
+    });
+});
+</script>
 
 <!-- 舊版頁首 -->
 <!-- 
