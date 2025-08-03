@@ -88,6 +88,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
 
+    // --- 新增：初始化主題切換邏輯的函數 ---
+    function initializeThemeSwitcher() {
+        console.log('initializeThemeSwitcher 函數已執行。');
+        const themeRadios = document.querySelectorAll('.theme-controller');
+        const htmlElement = document.documentElement; // 獲取 <html> 元素
+        const localStorageKey = 'daisyuiTheme'; // 儲存主題的 localStorage 鍵名
+
+        // 1. 頁面載入時，從 localStorage 讀取並應用主題
+        const savedTheme = localStorage.getItem(localStorageKey);
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme); // 設定 <html> 的 data-theme 屬性
+            // 同步更新 radio 按鈕的選中狀態
+            const savedRadio = document.querySelector(`input[value="${savedTheme}"]`);
+            if (savedRadio) {
+                savedRadio.checked = true;
+                console.log(`已從 localStorage 載入主題: ${savedTheme}`);
+            } else {
+                console.warn(`localStorage 中儲存的主題 '${savedTheme}' 找不到對應的 radio 按鈕。`);
+            }
+        } else {
+            // 如果 localStorage 沒有儲存，預設使用第一個主題或 'default' 主題
+            const defaultThemeRadio = document.querySelector('input[name="theme-dropdown"]:checked') || document.querySelector('input[value="default"]');
+            if (defaultThemeRadio) {
+                htmlElement.setAttribute('data-theme', defaultThemeRadio.value);
+                localStorage.setItem(localStorageKey, defaultThemeRadio.value);
+                defaultThemeRadio.checked = true;
+                console.log(`localStorage 無主題，設定預設主題: ${defaultThemeRadio.value}`);
+            } else {
+                console.warn('找不到預設主題的 radio 按鈕或任何選中的主題。');
+            }
+        }
+
+        // 2. 監聽 radio 按鈕的變更事件，儲存新主題並應用
+        if (themeRadios.length > 0) {
+            themeRadios.forEach(radio => {
+                radio.addEventListener('change', (event) => {
+                    const selectedTheme = event.target.value; // 取得被選中的主題值
+                    htmlElement.setAttribute('data-theme', selectedTheme);
+                    localStorage.setItem(localStorageKey, selectedTheme);
+                    console.log(`主題已切換並儲存: ${selectedTheme}`);
+                });
+            });
+            console.log('主題切換監聽器已成功綁定。');
+        } else {
+            console.warn('未找到任何主題切換 radio 按鈕 (.theme-controller)。');
+        }
+    }
+        console.log('initializeThemeSwitcher 函數預備執行');
+        initializeThemeSwitcher();
+
         toastr.options = {
             "closeButton": false,
             "debug": false,
