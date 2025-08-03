@@ -11,6 +11,7 @@
 @source "../act/*.{html,js}";
 @source "../components/*.{html,js}";
 @source "../assets/*.{html,js}";
+@source ".../node_modules/daisyui/";
 @plugin "daisyui" {
     themes: corporate --default, dracula --prefersdark;
 }
