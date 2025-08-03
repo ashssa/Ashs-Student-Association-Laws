@@ -81,8 +81,13 @@ p {
 
 /* --- 共用模組載入動畫 --- */
 .site-header p{
-    @apply skeleton px-2 h-18 w-full my-2 fixed
+    @apply px-2 h-18 w-full my-2 fixed
 }
+
+#button-container{
+    @apply justify-center 
+}
+
 #button-container p{
     text-align: center;
     @apply loading loading-ring loading-md h-10 mx-auto 
