@@ -2672,12 +2672,15 @@ a[target="_blank"]::after {
   margin-left: -1rem;
   left: -2rem;
   display: inline-block;
-  color: var(--color-neutral);
   font-family: "Noto Sans", serif;
   font-style: italic;
   text-align: right;
   width: 1.5rem;
   position: relative;
+  color: var(--color-base-content);
+  @supports (color: color-mix(in lab, red, red)) {
+    color: color-mix(in oklab, var(--color-base-content) 40%, transparent);
+  }
 }
 .sub {
   margin-top: 0.4rem;

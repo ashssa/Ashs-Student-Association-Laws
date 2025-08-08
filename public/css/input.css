@@ -258,7 +258,7 @@ a[target="_blank"]::after {
     left: -2rem;
     display: inline-block ;
     /* color: #999; */
-    color: var(--color-neutral);
+    /* color: var(--color-neutral); */
     font-family: "Noto Sans", serif;
     font-style: italic;
     /*font-weight: bold;*/
@@ -266,6 +266,7 @@ a[target="_blank"]::after {
     width: 1.5rem;
     position: relative;
     /*position: absolute;*/
+    @apply text-base-content/40
 }
 .sub{
     margin-top: 0.4rem;
