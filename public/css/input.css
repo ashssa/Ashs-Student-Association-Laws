@@ -26,12 +26,11 @@
 }
 :root {
     /* --color-primary	: #99a15d; 主要顏色，例如：藍色 */
-    --text-color: #333; /* 主要文字顏色 */
-    --background-color: #f8f9fa; /* 頁面背景顏色 */
-    --secondary-color: #68605c; /* 次要顏色，例如：灰色 */
+    /* --text-color: #333; 主要文字顏色 */
+    /* --background-color: #f8f9fa; 頁面背景顏色 */
+    /* --secondary-color: #68605c; 次要顏色，例如：灰色 */
     /*--accent-color: #28a745; /* 強調色，例如：綠色 */
 }
-
 body {
     font-family: "Noto Sans TC", sans-serif; /* 使用思源黑體 */
     line-height: 1.7; /* 增加行高以提高可讀性 */
@@ -40,7 +39,6 @@ body {
     display: flex;
     flex-direction: column; /* 垂直排列 header, main, footer */
     min-height: 100vh; /* 確保 body 至少和視窗一樣高 */
-    
     /* background-color: #f4f7f6; 背景色 */
     /* color: var(--text-color); 主要文字顏色 */ /* 改用tailwind控制。 */
 }
@@ -334,7 +332,6 @@ a[target="_blank"]::after {
     /*display: flex; /* 使用 Flexbox 方便對齊日期和描述 */
     /*gap: 1rem; /* 日期和描述之間的間距 */
 }
-
 /*.amendment-date {*/
 /*    color: #555;*/
 /*    font-weight: bold;*/
@@ -358,7 +355,6 @@ a[target="_blank"]::after {
     font-size: 0.95rem;
     /* font-weight: 440; */
 }
-
 .notice h3 {
     color: var(--color-error);
     margin-top: 0;
@@ -368,11 +364,9 @@ a[target="_blank"]::after {
     padding-left: 0; /* 移除原本 h3 的左側裝飾線 */
     border-left: none;
 }
-
 .notice p {
     margin-left: 1rem; /* 內容左側縮排 */
 }
-
 
 /* --- 法規內容樣式 --- */
 .regulation-content h3 {
@@ -386,7 +380,6 @@ a[target="_blank"]::after {
     /* color: #555; */
     font-size: 1.3rem;
 }
-
 .regulation-content h4 {
     margin: 1.7rem auto 1.15rem;
     /* color: #555; */
@@ -394,21 +387,17 @@ a[target="_blank"]::after {
     font-size: 1.15rem;
     word-break: keep-all; 
 }
-
 .regulation-content h4::before {
     font-family: "Noto Sans";
     content: "• "; /* 這裡的 "• " 就是你要加的點和一個空格 */
     color: var(--color-primary	);
     font-weight: 900;
     margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
-
-    /* 其他你可能需要的樣式，例如：
-    font-size: 1.2em;
+    /* font-size: 1.2em;
     vertical-align: middle;
     margin-right: 0.3em;
-    */
+     */
 }
-
 .regulation-content p {
     /*margin-bottom: 1rem;*/
     text-align: justify; /* 左右對齊 */
@@ -416,7 +405,6 @@ a[target="_blank"]::after {
 
 
 /* 附件清單樣式 */
-
 .attachments {
     /* color: var(--text-color); */
     font-family: "Reddit Sans","Noto Sans TC";
@@ -430,7 +418,6 @@ a[target="_blank"]::after {
     align-items: flex-start; /* 垂直方向頂部對齊 */
     margin-bottom: 0.65rem;
 }
-
 .attachments a {
     /* color: var(--text-color); */
     display: flex; /* 讓 a 成為 flex 容器 */
@@ -439,22 +426,18 @@ a[target="_blank"]::after {
     width: 100%; /* 佔滿 li 的寬度 */
     font-weight: inherit; /* 主要內容中曾經指定連結文字較粗 */
 }
-
 .attachments a {
     /* color: var(--text-color); */
     font-family: inherit;
 }
-
 .attachments a::after {
     vertical-align: bottom;
     line-height: 1rem;
 }
-
 .attachments a:hover {
     text-decoration: none; /* 懸停時不加底線 */
     /* color: #b4a69f; */
 }
-
 .attachments li::before {
     font-family: "Noto Sans";
     /* color: #b4a69f; */
@@ -467,14 +450,12 @@ a[target="_blank"]::after {
     vertical-align: top;
     margin-right: 0.5rem; /* 移除原本的右邊距 */
 }
-
 .att-no {
     width: 3.5rem; /* 固定寬度 */
     flex-shrink: 0; /* 防止被壓縮 */
     margin-right: 0.75rem; /* 與標題間距 */
     display: inline-block !important; /* 覆蓋之前的 display */
 }
-
 .att-title {
     flex-grow: 0; /* 標題佔用剩餘空間 */
     word-break: break-word;
@@ -483,15 +464,13 @@ a[target="_blank"]::after {
 
 /* --- toast 通知樣式設定 --- */
 .toast-success {
-    background-color: var(--color-primary	) !important;
+    background-color: var(--color-primary) !important;
     color: white !important;
     /*opacity: 1 !important;*/
 }
-
 .toast-success .toast-title {
     color: white !important;
 }
-
 .toast-success .toast-message {
     color: white !important;
 }
@@ -504,14 +483,12 @@ a[target="_blank"]::after {
         padding: 1.5rem 1rem;
         margin-top: 6rem;
     }
-
     .page-title {
         font-size: 1.5em;
     }
 
     /* 調整導覽列在小螢幕上的樣式 */
     .site-header nav ul li { display: block; margin: 0.5rem 0; } 
-
     .site-header h1 {
         font-size: inherit;
     } 
@@ -522,39 +499,31 @@ a[target="_blank"]::after {
     .sub{
         margin-left: 1.3rem;
     }
-
     .sub::before {
         width: 1rem;
         left: -1.3rem;
         margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
     }
-
     .item{
         margin-left: 3rem;
     }
-
     .item::before{
         width: 1rem;
         left: -1.5rem;
         margin-right: -1rem; /* 在編號和內容之間添加一些間距 */    
     }
-
     .attachments {
     padding-left: 0;
     }
-
     .attachments-list{
         padding: 1rem 0.75rem 0.5rem;
     }
-
     .attachments-list h3{
         padding-left: 0.75rem;
     }
-
     .attachments li::before {
     content: ""; 
     }
-
     .footer-block{
         display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
     }
