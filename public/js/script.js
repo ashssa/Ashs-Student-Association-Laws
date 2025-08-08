@@ -88,9 +88,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
 
+const backBtn = document.getElementById('backBtn');
+console.log('即將啟動myBtn');
+if (backBtn) {
+    console.log('myButton 元素已找到（',backBtn,'），添加點擊事件監聽器。');
+    backBtn.addEventListener('click', function() {
+        window.location.href = '../';
+    });
+}
+
     // --- 新增：初始化主題切換邏輯的函數 ---
     function initializeThemeSwitcher() {
-        console.log('initializeThemeSwitcher 函數已執行。');
+        console.log('initializeThemeSwitcher 函數開始執行。');
         const themeRadios = document.querySelectorAll('.theme-controller');
         const htmlElement = document.documentElement; // 獲取 <html> 元素
         const localStorageKey = 'daisyuiTheme'; // 儲存主題的 localStorage 鍵名
