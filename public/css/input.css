@@ -141,7 +141,13 @@ p {
     @apply text-4xl font-thin opacity-30 tabular-nums
 }
 .law-list > li  > .law-name {
-    @apply text-lg text-base-content/75 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
+    @apply text-lg/8 text-base-content/75 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
+}
+.law-list > .list-row > a {
+    @apply decoration-accent/0
+}
+.law-list > .list-row > a:hover {
+    @apply transition-colors duration-550 underline underline-offset-[-0.5rem] decoration-accent/25  decoration-wavy decoration-4
 }
 /* .law-list > li  > svg {
     @apply size-[1.2em]
