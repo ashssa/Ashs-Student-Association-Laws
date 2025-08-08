@@ -4,7 +4,7 @@
   "description": "高師大附中自治法規共用系統，彙編高師大附中學生會所有自治法規的展示網站，在這裡可以找到高師大附中附中的所有學生會自治法規。",
   "start_url": "/Ashs-Student-Association-Laws/public/",
   "display": "standalone", // 或 "fullscreen", "minimal-ui", "browser"
-  "background_color": "#99a15d",
+  "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
