@@ -9,7 +9,6 @@
     justify-content: center; /* 水平置中所有按鈕 */
     align-items: center; /* 垂直置中所有按鈕 */
 }
-
 .law-functions ul li a,
 .law-functions ul li button {
     display: inline-block;
@@ -27,14 +26,12 @@
     font-weight: 450;
     vertical-align: middle; /* 垂直對齊 */
 }
-
 .law-functions ul li button {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     height: 100%;
 }
-
 .law-functions ul li a:hover,
 .law-functions ul li button:hover {
     background-color: #505430;
@@ -66,44 +63,36 @@
     text-align: center; 
     border-radius: 0px 0px 0 0; /** was 8px 8px 0 0 before*/
 } 
-
 .banner h1{
     font-weight: 780;
 }
-
 .site-header h1 { 
     margin: 0; 
     font-size: 1.8em;
     word-break: keep-all; 
 } 
-
 .site-header h1 a:hover { 
     color: #dac9c0;
 } 
-
 .site-header h1 a {
     text-decoration: none;
     color: white;
     transition: color 0.2s ease;
 }
-
 .site-header nav { 
     background-color: #f8f9fa; 
     padding: 0.75rem 0; 
     border-bottom: 1px solid #dee2e6; 
 } 
-
 .site-header nav ul { 
     list-style: none; 
     padding: 0; margin: 0; 
     text-align: center; 
 }
-
 .site-header nav ul li { 
     display: inline-block; 
     margin: 0 1rem; 
 }
-
 .site-header nav ul li a { 
     text-decoration: none; 
     color: var(--secondary-color); 
@@ -112,13 +101,20 @@
     border-radius: 5px; 
     transition: background-color 0.2s ease; 
 }
-
 /* 導覽列連結懸停效果 */
 nav ul li a:hover, nav ul li a:focus {
     background-color: #e9ecef;
     /* color: var(--secondary-color); */
 }
-
+/* 首頁法規選單 */
+.regulation-list {
+    list-style: none; /* 移除列表標記 */
+    padding-left: 2rem;
+}
+.regulation-list li {
+    margin-bottom: 0.8rem;
+    font-weight: 450;
+}
 /* --- 頁尾樣式 --- */
 .site-footer {
     background-color: var(--secondary-color); /* 頁尾背景 */
@@ -137,3 +133,57 @@ nav ul li a:hover, nav ul li a:focus {
 .footer-block{
     display: none;
 }
+/* 棄用法規樣式 */
+/*.par-or{
+    list-style-type: upper-roman ;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+}
+.par-or li::marker {
+    color: #999; /* 修改列點的顏色為藍色 
+    font-style: italic;
+    /* 其他 ::marker 可以支援的樣式 
+}*/
+/*
+.article-content {
+    color: var(--text-color);
+    margin-left: 4rem;  內容左側縮排 4rem 
+    text-indent: -4rem;  將第一行往左縮排負 4rem，與條號對齊 
+    line-height: 1.7;  增加行高以提高可讀性 
+}*/
+/*
+.article-content .article-title {  可以針對標題設定額外樣式，如果需要的話 
+    font-weight: bold;  例如將標題加粗 
+    display: block;  確保標題佔據一行 
+    margin-bottom: 0.3rem;  標題與內文間的間距 
+}*/
+/* 處理列表內部的 row，增加額外的縮排 
+/*.regulation-content ol > .row,
+.regulation-content ul > .row {
+    margin-left: 2em; /* 相對於條文的額外縮排 
+}*/
+/* 調整列表內條、項、款、目的寬度，以配合內容的縮排 
+.regulation-content ol > .row > .Art,
+.regulation-content ul > .row > .Art {
+    width: 1em; /* 配合列表縮排調整條號寬度 
+}*/
+/*
+.regulation-content ol > .row > .Par,
+.regulation-content ul > .row > .Par,
+.regulation-content ol > .row > .Par\.or,
+.regulation-content ul > .row > .Par\.or {
+    width: 2em;
+}
+.regulation-content ol > .row > .Sub,
+.regulation-content ul > .row > .Sub {
+    width: 3em;
+}
+.regulation-content ol > .row > .Item,
+.regulation-content ul > .row > .Item {
+    width: 4em;
+}
+.regulation-content ol > .row > .article-content,
+.regulation-content ul > .row > .article-content {
+    margin-left: 4rem;
+    text-indent: -4rem;
+}*/

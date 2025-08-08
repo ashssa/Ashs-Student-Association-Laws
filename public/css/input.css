@@ -24,16 +24,13 @@
 *, *::before, *::after {
     box-sizing: border-box; /* 更直觀的寬度計算 */
 }
-
 :root {
     /* --color-primary	: #99a15d; 主要顏色，例如：藍色 */
     --text-color: #333; /* 主要文字顏色 */
     --background-color: #f8f9fa; /* 頁面背景顏色 */
     --secondary-color: #68605c; /* 次要顏色，例如：灰色 */
     /*--accent-color: #28a745; /* 強調色，例如：綠色 */
-
 }
-
 
 body {
     font-family: "Noto Sans TC", sans-serif; /* 使用思源黑體 */
@@ -47,7 +44,6 @@ body {
     /* background-color: #f4f7f6; 背景色 */
     /* color: var(--text-color); 主要文字顏色 */ /* 改用tailwind控制。 */
 }
-
 p {
     margin: 0rem;
 }
@@ -73,7 +69,6 @@ p {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 陰影效果 */
     transition: background-color 0.3s, transform 0.3s; /* 平滑過渡效果 */
 }
-
 #scrollToTopBtn:hover {
     /* background-color: #505430; 鼠標懸停時的顏色 */
     transform: scale(1.05); /* 鼠標懸停時稍微放大 */
@@ -84,11 +79,9 @@ p {
 .site-header p{
     @apply px-2 h-18 w-full my-2 fixed
 }
-
 #button-container{
     @apply justify-center 
 }
-
 #button-container p{
     text-align: center;
     @apply loading loading-ring loading-md h-10 mx-auto 
@@ -106,7 +99,6 @@ p {
     border-radius: 8px; /* 圓角 */
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 細緻的陰影 */
 }
-
 .main-content hr {
     display: block;
     margin: 1rem 0;
@@ -114,22 +106,21 @@ p {
     size: 4px;
     /* color: var(--text-color); */
 }
-
 .page-title {
-    color: var(--color-primary); /* 標題顏色與頁首橫幅呼應 */
-    border-bottom: 3px solid var(--color-primary);
+    color: var(--color-primary); 
+    /* border-bottom: 3px solid var(--color-primary); */
+    padding-left: 0.8rem; 
     padding-bottom: 0.6rem;
     margin-top: 0; /* 移除預設的上邊距 */
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
     font-weight: 700; /* 標題加粗 */
-    @apply text-2xl text-primary; /* 使用 Tailwind CSS 的文字大小 */
+    @apply text-2xl text-primary tracking-wide; /* 使用 Tailwind CSS 的文字大小 */
 }
-
 .page-subtitle {
     /* color: #555; */
     font-size: 1.3rem;
     font-weight: 600;
-    border-bottom: 2px solid #555;
+    /* border-bottom: 2px solid #555; */
     padding-bottom: 0.2rem;
     margin-top: 2.5rem;
     margin-bottom: 0.6rem;
@@ -138,15 +129,25 @@ p {
     /* padding-left: 0.8rem; */ 
 }
 
-.regulation-list {
-    list-style: none; /* 移除列表標記 */
-    padding-left: 2rem;
+/* --- 首頁法規選單樣式 --- */
+.law-list {
+    @apply bg-base-100 rounded-box shadow-md mb-6
 }
-
-.regulation-list li {
-    margin-bottom: 0.8rem;
-    font-weight: 450;
+.law-list > li {
+    @apply items-center
 }
+.law-list > .law-list-title {
+    @apply  p-4 pb-0 text-sm opacity-65 tracking-wide
+}
+.law-list > li  > .no {
+    @apply text-4xl font-thin opacity-30 tabular-nums
+}
+.law-list > li  > .law-name {
+    @apply text-lg text-base-content/75 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
+}
+/* .law-list > li  > svg {
+    @apply size-[1.2em]
+} */
 
 /* .main-content a, */
 .regulation-list li a {
@@ -155,7 +156,6 @@ p {
     transition: color 0.2s ease;
     font-weight: 500;
 }
-
 /* .main-content a:hover, */
 .regulation-list li a:hover,
 .regulation-list li a:focus {
@@ -167,17 +167,17 @@ p {
 .remarks-content{
     margin: 0 1.5rem 0;
 }
-
 .remarks {
     list-style-type: none; /* 移除預設的列表符號 */
     padding-left: 0; /* 移除預設的左邊內距 */
 }
-
 .remarks li {
     position: relative; /* 建立定位上下文，方便絕對定位偽元素 */
     padding-left: 1.5rem; /* 為文字內容預留空間 */
 }
-
+.remarks li > a{
+    @apply link link-primary link-hover
+}
 .remarks li::before {
     content: "※"; /* 設定偽元素的內容為「※」 */
     position: absolute; /* 相對於 li 元素定位 */
@@ -207,7 +207,6 @@ a[target="_blank"]::after {
     /* font-size: inherit; */
     }
 
-
 /* --- 法規內容樣式調整 --- */
 .row {
     display: flex; /* 使用 Flexbox 進行條號和內容的排版 */
@@ -215,8 +214,6 @@ a[target="_blank"]::after {
     margin-bottom: 0.8rem; /* 調整條文間距 */
     counter-reset: roman-counter; /* Reset the par-or list */
 }
-
-
 .art {
     /* color: #555; */
     font-weight: bold;
@@ -227,40 +224,31 @@ a[target="_blank"]::after {
     flex-shrink: 0; /* 防止條號被壓縮 */
     word-break: keep-all;
 }
-
 .art-data {
     margin: 0 0 0.4rem 0.3rem;
 }
-
 .art-note {
     margin: inherit;
 }
-
 /* .par,
 .sub,
 .item{
     text-align: justify; /* 文字左右對齊 */
 /* } */
-
-
 .par {
     line-height: 1.7 ;
     margin: 0.3rem 0 0 0;
     counter-reset: sub-counter; /* Reset the Subparagraph list */
 }
-
-
 .art-data > .par.only-one-par::before {
     content: none !important;
 }
-
 .par p {
     margin: inherit;
     margin-top: 0rem;
     margin-bottom: 0rem;
     background-color: red;
 }
-
 .par::before{
     content: counter(roman-counter, upper-roman); /* 顯示大寫羅馬數字 */
     counter-increment: roman-counter; /* 增加計數器 */
@@ -279,16 +267,13 @@ a[target="_blank"]::after {
     position: relative;
     /*position: absolute;*/
 }
-
 .sub{
     margin-top: 0.4rem;
     margin-bottom: 0;
     counter-increment: sub-counter; /* 增加計數器 */
     margin-left: 2rem;
     counter-reset: item-counter; /* Reset the Item list */
-
 }
-
 .sub::before {
     content: counter(sub-counter, decimal); /* set Subparagraph counter */
     /*content: "(" counter(sub-counter) ")"; /* 自訂前置字元和計數器 */
@@ -299,12 +284,10 @@ a[target="_blank"]::after {
     position: relative;
     font-family: "Reddit Sans","Noto Sans TC", sans-serif;
 }
-
 .item{
     margin-left: 4rem;
     counter-increment:(item-counter);
 }
-
 .item::before{
     content: "(" counter(item-counter, decimal) ")"; /* 自訂前置字元和計數器 */
     counter-increment: item-counter; /* 增加計數器 */
@@ -316,81 +299,17 @@ a[target="_blank"]::after {
     position: relative;
 }
 
-/*.par-or{
-    list-style-type: upper-roman ;
-    margin-block-start: 0.3em;
-    margin-block-end: 0.3em;
-}
-
-.par-or li::marker {
-    color: #999; /* 修改列點的顏色為藍色 
-    font-style: italic;
-    /* 其他 ::marker 可以支援的樣式 
-}*/
-
-/*
-.article-content {
-    color: var(--text-color);
-    margin-left: 4rem;  內容左側縮排 4rem 
-    text-indent: -4rem;  將第一行往左縮排負 4rem，與條號對齊 
-    line-height: 1.7;  增加行高以提高可讀性 
-}*/
-
-/*
-.article-content .article-title {  可以針對標題設定額外樣式，如果需要的話 
-    font-weight: bold;  例如將標題加粗 
-    display: block;  確保標題佔據一行 
-    margin-bottom: 0.3rem;  標題與內文間的間距 
-}*/
-
-/* 處理列表內部的 row，增加額外的縮排 
-/*.regulation-content ol > .row,
-.regulation-content ul > .row {
-    margin-left: 2em; /* 相對於條文的額外縮排 
-}*/
-
-/* 調整列表內條、項、款、目的寬度，以配合內容的縮排 
-.regulation-content ol > .row > .Art,
-.regulation-content ul > .row > .Art {
-    width: 1em; /* 配合列表縮排調整條號寬度 
-}*/
-/*
-.regulation-content ol > .row > .Par,
-.regulation-content ul > .row > .Par,
-.regulation-content ol > .row > .Par\.or,
-.regulation-content ul > .row > .Par\.or {
-    width: 2em;
-}
-
-.regulation-content ol > .row > .Sub,
-.regulation-content ul > .row > .Sub {
-    width: 3em;
-}
-
-.regulation-content ol > .row > .Item,
-.regulation-content ul > .row > .Item {
-    width: 4em;
-}
-
-.regulation-content ol > .row > .article-content,
-.regulation-content ul > .row > .article-content {
-    margin-left: 4rem;
-    text-indent: -4rem;
-}*/
-
-
-
 /* --- 修法歷程樣式 --- */
 .amendment-history, .attachments-list {
     /* background-color: #f9f9f9; 淺灰色背景，與主要內容區隔 */
     background-color: var(--color-secondary-content	);
     padding: 1rem 1.5rem;
+    margin-top: 0.65rem;
     margin-bottom: 1.5rem;
     border-left: 4px solid var(--color-secondary); /* 左側灰色標示線 */
     border-radius: 4px;
     font-size: 0.95em;
 }
-
 .amendment-history h3, .attachments-list h3 {
     /* color: #6c757d; 較柔和的標題顏色 */
     color: var(--color-secondary); 
@@ -401,7 +320,6 @@ a[target="_blank"]::after {
     padding-left: 0; /* 移除原本 h3 的左側裝飾線 */
     border-left: none;
 }
-
 .amendment-history ul {
     list-style: none;
     padding-left: 0;
@@ -423,7 +341,6 @@ a[target="_blank"]::after {
 /*    width: 100px; /* 固定日期寬度，方便對齊 */
 /*    flex-shrink: 0; /* 防止日期被壓縮 */
 /*}*/
-
 /*.amendment-description {
     color: var(--text-color);
 }*/
