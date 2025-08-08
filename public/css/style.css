@@ -2116,15 +2116,6 @@
       grid-template-columns: auto;
     }
   }
-  .footer-horizontal {
-    grid-auto-flow: column;
-    &.footer-center {
-      grid-auto-flow: row dense;
-    }
-  }
-  .grid-flow-col {
-    grid-auto-flow: column;
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -2133,9 +2124,6 @@
   }
   .justify-start {
     justify-content: flex-start;
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -2170,9 +2158,6 @@
       padding-inline: calc(0.25rem * 3);
       padding-block: calc(0.25rem * 2);
     }
-  }
-  .rounded {
-    border-radius: 0.25rem;
   }
   .rounded-box {
     border-radius: var(--radius-box);
@@ -2235,9 +2220,6 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
-  .p-10 {
-    padding: calc(var(--spacing) * 10);
-  }
   .table-xs {
     :not(thead, tfoot) tr {
       font-size: 0.6875rem;
@@ -2254,6 +2236,9 @@
   }
   .px-1 {
     padding-inline: calc(var(--spacing) * 1);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
   }
   .py-0 {
     padding-block: calc(var(--spacing) * 0);
@@ -2474,6 +2459,14 @@
       grid-auto-flow: column;
     }
   }
+  .sm\:footer-horizontal {
+    @media (width >= 40rem) {
+      grid-auto-flow: column;
+      &.footer-center {
+        grid-auto-flow: row dense;
+      }
+    }
+  }
   .md\:m-8 {
     @media (width >= 48rem) {
       margin: calc(var(--spacing) * 8);
@@ -2515,6 +2508,11 @@
       &:has(:nth-child(2)) {
         grid-template-columns: auto minmax(auto, 1fr);
       }
+    }
+  }
+  .lg\:py-6 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 6);
     }
   }
   .print\:hidden {
