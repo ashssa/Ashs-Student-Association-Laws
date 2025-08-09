@@ -107,12 +107,13 @@ p {
 .page-title {
     color: var(--color-primary); 
     /* border-bottom: 3px solid var(--color-primary); */
-    padding-left: 0.8rem; 
+    /* padding-left: 0.8rem; 
+    padding-right: 0.8rem;  */
     padding-bottom: 0.6rem;
     margin-top: 0; /* 移除預設的上邊距 */
     /* margin-bottom: 1.5rem; */
     font-weight: 700; /* 標題加粗 */
-    @apply text-2xl text-primary tracking-wide; /* 使用 Tailwind CSS 的文字大小 */
+    @apply text-2xl text-primary tracking-wide px-0 md:px-3; /* 使用 Tailwind CSS 的文字大小 */
 }
 .page-subtitle {
     /* color: #555; */

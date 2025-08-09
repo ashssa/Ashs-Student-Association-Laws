@@ -2602,15 +2602,18 @@ p {
 }
 .page-title {
   color: var(--color-primary);
-  padding-left: 0.8rem;
   padding-bottom: 0.6rem;
   margin-top: 0;
   font-weight: 700;
+  padding-inline: calc(var(--spacing) * 0);
   font-size: var(--text-2xl);
   line-height: var(--tw-leading, var(--text-2xl--line-height));
   --tw-tracking: var(--tracking-wide);
   letter-spacing: var(--tracking-wide);
   color: var(--color-primary);
+  @media (width >= 48rem) {
+    padding-inline: calc(var(--spacing) * 3);
+  }
 }
 .page-subtitle {
   font-size: 1.3rem;
