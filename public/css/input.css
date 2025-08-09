@@ -143,11 +143,14 @@ p {
 .law-list > li  > .law-name {
     @apply text-lg/8 text-base-content/75 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
 }
-.law-list > .list-row > a {
-    @apply decoration-accent/0
+/* .law-list > .list-row > a {
+    @apply transition-colors duration-550 decoration-accent/0
+} */
+.law-list > .list-row > a, .law-list > .list-row > a:hover{
+    @apply transition-colors duration-300/* 這邊的值是有底線 → 無底線的時間 */ underline underline-offset-[-0.5rem] decoration-accent/0  decoration-wavy decoration-4
 }
 .law-list > .list-row > a:hover {
-    @apply transition-colors duration-550 underline underline-offset-[-0.5rem] decoration-accent/25  decoration-wavy decoration-4
+    @apply decoration-accent/25 duration-550/* 這邊的值是「無」底線 → 有底線的時間 */
 }
 /* .law-list > li  > svg {
     @apply size-[1.2em]

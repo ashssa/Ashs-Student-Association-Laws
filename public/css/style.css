@@ -2665,17 +2665,11 @@ p {
     color: color-mix(in oklab, var(--color-base-content) 75%, transparent);
   }
 }
-.law-list > .list-row > a {
-  text-decoration-color: var(--color-accent);
-  @supports (color: color-mix(in lab, red, red)) {
-    text-decoration-color: color-mix(in oklab, var(--color-accent) 0%, transparent);
-  }
-}
-.law-list > .list-row > a:hover {
+.law-list > .list-row > a, .law-list > .list-row > a:hover {
   text-decoration-line: underline;
   text-decoration-color: var(--color-accent);
   @supports (color: color-mix(in lab, red, red)) {
-    text-decoration-color: color-mix(in oklab, var(--color-accent) 25%, transparent);
+    text-decoration-color: color-mix(in oklab, var(--color-accent) 0%, transparent);
   }
   text-decoration-style: wavy;
   text-decoration-thickness: 4px;
@@ -2683,6 +2677,14 @@ p {
   transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+}
+.law-list > .list-row > a:hover {
+  text-decoration-color: var(--color-accent);
+  @supports (color: color-mix(in lab, red, red)) {
+    text-decoration-color: color-mix(in oklab, var(--color-accent) 25%, transparent);
+  }
   --tw-duration: 550ms;
   transition-duration: 550ms;
 }
