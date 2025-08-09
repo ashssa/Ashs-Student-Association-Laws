@@ -293,6 +293,53 @@ a[target="_blank"]::after {
     position: relative;
 }
 
+/* 已經廢止法規之編章節、內文樣式 */
+.regulation-content {
+    counter-reset: oldArtNo;   /* 定義計數器名稱為 oldArtNo，重設數值為 0 */
+}
+.oldArt {
+    font-weight: bold;
+    font-family: "Noto Sans TC", sans-serif;
+    flex-shrink: 0; /* 防止條號被壓縮 */
+    word-break: keep-all;
+    counter-increment: oldArtNo; /* 計數器每次遇到 oldArt 都會加一 */
+    counter-reset: oldSub;   /* 定義計數器名稱為 oldSub，重設數值為 0 */
+}
+.oldArt::before {
+    content: counter(oldArtNo, cjk-ideographic) "、";
+}
+.oldSub {
+    font-family: "Noto Sans TC", sans-serif;
+    counter-increment: oldSub; /* 計數器每次遇到 oldSub 都會加一 */
+    /* @aplly -indent-12 */
+}
+.oldSub::before {
+    content: "（" counter(oldSub, cjk-ideographic) "）";
+}
+.oldPar {
+    margin: 0 0.3rem 0 0;
+}
+.oldPar::before {
+    content:"";
+}
+
+/* 已廢止法規的表格部分 */
+.oldTableDiv {
+    background-color: red;
+    @apply overflow-x-auto rounded-box border border-base-content/5 bg-base-100;
+}
+/* .oldTable {
+    @apply table-pin-cols
+} */
+.oldTable th, .oldTable td {
+    border-radius: var(--radius-box);
+    @apply /*border border-gray-300*/ border border-gray-300 p-4 text-base-content;
+}
+.tableBut直書{
+    writing-mode: vertical-lr; /* 用於表格的文字垂直書寫 */
+    text-align: center;
+}
+
 /* --- 修法歷程、附件選單樣式 --- */
 .amendment-history, .attachments-list {
     /* background-color: #f9f9f9; 淺灰色背景，與主要內容區隔 */
