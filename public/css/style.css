@@ -2922,6 +2922,8 @@ a[target="_blank"]::after {
 .oldSub {
   font-family: "Noto Sans TC", sans-serif;
   counter-increment: oldSub;
+  padding-left: calc(var(--spacing) * 12);
+  text-indent: calc(var(--spacing) * -12);
 }
 .oldSub::before {
   content: "（" counter(oldSub, cjk-ideographic) "）";

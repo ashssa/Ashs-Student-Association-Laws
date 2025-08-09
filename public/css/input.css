@@ -311,7 +311,7 @@ a[target="_blank"]::after {
 .oldSub {
     font-family: "Noto Sans TC", sans-serif;
     counter-increment: oldSub; /* 計數器每次遇到 oldSub 都會加一 */
-    /* @aplly -indent-12 */
+    @apply -indent-12 pl-12;
 }
 .oldSub::before {
     content: "（" counter(oldSub, cjk-ideographic) "）";
