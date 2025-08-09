@@ -88,14 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
 
-const backBtn = document.getElementById('backBtn');
-console.log('即將啟動myBtn');
-if (backBtn) {
-    console.log('myButton 元素已找到（',backBtn,'），添加點擊事件監聽器。');
-    backBtn.addEventListener('click', function() {
-        window.location.href = '../';
-    });
-}
+    const backBtn = document.getElementById('backBtn');
+    console.log('即將啟動myBtn（回上頁按鈕）');
+    if (backBtn) {
+        console.log('myButton 元素已找到（',backBtn,'），添加點擊事件監聽器。');
+        backBtn.addEventListener('click', function() {
+            window.location.href = '../';
+        });
+    }
 
     // --- 新增：初始化主題切換邏輯的函數 ---
     function initializeThemeSwitcher() {
