@@ -2686,16 +2686,6 @@ p {
   --tw-duration: 550ms;
   transition-duration: 550ms;
 }
-.regulation-list li a {
-  text-decoration: none;
-  color: var(--color-primary	);
-  transition: color 0.2s ease;
-  font-weight: 500;
-}
-.regulation-list li a:hover, .regulation-list li a:focus {
-  color: var(--color-primary	);
-  text-decoration: underline;
-}
 .remarks-content {
   margin: 0 1.5rem 0;
 }
@@ -2964,14 +2954,11 @@ a[target="_blank"]::after {
   display: inline-block !important;
 }
 .toast-success {
-  background-color: var(--color-primary) !important;
-  color: white !important;
+  background-color: var(--color-secondary) !important;
+  color: var(--color-secondary-content) !important;
 }
-.toast-success .toast-title {
-  color: white !important;
-}
-.toast-success .toast-message {
-  color: white !important;
+.toast-success .toast-title, .toast-success .toast-message {
+  color: var(--color-secondary-content) !important;
 }
 @media (max-width: 768px) {
   .main-content {

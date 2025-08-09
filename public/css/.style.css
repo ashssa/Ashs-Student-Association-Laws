@@ -1,5 +1,5 @@
 /* 已棄用樣式 */
-/* --- 法規功能列表 --- */
+/* --- 插入式共用功能列表 --- */
 .law-functions ul {
     list-style: none;
     padding: 0;
@@ -115,6 +115,20 @@ nav ul li a:hover, nav ul li a:focus {
     margin-bottom: 0.8rem;
     font-weight: 450;
 }
+/* .main-content a, */
+.regulation-list li a {
+    text-decoration: none;
+    color: var(--color-primary	);
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+/* .main-content a:hover, */
+.regulation-list li a:hover,
+.regulation-list li a:focus {
+    color: var(--color-primary	);
+    text-decoration: underline; /* 懸停時加底線 */
+}
+
 /* --- 頁尾樣式 --- */
 .site-footer {
     background-color: var(--secondary-color); /* 頁尾背景 */

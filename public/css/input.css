@@ -153,20 +153,6 @@ p {
     @apply size-[1.2em]
 } */
 
-/* .main-content a, */
-.regulation-list li a {
-    text-decoration: none;
-    color: var(--color-primary	);
-    transition: color 0.2s ease;
-    font-weight: 500;
-}
-/* .main-content a:hover, */
-.regulation-list li a:hover,
-.regulation-list li a:focus {
-    color: var(--color-primary	);
-    text-decoration: underline; /* 懸停時加底線 */
-}
-
 /* --- 備註星號列點 --- */
 .remarks-content{
     margin: 0 1.5rem 0;
@@ -303,7 +289,7 @@ a[target="_blank"]::after {
     position: relative;
 }
 
-/* --- 修法歷程樣式 --- */
+/* --- 修法歷程、附件選單樣式 --- */
 .amendment-history, .attachments-list {
     /* background-color: #f9f9f9; 淺灰色背景，與主要內容區隔 */
     background-color: var(--color-base-200	);
@@ -470,16 +456,18 @@ a[target="_blank"]::after {
 
 /* --- toast 通知樣式設定 --- */
 .toast-success {
-    background-color: var(--color-primary) !important;
-    color: white !important;
+    background-color: var(--color-secondary) !important;
+    color: var(--color-secondary-content) !important;
     /*opacity: 1 !important;*/
 }
-.toast-success .toast-title {
-    color: white !important;
-}
+.toast-success .toast-title,
 .toast-success .toast-message {
-    color: white !important;
+    color: var(--color-secondary-content) !important;
 }
+/* #toast-container > .toast-success{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m4.5 12.75 6 6 9-13.5'/%3E%3C/svg%3E") !important;
+    color: var(--color-secondary-content) !important;
+} */
 
 /* --- 響應式調整 (手機橫向或小平板) --- */
 @media (max-width: 768px) {
