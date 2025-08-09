@@ -334,32 +334,6 @@ a[target="_blank"]::after {
     color: var(--text-color);
 }*/
 
-/* --- 法規注意事項樣式 --- */
-.notice {
-    /* color: #a42f0e; 較深色的文字顏色 */
-    color: var(--color-error);
-    /* background-color: #fdece8; 淺橘色背景，與主要內容區隔 */
-    background-color: var(--color-error-content);
-    padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
-    border-left: 4px solid #ef572e; /* 左側橘色標示線 */
-    border-radius: 4px;
-    font-size: 0.95rem;
-    /* font-weight: 440; */
-}
-.notice h3 {
-    color: var(--color-error);
-    margin-top: 0;
-    margin-bottom: 0.3rem;
-    font-size: 0.95rem;
-    font-weight: 650;
-    padding-left: 0; /* 移除原本 h3 的左側裝飾線 */
-    border-left: none;
-}
-.notice p {
-    margin-left: 1rem; /* 內容左側縮排 */
-}
-
 /* --- 法規內容樣式 --- */
 .regulation-content h3 {
     /* color: #343a40; */
@@ -381,7 +355,7 @@ a[target="_blank"]::after {
 }
 .regulation-content h4::before {
     font-family: "Noto Sans";
-    content: "• "; /* 這裡的 "• " 就是你要加的點和一個空格 */
+    content: "• ";
     color: var(--color-primary	);
     font-weight: 900;
     margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    

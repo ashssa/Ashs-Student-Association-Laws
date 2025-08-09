@@ -201,3 +201,29 @@ nav ul li a:hover, nav ul li a:focus {
     margin-left: 4rem;
     text-indent: -4rem;
 }*/
+
+/* --- 法規注意事項樣式（用於校務章則節選） --- */
+.notice {
+    /* color: #a42f0e; 較深色的文字顏色 */
+    color: var(--color-error);
+    /* background-color: #fdece8; 淺橘色背景，與主要內容區隔 */
+    background-color: var(--color-error-content);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #ef572e; /* 左側橘色標示線 */
+    border-radius: 4px;
+    font-size: 0.95rem;
+    /* font-weight: 440; */
+}
+.notice h3 {
+    color: var(--color-error);
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 650;
+    padding-left: 0; /* 移除原本 h3 的左側裝飾線 */
+    border-left: none;
+}
+.notice p {
+    margin-left: 1rem; /* 內容左側縮排 */
+}
