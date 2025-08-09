@@ -325,50 +325,14 @@ a[target="_blank"]::after {
     /*gap: 1rem; /* 日期和描述之間的間距 */
 }
 /* .amendment-date {
-   color: #555;
-   font-weight: bold;
+    color: #555;
+    font-weight: bold;
     width: 100px; 固定日期寬度，方便對齊
     flex-shrink: 0; 防止日期被壓縮
 }
 .amendment-description {
     color: var(--text-color);
 } */
-
-/* --- 法規編章節、內文樣式 --- */
-.regulation-content h3 {
-    /* color: #343a40; */
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-    border-left: 4px solid var(--color-primary	); /* 左側裝飾線 */
-    padding-left: 0.8rem;
-    font-weight: 600;
-    /* color: #555; */
-    font-size: 1.3rem;
-}
-.regulation-content h4 {
-    margin: 1.7rem auto 1.15rem;
-    /* color: #555; */
-    font-weight: 550;
-    font-size: 1.15rem;
-    word-break: keep-all; 
-}
-.regulation-content h4::before {
-    font-family: "Noto Sans";
-    content: "• ";
-    color: var(--color-primary	);
-    font-weight: 900;
-    margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
-    /* font-size: 1.2em;
-    vertical-align: middle;
-    margin-right: 0.3em;
-     */
-}
-.regulation-content p {
-    /*margin-bottom: 1rem;*/
-    text-align: justify; /* 左右對齊 */
-}
-
 
 /* 附件清單樣式 */
 .attachments {
@@ -407,7 +371,7 @@ a[target="_blank"]::after {
 .attachments li::before {
     font-family: "Noto Sans";
     /* color: #b4a69f; */
-    color: var(--color-secondary-content);
+    color: var(--color-secondary);
     font-weight: 900;
     content: "• "; 
     position: relative; /* 相對於 li 元素定位 */
@@ -427,6 +391,43 @@ a[target="_blank"]::after {
     word-break: break-word;
     display: inline-block !important; /* 覆蓋之前的 display */
 }
+
+/* --- 法規編章節、內文樣式 --- */
+.regulation-content h3 {
+    /* color: #343a40; */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    border-left: 4px solid var(--color-primary	); /* 左側裝飾線 */
+    padding-left: 0.8rem;
+    font-weight: 600;
+    /* color: #555; */
+    font-size: 1.3rem;
+}
+.regulation-content h4 {
+    margin: 1.7rem auto 1.15rem;
+    /* color: #555; */
+    font-weight: 550;
+    font-size: 1.15rem;
+    word-break: keep-all; 
+}
+.regulation-content h4::before {
+    font-family: "Noto Sans";
+    content: "• ";
+    color: var(--color-primary	);
+    font-weight: 900;
+    margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
+    /* font-size: 1.2em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+     */
+}
+.regulation-content p {
+    /*margin-bottom: 1rem;*/
+    text-align: justify; /* 左右對齊 */
+}
+
+
 
 /* --- toast 通知樣式設定 --- */
 .toast-success {

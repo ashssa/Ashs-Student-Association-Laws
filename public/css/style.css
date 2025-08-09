@@ -2856,31 +2856,6 @@ a[target="_blank"]::after {
   margin-bottom: 0.15rem;
   padding-left: 2rem;
 }
-.regulation-content h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  border-left: 4px solid var(--color-primary	);
-  padding-left: 0.8rem;
-  font-weight: 600;
-  font-size: 1.3rem;
-}
-.regulation-content h4 {
-  margin: 1.7rem auto 1.15rem;
-  font-weight: 550;
-  font-size: 1.15rem;
-  word-break: keep-all;
-}
-.regulation-content h4::before {
-  font-family: "Noto Sans";
-  content: "• ";
-  color: var(--color-primary	);
-  font-weight: 900;
-  margin-right: 0.45rem;
-}
-.regulation-content p {
-  text-align: justify;
-}
 .attachments {
   font-family: "Reddit Sans","Noto Sans TC";
   padding-left: 0.5rem;
@@ -2912,7 +2887,7 @@ a[target="_blank"]::after {
 }
 .attachments li::before {
   font-family: "Noto Sans";
-  color: var(--color-secondary-content);
+  color: var(--color-secondary);
   font-weight: 900;
   content: "• ";
   position: relative;
@@ -2931,6 +2906,31 @@ a[target="_blank"]::after {
   flex-grow: 0;
   word-break: break-word;
   display: inline-block !important;
+}
+.regulation-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border-left: 4px solid var(--color-primary	);
+  padding-left: 0.8rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.regulation-content h4 {
+  margin: 1.7rem auto 1.15rem;
+  font-weight: 550;
+  font-size: 1.15rem;
+  word-break: keep-all;
+}
+.regulation-content h4::before {
+  font-family: "Noto Sans";
+  content: "• ";
+  color: var(--color-primary	);
+  font-weight: 900;
+  margin-right: 0.45rem;
+}
+.regulation-content p {
+  text-align: justify;
 }
 .toast-success {
   background-color: var(--color-secondary) !important;
