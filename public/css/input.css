@@ -128,7 +128,7 @@ p {
     /* padding-left: 0.8rem; */ 
 }
 
-/* --- 首頁法規選單樣式 --- */
+/* --- 首頁：法規選單樣式 --- */
 .law-list {
     @apply bg-base-100 rounded-box shadow-md mb-6
 }
@@ -142,7 +142,7 @@ p {
     @apply text-4xl font-thin opacity-30 tabular-nums
 }
 .law-list > li  > .law-name {
-    @apply text-lg/8 text-base-content/75 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
+    @apply text-lg/8 text-base-content/85 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
 }
 /* .law-list > .list-row > a {
     @apply transition-colors duration-550 decoration-accent/0

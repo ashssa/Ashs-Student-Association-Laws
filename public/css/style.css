@@ -2665,7 +2665,7 @@ p {
   letter-spacing: var(--tracking-wide);
   color: var(--color-base-content);
   @supports (color: color-mix(in lab, red, red)) {
-    color: color-mix(in oklab, var(--color-base-content) 75%, transparent);
+    color: color-mix(in oklab, var(--color-base-content) 85%, transparent);
   }
 }
 .law-list > .list-row > a, .law-list > .list-row > a:hover {
