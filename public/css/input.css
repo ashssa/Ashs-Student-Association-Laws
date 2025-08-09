@@ -391,6 +391,26 @@ a[target="_blank"]::after {
     word-break: break-word;
     display: inline-block !important; /* 覆蓋之前的 display */
 }
+.attachments > li > a[target="_blank"]::after {
+    content: "";
+}
+.attachments > li > a[target="_blank"] > .att-title::after {
+    content: "\e89e"; /* 新視窗開啟網站符號 */
+    font-family: 'Material Symbols Outlined'; /* Google Material Symbols */
+    font-weight: inherit; 
+    font-style: normal; 
+    font-size: 1.1rem; /* 調整圖標大小，使其與文字協調 */
+    line-height: 0rem; /* 使按鈕文字不改變 */
+    margin-left: 0.1em; /* 與文字的間距 */
+    vertical-align: middle; /* middle: 垂直對齊 / super: 稍微抬高位置 */
+    /* color: inherit; 圖標顏色 */
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' -25,
+        'opsz' 20;
+    }
+
 
 /* --- 法規編章節、內文樣式 --- */
 .regulation-content h3 {

@@ -2907,6 +2907,20 @@ a[target="_blank"]::after {
   word-break: break-word;
   display: inline-block !important;
 }
+.attachments > li > a[target="_blank"]::after {
+  content: "";
+}
+.attachments > li > a[target="_blank"] > .att-title::after {
+  content: "\e89e";
+  font-family: 'Material Symbols Outlined';
+  font-weight: inherit;
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 0rem;
+  margin-left: 0.1em;
+  vertical-align: middle;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' -25, 'opsz' 20;
+}
 .regulation-content h3 {
   margin-top: 2rem;
   margin-bottom: 1rem;
