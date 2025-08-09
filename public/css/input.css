@@ -324,17 +324,17 @@ a[target="_blank"]::after {
     /*display: flex; /* 使用 Flexbox 方便對齊日期和描述 */
     /*gap: 1rem; /* 日期和描述之間的間距 */
 }
-/*.amendment-date {*/
-/*    color: #555;*/
-/*    font-weight: bold;*/
-/*    width: 100px; /* 固定日期寬度，方便對齊 */
-/*    flex-shrink: 0; /* 防止日期被壓縮 */
-/*}*/
-/*.amendment-description {
+/* .amendment-date {
+   color: #555;
+   font-weight: bold;
+    width: 100px; 固定日期寬度，方便對齊
+    flex-shrink: 0; 防止日期被壓縮
+}
+.amendment-description {
     color: var(--text-color);
-}*/
+} */
 
-/* --- 法規內容樣式 --- */
+/* --- 法規編章節、內文樣式 --- */
 .regulation-content h3 {
     /* color: #343a40; */
     margin-top: 2rem;
