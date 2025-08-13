@@ -2967,6 +2967,9 @@ a[target="_blank"]::after {
   writing-mode: vertical-lr;
   text-align: center;
 }
+mjx-container > svg {
+  display: inline;
+}
 .amendment-history, .attachments-list {
   background-color: var(--color-base-200	);
   padding: 1rem 1.5rem;

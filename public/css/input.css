@@ -350,6 +350,11 @@ a[target="_blank"]::after {
     text-align: center;
 }
 
+/* 選罷法插入公式 */
+mjx-container > svg{
+    display:inline;
+}
+
 /* --- 修法歷程、附件選單樣式 --- */
 .amendment-history, .attachments-list {
     /* background-color: #f9f9f9; 淺灰色背景，與主要內容區隔 */
