@@ -2843,6 +2843,7 @@ a[target="_blank"]::after {
   width: 3.5em;
   flex-shrink: 0;
   word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
 }
 .art-data {
   margin: 0 0 0.4rem 0.3rem;
