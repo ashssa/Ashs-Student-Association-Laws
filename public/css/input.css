@@ -224,7 +224,8 @@ a[target="_blank"]::after {
     width: 3.5em; /* 縮小條號寬度，以便容納更長的縮排 */
     flex-shrink: 0; /* 防止條號被壓縮 */
     word-break: keep-all;
-    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); /* 用陰影使文字平滑 */
+    -webkit-font-smoothing: antialiased; /* 文字顯示反鋸齒 */
 }
 .art-data {
     margin: 0 0 0.4rem 0.3rem;
