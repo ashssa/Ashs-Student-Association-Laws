@@ -4,7 +4,15 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,GRAD@8..144,0,150&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
-
+/* 未來熒黑 */
+@font-face {
+    font-family: 'GlowSans';
+    src:
+        url('../fonts/GlowSansTCCompressed-Bold.woff2') format('woff2'),
+        url('../fonts/GlowSansTCCompressed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
 /* import Daisy UI */
 @import "tailwindcss" ;
 /* @source "./node_modules/daisyui/*.{html,js}"; */
@@ -210,7 +218,7 @@ a[target="_blank"]::after {
 .art {
     /* color: #555; */
     font-weight: bold;
-    font-family: "Noto Sans", "Noto Sans TC";
+    font-family: "Noto Sans", "GlowSans", "Noto Sans TC";
     letter-spacing: 0.05em;
     word-spacing: 0.5em;
     width: 3.5em; /* 縮小條號寬度，以便容納更長的縮排 */
@@ -299,7 +307,7 @@ a[target="_blank"]::after {
 }
 .oldArt {
     font-weight: bold;
-    font-family: "Noto Sans TC", sans-serif;
+    font-family: /*"GlowSans", */"Noto Sans TC", sans-serif;
     flex-shrink: 0; /* 防止條號被壓縮 */
     word-break: keep-all;
     counter-increment: oldArtNo; /* 計數器每次遇到 oldArt 都會加一 */

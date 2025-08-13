@@ -4,6 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 @layer properties;
+@font-face {
+  font-family: 'GlowSans';
+  src: url('../fonts/GlowSansTCCompressed-Bold.woff2') format('woff2'), url('../fonts/GlowSansTCCompressed-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -2831,7 +2837,7 @@ a[target="_blank"]::after {
 }
 .art {
   font-weight: bold;
-  font-family: "Noto Sans", "Noto Sans TC";
+  font-family: "Noto Sans", "GlowSans", "Noto Sans TC";
   letter-spacing: 0.05em;
   word-spacing: 0.5em;
   width: 3.5em;
