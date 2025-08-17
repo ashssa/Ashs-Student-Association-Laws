@@ -217,6 +217,7 @@ a[target="_blank"]::after {
 }
 .art {
     /* color: #555; */
+    /* font-size: 1.1rem; */
     font-weight: bold;
     font-family: "Noto Sans", "GlowSans", "Noto Sans TC";
     letter-spacing: 0.05em;
@@ -229,6 +230,10 @@ a[target="_blank"]::after {
 }
 .art-data {
     margin: 0 0 0.4rem 0.3rem;
+    flex: 1; /* 讓內容區域填滿剩餘空間 */
+    min-width: 0;
+    display: flex;
+    flex-direction: column; /* 讓內容區域垂直排列 */
 }
 .art-note {
     margin: inherit;
@@ -336,14 +341,14 @@ a[target="_blank"]::after {
 /* 已廢止法規的表格部分 */
 .oldTableDiv {
     background-color: red;
-    @apply overflow-x-auto rounded-box border border-base-content/5 bg-base-100;
+    @apply max-w-fit overflow-x-auto rounded-box border-2 border-base-200 bg-base-100;
 }
-/* .oldTable {
-    @apply table-pin-cols
-} */
-.oldTable th, .oldTable td {
+.oldTable {
+    @apply rounded-box mx-auto /*table-pin-cols*/
+}
+.oldTable td {
     border-radius: var(--radius-box);
-    @apply /*border border-gray-300*/ border border-gray-300 p-4 text-base-content;
+    @apply rounded-box border border-base-200 p-4 text-base-content whitespace-nowrap;
 }
 .tableBut直書{
     writing-mode: vertical-lr; /* 用於表格的文字垂直書寫 */
