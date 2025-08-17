@@ -1,0 +1,188 @@
+/* 01-legal-content：法規文字樣式 */
+
+/* --- 法規編章節、內文樣式 --- */
+.regulation-content h3 {
+    /* color: #343a40; */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    border-left: 4px solid var(--color-primary	); /* 左側裝飾線 */
+    padding-left: 0.8rem;
+    font-weight: 600;
+    /* color: #555; */
+    font-size: 1.3rem;
+}
+.regulation-content h4 {
+    margin: 1.7rem auto 1.15rem;
+    /* color: #555; */
+    font-weight: 550;
+    font-size: 1.15rem;
+    word-break: keep-all; 
+}
+.regulation-content h4::before {
+    font-family: "Noto Sans";
+    content: "• ";
+    color: var(--color-primary	);
+    font-weight: 900;
+    margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
+    /* font-size: 1.2em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+     */
+}
+.regulation-content p {
+    /*margin-bottom: 1rem;*/
+    text-align: justify; /* 左右對齊 */
+}
+
+/* --- 法規內容樣式調整 --- */
+.row {
+    display: flex; /* 使用 Flexbox 進行條號和內容的排版 */
+    align-items: flex-start; /* 讓條號和內容頂部對齊 */
+    margin-bottom: 0.8rem; /* 調整條文間距 */
+    counter-reset: roman-counter; /* Reset the par-or list */
+}
+.art {
+    /* color: #555; */
+    /* font-size: 1.1rem; */
+    font-weight: bold;
+    font-family: "Noto Sans", "GlowSans", "Noto Sans TC";
+    letter-spacing: 0.05em;
+    word-spacing: 0.5em;
+    width: 3.5em; /* 縮小條號寬度，以便容納更長的縮排 */
+    flex-shrink: 0; /* 防止條號被壓縮 */
+    word-break: keep-all;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); /* 用陰影使文字平滑 */
+    -webkit-font-smoothing: antialiased; /* 文字顯示反鋸齒 */
+}
+.art-data {
+    margin: 0 0 0.4rem 0.3rem;
+    flex: 1; /* 讓內容區域填滿剩餘空間 */
+    min-width: 0;
+    display: flex;
+    flex-direction: column; /* 讓內容區域垂直排列 */
+}
+.art-note {
+    margin: inherit;
+}
+/* .par,
+.sub,
+.item{
+    text-align: justify; /* 文字左右對齊 */
+/* } */
+.par {
+    line-height: 1.7 ;
+    margin: 0.3rem 0 0 0;
+    counter-reset: sub-counter; /* Reset the Subparagraph list */
+}
+.art-data > .par.only-one-par::before {
+    content: none !important;
+}
+.par p {
+    margin: inherit;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    background-color: red;
+}
+.par::before{
+    content: counter(roman-counter, upper-roman); /* 顯示大寫羅馬數字 */
+    counter-increment: roman-counter; /* 增加計數器 */
+    /* padding-left: 1.5em; /* 增加左內邊距 */
+    margin-right: -0.5rem; /* 在編號和內容之間添加一些間距 */
+    margin-left: -1rem;
+    left: -2rem;
+    display: inline-block ;
+    /* color: #999; */
+    /* color: var(--color-neutral); */
+    font-family: "Noto Sans", serif;
+    font-style: italic;
+    /*font-weight: bold;*/
+    text-align: right;
+    width: 1.5rem;
+    position: relative;
+    /*position: absolute;*/
+    @apply text-base-content/40
+}
+.sub{
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    counter-increment: sub-counter; /* 增加計數器 */
+    margin-left: 2rem;
+    counter-reset: item-counter; /* Reset the Item list */
+}
+.sub::before {
+    content: counter(sub-counter, decimal); /* set Subparagraph counter */
+    /*content: "(" counter(sub-counter) ")"; /* 自訂前置字元和計數器 */
+    display: inline-block ;
+    width: 1rem;
+    left: -2rem;
+    margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
+    position: relative;
+    font-family: "Reddit Sans","Noto Sans TC", sans-serif;
+}
+.item{
+    margin-left: 4rem;
+    counter-increment:(item-counter);
+}
+.item::before{
+    content: "(" counter(item-counter, decimal) ")"; /* 自訂前置字元和計數器 */
+    counter-increment: item-counter; /* 增加計數器 */
+    display: inline-block ;
+    font-family: "Noto Sans" ;
+    width: 1rem;
+    left: -2rem;
+    margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
+    position: relative;
+}
+
+/* 已經廢止法規之編章節、內文樣式 */
+.regulation-content {
+    counter-reset: oldArtNo;   /* 定義計數器名稱為 oldArtNo，重設數值為 0 */
+}
+.oldArt {
+    font-weight: bold;
+    font-family: /*"GlowSans", */"Noto Sans TC", sans-serif;
+    flex-shrink: 0; /* 防止條號被壓縮 */
+    word-break: keep-all;
+    counter-increment: oldArtNo; /* 計數器每次遇到 oldArt 都會加一 */
+    counter-reset: oldSub;   /* 定義計數器名稱為 oldSub，重設數值為 0 */
+}
+.oldArt::before {
+    content: counter(oldArtNo, cjk-ideographic) "、";
+}
+.oldSub {
+    font-family: "Noto Sans TC", sans-serif;
+    counter-increment: oldSub; /* 計數器每次遇到 oldSub 都會加一 */
+    @apply -indent-12 pl-12;
+}
+.oldSub::before {
+    content: "（" counter(oldSub, cjk-ideographic) "）";
+}
+.oldPar {
+    margin: 0 0.3rem 0 0;
+}
+.oldPar::before {
+    content:"";
+}
+
+/* 已廢止法規的表格部分 */
+.oldTableDiv {
+    background-color: red;
+    @apply max-w-fit overflow-x-auto rounded-box border-2 border-base-200 bg-base-100;
+}
+.oldTable {
+    @apply rounded-box mx-auto /*table-pin-cols*/
+}
+.oldTable td {
+    border-radius: var(--radius-box);
+    @apply rounded-box border border-base-200 p-4 text-base-content whitespace-nowrap;
+}
+.tableBut直書{
+    writing-mode: vertical-lr; /* 用於表格的文字垂直書寫 */
+    text-align: center;
+}
+
+/* 選罷法插入公式 */
+mjx-container > svg{
+    display:inline;
+}

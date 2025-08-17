@@ -1,0 +1,73 @@
+/* 02-home；首頁樣式 */
+
+/* --- 主要內容區域 --- */
+.main-content {
+    flex-grow: 1; /* 讓 main 填滿 header 和 footer 之間的剩餘空間 */
+    padding: 2rem 1.5rem; /* 上下邊距 2rem，左右 1.5rem */
+    max-width: 900px; /* 限制內容最大寬度，方便閱讀 */
+    width: 90%; /* 在較小螢幕上佔用 90% 寬度 */
+    margin: 2rem auto; /* 上下邊距 2rem，左右自動 (實現水平置中) */
+    margin-top: 6rem;
+    /* background-color: #ffffff; 內容區塊白色背景 */
+    border-radius: 8px; /* 圓角 */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 細緻的陰影 */
+}
+.main-content hr {
+    display: block;
+    margin: 1rem 0;
+    border-style: inset;
+    size: 4px;
+    /* color: var(--text-color); */
+}
+.page-title {
+    color: var(--color-primary); 
+    /* border-bottom: 3px solid var(--color-primary); */
+    /* padding-left: 0.8rem; 
+    padding-right: 0.8rem;  */
+    padding-bottom: 0.6rem;
+    margin-top: 0; /* 移除預設的上邊距 */
+    /* margin-bottom: 1.5rem; */
+    font-weight: 700; /* 標題加粗 */
+    @apply text-2xl text-primary tracking-wide px-0 md:px-3; /* 使用 Tailwind CSS 的文字大小 */
+}
+.page-subtitle {
+    /* color: #555; */
+    font-size: 1.3rem;
+    font-weight: 600;
+    /* border-bottom: 2px solid #555; */
+    padding-bottom: 0.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    /* border-left: 4px solid var(--color-primary	); 左側裝飾線 */
+    /* padding-left: 0.8rem; */ 
+}
+
+/* --- 首頁：法規選單樣式 --- */
+.law-list {
+    @apply bg-base-100 rounded-box shadow-md mb-6
+}
+.law-list > li {
+    @apply items-center
+}
+.law-list > .law-list-title {
+    @apply  p-4 pb-0 text-sm opacity-65 tracking-wide
+}
+.law-list > li  > .no {
+    @apply text-4xl font-thin opacity-30 tabular-nums
+}
+.law-list > li  > .law-name {
+    @apply text-lg/8 text-base-content/85 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
+}
+/* .law-list > .list-row > a {
+    @apply transition-colors duration-550 decoration-accent/0
+} */
+.law-list > .list-row > a, .law-list > .list-row > a:hover{
+    @apply transition-colors duration-300/* 這邊的值是有底線 → 無底線的時間 */ underline underline-offset-[-0.5rem] decoration-accent/0  decoration-wavy decoration-4
+}
+.law-list > .list-row > a:hover {
+    @apply decoration-accent/25 duration-550/* 這邊的值是「無」底線 → 有底線的時間 */
+}
+/* .law-list > li  > svg {
+    @apply size-[1.2em]
+} */

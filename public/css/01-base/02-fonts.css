@@ -1,0 +1,17 @@
+/* 02-fonts：字型樣式 */
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,500;1,62.5,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,700;1,62.5,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,GRAD@8..144,0,150&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+/* 未來熒黑 */
+@font-face {
+    font-family: 'GlowSans';
+    src:
+        url('../fonts/GlowSansTCCompressed-Bold.woff2') format('woff2'),
+        url('../fonts/GlowSansTCCompressed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
