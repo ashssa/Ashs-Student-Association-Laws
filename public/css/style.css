@@ -2165,14 +2165,14 @@
       outline-offset: 2px;
     }
   }
-  .alert-vertical {
-    justify-content: center;
-    justify-items: center;
-    grid-auto-flow: row;
+  .alert-horizontal {
+    justify-content: start;
+    justify-items: start;
+    grid-auto-flow: column;
     grid-template-columns: auto;
-    text-align: center;
+    text-align: start;
     &:has(:nth-child(2)) {
-      grid-template-columns: auto;
+      grid-template-columns: auto minmax(auto, 1fr);
     }
   }
   .flex-col {
@@ -2574,18 +2574,6 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
-    }
-  }
-  .lg\:alert-horizontal {
-    @media (width >= 64rem) {
-      justify-content: start;
-      justify-items: start;
-      grid-auto-flow: column;
-      grid-template-columns: auto;
-      text-align: start;
-      &:has(:nth-child(2)) {
-        grid-template-columns: auto minmax(auto, 1fr);
-      }
     }
   }
   .lg\:py-6 {
