@@ -1,0 +1,27 @@
+/* 01-base：基本樣式 */
+
+/* --- 基本重設與全域樣式 --- */
+*, *::before, *::after {
+    box-sizing: border-box; /* 更直觀的寬度計算 */
+}
+:root {
+    /* --color-primary	: #99a15d; 主要顏色，例如：藍色 */
+    /* --text-color: #333; 主要文字顏色 */
+    /* --background-color: #f8f9fa; 頁面背景顏色 */
+    /* --secondary-color: #68605c; 次要顏色，例如：灰色 */
+    /*--accent-color: #28a745; /* 強調色，例如：綠色 */
+}
+body {
+    font-family: "Noto Sans TC", sans-serif; /* 使用思源黑體 */
+    line-height: 1.7; /* 增加行高以提高可讀性 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 垂直排列 header, main, footer */
+    min-height: 100vh; /* 確保 body 至少和視窗一樣高 */
+    /* background-color: #f4f7f6; 背景色 */
+    /* color: var(--text-color); 主要文字顏色 */ /* 改用tailwind控制。 */
+}
+p {
+    margin: 0rem;
+}

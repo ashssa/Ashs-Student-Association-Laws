@@ -1,0 +1,28 @@
+/* input.css：最主要的 CSS */
+
+/* import Daisy UI */
+@import "tailwindcss" ;
+@source "../*.{html,js}";
+@source "../act/*.{html,js}";
+@source "../components/*.{html,js}";
+@source "../assets/*.{html,js}";
+@source "../assets/*.{html,js}";
+@plugin "daisyui" {
+    themes: corporate --default, dracula --prefersdark, retro, cyberpunk, valentine, aqua, lemonade, abyss, all;
+}
+
+/* 01. 載入基本樣式 */
+@import "/01-base/01-base.css";
+@import "/01-base/02-fonts.css";
+
+/* 02. 載入佈局樣式 */
+@import "/02-layout/01-layout.css";
+@import "/02-layout/02-home.css";
+
+/* 03. 載入共用樣式 */
+@import "/03-components/01-legal-content.css";
+@import "/03-components/02-lists.css";
+@import "/03-components/03-misc.css";
+
+/* 04. 載入工具類別（響應式設計） */
+@import "/04-utilities/01-responsive.css";

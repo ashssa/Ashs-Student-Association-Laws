@@ -1,0 +1,229 @@
+/* 已棄用樣式 */
+/* --- 插入式共用功能列表 --- */
+.law-functions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 使用 Flexbox 進行橫向排列 */
+    gap: 0.75rem; /* 設定按鈕之間的間距 */
+    justify-content: center; /* 水平置中所有按鈕 */
+    align-items: center; /* 垂直置中所有按鈕 */
+}
+.law-functions ul li a,
+.law-functions ul li button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0px solid var(--secondary-color);
+    border-radius: 3px; /* 設定圓角 */
+    background-color: var(--main-color);
+    color: white; /* 使用您定義的主要顏色 */
+    line-height: 1.65rem; /* 調整行距使按鈕、連結高度不變 */
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease; /* 添加一些平滑的過渡效果 */
+    font-family: inherit;
+    font-weight: 450;
+    vertical-align: middle; /* 垂直對齊 */
+}
+.law-functions ul li button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 100%;
+}
+.law-functions ul li a:hover,
+.law-functions ul li button:hover {
+    background-color: #505430;
+    color: white;
+    text-decoration: none; /* 懸停時不加底線 */
+}
+@media (max-width: 387px) {
+    .law-functions ul {
+        display: flex; /* 使用 Flexbox 進行橫向排列 */
+        flex-direction: column;
+    }
+    .law-functions ul li {
+        width: 50%;
+        align-items: center;
+    }
+    .law-functions ul li a,
+    .law-functions ul li button {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        /* background-color:red ; */
+    }
+}
+/* --- 頁首樣式 --- */
+.site-header .banner {
+    background-color: var(--secondary-color); 
+    color: white; 
+    padding: 1rem 2rem; 
+    text-align: center; 
+    border-radius: 0px 0px 0 0; /** was 8px 8px 0 0 before*/
+} 
+.banner h1{
+    font-weight: 780;
+}
+.site-header h1 { 
+    margin: 0; 
+    font-size: 1.8em;
+    word-break: keep-all; 
+} 
+.site-header h1 a:hover { 
+    color: #dac9c0;
+} 
+.site-header h1 a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease;
+}
+.site-header nav { 
+    background-color: #f8f9fa; 
+    padding: 0.75rem 0; 
+    border-bottom: 1px solid #dee2e6; 
+} 
+.site-header nav ul { 
+    list-style: none; 
+    padding: 0; margin: 0; 
+    text-align: center; 
+}
+.site-header nav ul li { 
+    display: inline-block; 
+    margin: 0 1rem; 
+}
+.site-header nav ul li a { 
+    text-decoration: none; 
+    color: var(--secondary-color); 
+    Font-weight: 500; 
+    padding: 0.5rem 1rem; 
+    border-radius: 5px; 
+    transition: background-color 0.2s ease; 
+}
+/* 導覽列連結懸停效果 */
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #e9ecef;
+    /* color: var(--secondary-color); */
+}
+/* 首頁法規選單 */
+.regulation-list {
+    list-style: none; /* 移除列表標記 */
+    padding-left: 2rem;
+}
+.regulation-list li {
+    margin-bottom: 0.8rem;
+    font-weight: 450;
+}
+/* .main-content a, */
+.regulation-list li a {
+    text-decoration: none;
+    color: var(--color-primary	);
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+/* .main-content a:hover, */
+.regulation-list li a:hover,
+.regulation-list li a:focus {
+    color: var(--color-primary	);
+    text-decoration: underline; /* 懸停時加底線 */
+}
+
+/* --- 頁尾樣式 --- */
+.site-footer {
+    background-color: var(--secondary-color); /* 頁尾背景 */
+    color: white; /* 頁尾文字顏色 */
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto; /* 將頁尾推到 flex 容器底部 */
+    font-size: 0.9em;
+    /* font-family:"Roboto Flex", "Noto Sans TC", sans-serif;*/ 
+}
+.site-footer a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease;
+}
+.footer-block{
+    display: none;
+}
+/* 棄用法規樣式 */
+/*.par-or{
+    list-style-type: upper-roman ;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+}
+.par-or li::marker {
+    color: #999; /* 修改列點的顏色為藍色 
+    font-style: italic;
+    /* 其他 ::marker 可以支援的樣式 
+}*/
+/*
+.article-content {
+    color: var(--text-color);
+    margin-left: 4rem;  內容左側縮排 4rem 
+    text-indent: -4rem;  將第一行往左縮排負 4rem，與條號對齊 
+    line-height: 1.7;  增加行高以提高可讀性 
+}*/
+/*
+.article-content .article-title {  可以針對標題設定額外樣式，如果需要的話 
+    font-weight: bold;  例如將標題加粗 
+    display: block;  確保標題佔據一行 
+    margin-bottom: 0.3rem;  標題與內文間的間距 
+}*/
+/* 處理列表內部的 row，增加額外的縮排 
+/*.regulation-content ol > .row,
+.regulation-content ul > .row {
+    margin-left: 2em; /* 相對於條文的額外縮排 
+}*/
+/* 調整列表內條、項、款、目的寬度，以配合內容的縮排 
+.regulation-content ol > .row > .Art,
+.regulation-content ul > .row > .Art {
+    width: 1em; /* 配合列表縮排調整條號寬度 
+}*/
+/*
+.regulation-content ol > .row > .Par,
+.regulation-content ul > .row > .Par,
+.regulation-content ol > .row > .Par\.or,
+.regulation-content ul > .row > .Par\.or {
+    width: 2em;
+}
+.regulation-content ol > .row > .Sub,
+.regulation-content ul > .row > .Sub {
+    width: 3em;
+}
+.regulation-content ol > .row > .Item,
+.regulation-content ul > .row > .Item {
+    width: 4em;
+}
+.regulation-content ol > .row > .article-content,
+.regulation-content ul > .row > .article-content {
+    margin-left: 4rem;
+    text-indent: -4rem;
+}*/
+
+/* --- 法規注意事項樣式（用於校務章則節選） --- */
+.notice {
+    /* color: #a42f0e; 較深色的文字顏色 */
+    color: var(--color-error);
+    /* background-color: #fdece8; 淺橘色背景，與主要內容區隔 */
+    background-color: var(--color-error-content);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #ef572e; /* 左側橘色標示線 */
+    border-radius: 4px;
+    font-size: 0.95rem;
+    /* font-weight: 440; */
+}
+.notice h3 {
+    color: var(--color-error);
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 650;
+    padding-left: 0; /* 移除原本 h3 的左側裝飾線 */
+    border-left: none;
+}
+.notice p {
+    margin-left: 1rem; /* 內容左側縮排 */
+}

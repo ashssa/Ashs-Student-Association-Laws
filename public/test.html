@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaisyUI 範例</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        tailwind.config = {
+            plugins: [require("daisyui")],
+        }
+    </script>
+</head>
+<body>
+
+    <div class="p-8">
+        <h1 class="text-3xl font-bold mb-4">Hello DaisyUI!</h1>
+
+        <button class="btn btn-primary">點我</button>
+
+        <button class="btn btn-neutral">Neutral</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-accent">Accent</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-error">Error</button>
+        <button class="btn btn-circle btn-neutral">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-[1.2em]"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+        </button>
+    </div>
+<h2 class="page-title">DaisyUI 導覽列範例</h2>
+<!-- 新版頁首 -->
+<div class="navbar bg-base-100 shadow-sm">
+    <!-- 導覽列 - 左 -->
+    <div class="navbar-start">
+        <!-- 回應式：小螢幕漢堡選單 -->
+        <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden"><!-- ←這段「lg:hidden」控制回應式設計 -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+            </div>
+            <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                <li><a href="index.html" >首頁</a></li>
+                <li><a href="act01.html" >組織章程</a></li>
+                <!-- 太冗長，不合適 -->
+                <!-- <li>
+                    <a>法規總覽</a>
+                    <ul class="p-2">
+                        <li><a href="act01.html" >組織章程</a></li>
+                        <li><a href="act02.html" >學生代表法</a></li>
+                        <li><a href="act03.html" >行政中心組織及運作法</a></li>
+                        <li><a href="act04.html" >學生議會組織及運作法</a></li>
+                        <li><a href="act05.html" >選舉及罷免法</a></li>
+                        <li><a href="act06.html" >經費法</a></li>
+                        <li><a href="act07.html" >自治法規標準法</a></li>
+                        <li><a href="act08.html" >學生政黨法</a></li>
+                        <li><a href="overview.html" >自治法規架構圖</a></li>
+                        <li><a href="directions01.html" >學校會議旁聽要點</a></li>
+                    </ul>
+                </li> -->
+                <li><a href="https://sites.google.com/stu.nknush.kh.edu.tw/ashssa/mac" target="_blank">本會官網</a></li>
+            </ul>
+        </div>
+        <!-- 網站Banner（不論是否回應式） -->
+        <a class="btn btn-ghost text-xl" href="index.html">高師大附中學生會自治法規共用系統</a>
+    </div>
+    <!-- 導覽列 - 中 -->
+    <div class="navbar-center hidden lg:flex"><!-- ←這段「hidden」控制回應式設計（除large尺寸之外不顯示） -->
+        <ul class="menu menu-horizontal px-1">
+            <li><a href="index.html" >首頁</a></li>
+            <li>
+                <details>
+                    <summary>法規總覽</summary>
+                    <ul class="bg-base-100 rounded-t-none p-2">
+                        <li><a href="act01.html" >組織章程</a></li>
+                        <li><a href="act02.html" >學生代表法</a></li>
+                        <li><a href="act03.html" >行政中心組織及運作法</a></li>
+                        <li><a href="act04.html" >學生議會組織及運作法</a></li>
+                        <li><a href="act05.html" >選舉及罷免法</a></li>
+                        <li><a href="act06.html" >經費法</a></li>
+                        <li><a href="act07.html" >自治法規標準法</a></li>
+                        <li><a href="act08.html" >學生政黨法</a></li>
+                        <!-- <li><a href="overview.html" >自治法規架構圖</a></li> -->
+                        <li><a href="directions01.html" >學校會議旁聽要點</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li><a href="https://sites.google.com/stu.nknush.kh.edu.tw/ashssa/mac" target="_blank">本會官網</a></li>
+        </ul>
+    </div>
+    <!-- 導覽列 - 右 -->
+    <div class="navbar-end">
+        <a class="btn">Button</a>
+        
+    </div>
+</div>
+
+        <!-- 切換主題的無用按鈕 -->
+            <div class="dropdown ">
+                <!-- 無用按鈕本體（用div搓出來的，不是btn本身） --><div tabindex="0" role="button" class="btn m-2">
+                    Theme
+                    <svg
+                        width="12px"
+                        height="12px"
+                        class="inline-block h-2 w-2 fill-current opacity-60"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 2048 2048">
+                        <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                    </svg><!-- 下箭頭，「v」形的那個 -->
+                </div>
+                <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-auto p-2 shadow-2xl right-0"><!-- 選單在這裡 -->
+                    <li>
+                        <input
+                            type="radio"
+                            name="theme-dropdown"
+                            class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Default"
+                            value="default" />
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="theme-dropdown"
+                            class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Retro"
+                            value="retro" />
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="theme-dropdown"
+                            class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Cyberpunk"
+                            value="cyberpunk" />
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="theme-dropdown"
+                            class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Valentine"
+                            value="valentine" />
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="theme-dropdown"
+                            class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                            aria-label="Aqua"
+                            value="aqua" />
+                    </li>
+                </ul>
+            </div>
+
+    <div class="p-8">
+    <!-- buttons -->
+    <h2 class="text-2xl font-bold mb-4">Style Test</h1>
+    <div class="p-4">
+    <button class="btn btn-primary">primary</button>
+    <button class="btn btn-secondary">secondary</button>
+    <button class="btn btn-accent">accent</button>
+    </div>
+
+    <!-- same buttons with another theme! -->
+    <div class="p-4" data-theme="abyss">
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-accent">Accent</button>
+    </div>
+    <div class="p-4" data-theme="purplewind">
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-accent">Accent</button>
+    </div>
+
+    <!-- tab -->
+    <div class="tabs tabs-lift p-4">
+    <button class="tab">Tab 1</button>
+    <button class="tab tab-active">Tab 2</button>
+    <button class="tab">Tab 3</button>
+    <button class="tab"></button>
+    </div>
+
+    <!-- toggle, checkbox, radio -->
+    <div class="p-4">
+    <input type="checkbox" class="toggle" />
+    <input type="checkbox" class="toggle toggle-primary" />
+    <input type="checkbox" class="toggle toggle-secondary" />
+    <input type="checkbox" class="toggle toggle-accent" />
+    <br/>
+    <input type="checkbox" class="checkbox" />
+    <input type="checkbox" class="checkbox-primary checkbox" />
+    <input type="checkbox" class="checkbox-secondary checkbox" />
+    <input type="checkbox" class="checkbox-accent checkbox" />
+    <br/>
+    <input type="radio" name="radio" class="radio" />
+    <input type="radio" name="radio" class="radio-primary radio" />
+    <input type="radio" name="radio" class="radio-secondary radio" />
+    <input type="radio" name="radio" class="radio-accent radio" />
+    </div>
+
+    <!-- card -->
+    <div class="card m-4 w-80 shadow-sm">
+    <figure>
+        <img src="https://img.daisyui.com/images/blog/daisyui-5.webp" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">DaisyUI 5.0</h2>
+        <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus.</p>
+    </div>
+    </div>
+
+    <!-- dropdown -->
+    <details class="dropdown m-4">
+    <summary class="btn m-1">open/close dropdown</summary>
+    <ul class="dropdown-content menu z-[2] w-52 rounded-box bg-base-200 p-2">
+        <li><a>Item 1</a></li>
+        <li><a>Item 2</a></li>
+    </ul>
+    </details>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+    <dialog id="my_modal_1" class="modal">
+    <form method="dialog" class="modal-box">
+        <p class="py-4">Press ESC key or click the button below to close</p>
+        <div class="modal-action">
+        <button class="btn">Close</button>
+        </div>
+    </form>
+    </dialog>
+
+    <!-- steps -->
+    <ul class="steps my-4 w-full">
+    <li class="step step-primary">Register</li>
+    <li class="step step-primary">Choose plan</li>
+    <li class="step">Purchase</li>
+    <li class="step">Receive Product</li>
+    </ul>
+
+    <!-- chat bubble -->
+    <div class="chat chat-start m-4">
+    <div class="avatar chat-image">
+        <div class="w-10 rounded-full">
+        <img src="https://img.daisyui.com/images/profile/people/pouya-saadeghi.webp" />
+        </div>
+    </div>
+    <div class="chat-bubble">see all components <a class="link" target="_blank" href="https://daisyui.com/components">Here</a></div>
+    </div>
+</div>
+
+</body>
+</html>

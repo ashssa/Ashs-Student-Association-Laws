@@ -1,0 +1,50 @@
+/* 03-misc：雜七雜八的雜類樣式 */
+
+/* --- 01. 回到最上方按鈕 --- */
+#scrollToTopBtn {
+    display: none; /* 預設隱藏按鈕 */
+    position: fixed; /* 固定位置 */
+    bottom: 30px; /* 距離底部 30px */
+    right: 30px; /* 距離右側 30px */
+    z-index: 99; /* 確保按鈕在其他內容之上 */
+    font-size: 24px; /* 箭頭大小 */
+    font-family: "Noto Sans", "Noto Sans TC";
+    font-weight: 900;
+    /* font-width: 62.5; */
+    width: 50px; /* 按鈕寬度 */
+    height: 50px; /* 按鈕高度 */
+    border: none; /* 無邊框 */
+    /* border-radius: 50%; 圓形按鈕 */
+    /* opacity: 0.75; 調整不透明度 */
+    outline: none; /* 移除點擊時的外框 */
+    cursor: pointer; /* 鼠標變成手形 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 陰影效果 */
+    transition: background-color 0.3s, transform 0.3s; /* 平滑過渡效果 */
+}
+#scrollToTopBtn:hover {
+    /* background-color: #505430; 鼠標懸停時的顏色 */
+    transform: scale(1.05); /* 鼠標懸停時稍微放大 */
+    opacity: 1; /* 調整不透明度 */
+}
+
+/* --- 02. 共用模組載入動畫 --- */
+.site-header p{
+    @apply px-2 h-18 w-full my-2 fixed
+}
+#button-container{
+    @apply justify-center 
+}
+#button-container p{
+    text-align: center;
+    @apply loading loading-ring loading-md h-10 mx-auto 
+}
+/* --- 03. toast 通知樣式設定 --- */
+.toast-success {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-secondary-content) !important;
+    /*opacity: 1 !important;*/
+}
+.toast-success .toast-title,
+.toast-success .toast-message {
+    color: var(--color-secondary-content) !important;
+}

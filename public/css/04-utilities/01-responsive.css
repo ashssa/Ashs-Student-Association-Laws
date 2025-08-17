@@ -1,0 +1,60 @@
+/* 01-responsive：響應式設計 */
+
+/* --- 響應式調整 (手機橫向或小平板) --- */
+@media (max-width: 768px) {
+    .main-content {
+        width: 95%; /* 在更小的螢幕上寬度更大 */
+        margin: 1.5rem auto;
+        padding: 1.5rem 1rem;
+        margin-top: 6rem;
+    }
+    .page-title {
+        font-size: 1.5em;
+    }
+
+    /* 調整導覽列在小螢幕上的樣式 */
+    .site-header nav ul li { display: block; margin: 0.5rem 0; } 
+    .site-header h1 {
+        font-size: inherit;
+    } 
+}
+
+/* --- 響應式調整 (手機直向) --- */
+@media (max-width: 576px) {
+    .sub{
+        margin-left: 1.3rem;
+    }
+    .sub::before {
+        width: 1rem;
+        left: -1.3rem;
+        margin-right: -1rem; /* 在編號和內容之間添加一些間距 */
+    }
+    .item{
+        margin-left: 3rem;
+    }
+    .item::before{
+        width: 1rem;
+        left: -1.5rem;
+        margin-right: -1rem; /* 在編號和內容之間添加一些間距 */    
+    }
+    .attachments {
+    padding-left: 0;
+    }
+    .attachments-list{
+        padding: 1rem 0.75rem 0.5rem;
+    }
+    .attachments-list h3{
+        padding-left: 0.75rem;
+    }
+    .attachments li::before {
+    content: ""; 
+    }
+    .footer-block{
+        display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
+    }
+    #scrollToTopBtn:hover {
+        /* background-color: var(--color-primary	); 鼠標懸停時的顏色 */
+        transform: scale(1); /* 鼠標懸停時稍微放大 */
+        /* opacity: 0.75; 調整不透明度 */
+}
+}

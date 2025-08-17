@@ -31,7 +31,7 @@ jobs:
         run: |
           # 替換 sw.js 中的佔位符
           # 確保你的 sw.js 中 CACHE_NAME 的定義為 const CACHE_NAME = 'my-pwa-cache-v-%%VERSION%%';
-          sed -i "s/%%VERSION%%/${{ env.SW_VERSION }}/g" sw.js
+          sed -i "s/%%VERSION%%/${{ env.SW_VERSION }}/g" ./config/sw.js
           echo "Updated sw.js with cache version ${{ env.SW_VERSION }}"
 
       # --- 結束新增 Service Worker 相關步驟 ---
@@ -44,7 +44,7 @@ jobs:
 
       - name: Update date in HTML
         run: |
-          sed -i "s|<span id=\"last-updated-date\">.*</span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./footer.html
+          sed -i "s|<span id=\"last-updated-date\">.*</span>|<span id=\"last-updated-date\">${{ steps.date.outputs.DATE }}</span>|g" ./public/components/footer.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
