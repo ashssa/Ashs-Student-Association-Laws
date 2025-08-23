@@ -1,15 +1,5 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,500;1,62.5,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,700;1,62.5,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 @layer properties;
-@font-face {
-  font-family: 'GlowSans';
-  src: url('../fonts/GlowSansTCCompressed-Bold.woff2') format('woff2'), url('../fonts/GlowSansTCCompressed-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -1777,6 +1767,9 @@
       }
     }
   }
+  .mx-8 {
+    margin-inline: calc(var(--spacing) * 8);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -2602,53 +2595,64 @@ body {
 p {
   margin: 0rem;
 }
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  font-size: 24px;
-  font-family: "Noto Sans", "Noto Sans TC";
-  font-weight: 900;
-  width: 50px;
-  height: 50px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: background-color 0.3s, transform 0.3s;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,500;1,62.5,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,700;1,62.5,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@font-face {
+  font-family: 'GlowSans';
+  src: url('../fonts/GlowSansTCCompressed-Bold.woff2') format('woff2'), url('../fonts/GlowSansTCCompressed-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
-#scrollToTopBtn:hover {
-  transform: scale(1.05);
-  opacity: 1;
+.main-content {
+  flex-grow: 1;
+  padding: 2rem 1.5rem;
+  max-width: 900px;
+  width: 90%;
+  margin: 2rem auto;
+  margin-top: 6rem;
+  border-radius: 8px;
 }
-.site-header p {
-  position: fixed;
-  margin-block: calc(var(--spacing) * 2);
-  height: calc(var(--spacing) * 18);
-  width: 100%;
-  padding-inline: calc(var(--spacing) * 2);
+.main-content hr {
+  display: block;
+  margin: 1rem 0;
+  border-style: inset;
+  size: 4px;
 }
-#button-container {
-  justify-content: center;
+.page-title {
+  color: var(--color-primary);
+  padding-bottom: 0.6rem;
+  margin-top: 0;
+  font-weight: 700;
+  padding-inline: calc(var(--spacing) * 0);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  --tw-tracking: var(--tracking-wide);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-primary);
+  @media (width >= 48rem) {
+    padding-inline: calc(var(--spacing) * 3);
+  }
 }
-#button-container p {
-  text-align: center;
-  pointer-events: none;
-  display: inline-block;
-  aspect-ratio: 1 / 1;
-  background-color: currentColor;
+.page-subtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+a[target="_blank"]::after {
+  content: "\e89e";
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 0rem;
+  margin-left: 0.1em;
   vertical-align: middle;
-  width: calc(var(--size-selector, 0.25rem) * 6);
-  mask-size: 100%;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' stroke='black' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform-origin='center'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke-width='3' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='2s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dasharray' values='0,150;42,150;42,150' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dashoffset' values='0;-16;-59' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
-  margin-inline: auto;
-  height: calc(var(--spacing) * 10);
-  width: calc(var(--size-selector, 0.25rem) * 6);
-  mask-image: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg' stroke='white'%3E%3Cg fill='none' fill-rule='evenodd' stroke-width='2'%3E%3Ccircle cx='22' cy='22' r='1'%3E%3Canimate attributeName='r' begin='0s' dur='1.8s' values='1;20' calcMode='spline' keyTimes='0;1' keySplines='0.165,0.84,0.44,1' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-opacity' begin='0s' dur='1.8s' values='1;0' calcMode='spline' keyTimes='0;1' keySplines='0.3,0.61,0.355,1' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='22' cy='22' r='1'%3E%3Canimate attributeName='r' begin='-0.9s' dur='1.8s' values='1;20' calcMode='spline' keyTimes='0;1' keySplines='0.165,0.84,0.44,1' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-opacity' begin='-0.9s' dur='1.8s' values='1;0' calcMode='spline' keyTimes='0;1' keySplines='0.3,0.61,0.355,1' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 20;
 }
 .main-content {
   flex-grow: 1;
@@ -2709,10 +2713,9 @@ p {
   opacity: 65%;
 }
 .law-list > li > .no {
+  font-weight: 100;
   font-size: var(--text-4xl);
   line-height: var(--tw-leading, var(--text-4xl--line-height));
-  --tw-font-weight: var(--font-weight-thin);
-  font-weight: var(--font-weight-thin);
   --tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,);
   opacity: 30%;
@@ -2756,65 +2759,30 @@ p {
   --tw-duration: 550ms;
   transition-duration: 550ms;
 }
-.remarks-content {
-  margin: 0 1.5rem 0;
+.regulation-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border-left: 4px solid var(--color-primary	);
+  padding-left: 0.8rem;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
-.remarks {
-  list-style-type: none;
-  padding-left: 0;
+.regulation-content h4 {
+  margin: 1.7rem auto 1.15rem;
+  font-weight: 550;
+  font-size: 1.15rem;
+  word-break: keep-all;
 }
-.remarks li {
-  position: relative;
-  padding-left: 1.5rem;
+.regulation-content h4::before {
+  font-family: "Noto Sans";
+  content: "• ";
+  color: var(--color-primary	);
+  font-weight: 900;
+  margin-right: 0.45rem;
 }
-.remarks li > a {
-  cursor: pointer;
-  text-decoration-line: underline;
-  &:focus {
-    --tw-outline-style: none;
-    outline-style: none;
-    @media (forced-colors: active) {
-      outline: 2px solid transparent;
-      outline-offset: 2px;
-    }
-  }
-  &:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-  }
-  color: var(--color-primary);
-  @media (hover: hover) {
-    &:hover {
-      color: var(--color-primary);
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, var(--color-primary) 80%, #000);
-      }
-    }
-  }
-  text-decoration-line: none;
-  &:hover {
-    @media (hover: hover) {
-      text-decoration-line: underline;
-    }
-  }
-}
-.remarks li::before {
-  content: "※";
-  position: absolute;
-  left: 0;
-  line-height: inherit;
-  margin-right: 0.5rem;
-}
-a[target="_blank"]::after {
-  content: "\e89e";
-  font-family: 'Material Symbols Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.2rem;
-  line-height: 0rem;
-  margin-left: 0.1em;
-  vertical-align: middle;
-  font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 20;
+.regulation-content p {
+  text-align: justify;
 }
 .row {
   display: flex;
@@ -2967,6 +2935,55 @@ a[target="_blank"]::after {
 mjx-container > svg {
   display: inline;
 }
+.remarks-content {
+  margin: 0 1.5rem 0;
+}
+.remarks {
+  list-style-type: none;
+  padding-left: 0;
+}
+.remarks li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+.remarks li > a {
+  cursor: pointer;
+  text-decoration-line: underline;
+  &:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+    @media (forced-colors: active) {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+  }
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  color: var(--color-primary);
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-primary);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-primary) 80%, #000);
+      }
+    }
+  }
+  text-decoration-line: none;
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
+    }
+  }
+}
+.remarks li::before {
+  content: "※";
+  position: absolute;
+  left: 0;
+  line-height: inherit;
+  margin-right: 0.5rem;
+}
 .amendment-history, .attachments-list {
   background-color: var(--color-base-200	);
   padding: 1rem 1.5rem;
@@ -3060,30 +3077,53 @@ mjx-container > svg {
   vertical-align: middle;
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' -25, 'opsz' 20;
 }
-.regulation-content h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  border-left: 4px solid var(--color-primary	);
-  padding-left: 0.8rem;
-  font-weight: 600;
-  font-size: 1.3rem;
-}
-.regulation-content h4 {
-  margin: 1.7rem auto 1.15rem;
-  font-weight: 550;
-  font-size: 1.15rem;
-  word-break: keep-all;
-}
-.regulation-content h4::before {
-  font-family: "Noto Sans";
-  content: "• ";
-  color: var(--color-primary	);
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 24px;
+  font-family: "Noto Sans", "Noto Sans TC";
   font-weight: 900;
-  margin-right: 0.45rem;
+  width: 50px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.3s;
 }
-.regulation-content p {
-  text-align: justify;
+#scrollToTopBtn:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+.site-header p {
+  position: fixed;
+  margin-block: calc(var(--spacing) * 2);
+  height: calc(var(--spacing) * 18);
+  width: 100%;
+  padding-inline: calc(var(--spacing) * 2);
+}
+#button-container {
+  justify-content: center;
+}
+#button-container p {
+  text-align: center;
+  pointer-events: none;
+  display: inline-block;
+  aspect-ratio: 1 / 1;
+  background-color: currentColor;
+  vertical-align: middle;
+  width: calc(var(--size-selector, 0.25rem) * 6);
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' stroke='black' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform-origin='center'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke-width='3' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='2s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dasharray' values='0,150;42,150;42,150' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dashoffset' values='0;-16;-59' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  margin-inline: auto;
+  height: calc(var(--spacing) * 10);
+  width: calc(var(--size-selector, 0.25rem) * 6);
+  mask-image: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg' stroke='white'%3E%3Cg fill='none' fill-rule='evenodd' stroke-width='2'%3E%3Ccircle cx='22' cy='22' r='1'%3E%3Canimate attributeName='r' begin='0s' dur='1.8s' values='1;20' calcMode='spline' keyTimes='0;1' keySplines='0.165,0.84,0.44,1' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-opacity' begin='0s' dur='1.8s' values='1;0' calcMode='spline' keyTimes='0;1' keySplines='0.3,0.61,0.355,1' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='22' cy='22' r='1'%3E%3Canimate attributeName='r' begin='-0.9s' dur='1.8s' values='1;20' calcMode='spline' keyTimes='0;1' keySplines='0.165,0.84,0.44,1' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-opacity' begin='-0.9s' dur='1.8s' values='1;0' calcMode='spline' keyTimes='0;1' keySplines='0.3,0.61,0.355,1' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
 }
 .toast-success {
   background-color: var(--color-secondary) !important;
