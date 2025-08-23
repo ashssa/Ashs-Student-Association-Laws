@@ -2605,6 +2605,12 @@ p {
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'SourceSans';
+  src: url('../fonts/SourceSans3-Light.otf.woff2') format('woff2');
+  font-weight: thin;
+  font-style: normal;
+}
 .main-content {
   flex-grow: 1;
   padding: 2rem 1.5rem;
@@ -2713,9 +2719,11 @@ a[target="_blank"]::after {
   opacity: 65%;
 }
 .law-list > li > .no {
-  font-weight: 100;
-  font-size: var(--text-4xl);
-  line-height: var(--tw-leading, var(--text-4xl--line-height));
+  font-family: "SourceSans", "Noto Sans TC", sans-serif;
+  font-size: var(--text-5xl);
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
+  --tw-font-weight: var(--font-weight-thin);
+  font-weight: var(--font-weight-thin);
   --tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,);
   opacity: 30%;
