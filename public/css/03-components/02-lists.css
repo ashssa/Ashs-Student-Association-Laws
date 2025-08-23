@@ -134,3 +134,12 @@
         'GRAD' -25,
         'opsz' 20;
     }
+
+/* 04. Sources 頁面 */
+.sources-content p {
+    @apply font-mono text-sm pb-[1em] px-8
+}
+
+.sources-content h3 {
+    border-left: none;
+}
