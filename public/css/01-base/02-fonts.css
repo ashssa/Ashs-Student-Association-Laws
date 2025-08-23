@@ -15,3 +15,11 @@
     font-weight: bold;
     font-style: normal;
 }
+/* SourceSan（Noto Sans TC的英數字） */
+@font-face {
+    font-family: 'SourceSans';
+    src:
+        url('../fonts/SourceSans3-Light.otf.woff2') format('woff2');
+    font-weight: thin;
+    font-style: normal;
+}

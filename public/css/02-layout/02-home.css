@@ -54,8 +54,9 @@
     @apply  p-4 pb-0 text-sm opacity-65 tracking-wide
 }
 .law-list > li  > .no {
-    font-weight: 100;
-    @apply text-4xl font-thin opacity-30 tabular-nums
+    font-family: "SourceSans", "Noto Sans TC", sans-serif;
+    @apply text-5xl font-thin opacity-30 tabular-nums;
+    /* font-weight: 100; */
 }
 .law-list > li  > .law-name {
     @apply text-lg/8 text-base-content/85 font-medium tracking-wide line-clamp-1 /* 棄用：opacity-60 */
