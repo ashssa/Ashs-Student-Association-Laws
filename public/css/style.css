@@ -2483,6 +2483,9 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .break-keep {
+    word-break: keep-all;
+  }
   .checkbox-accent {
     color: var(--color-accent-content);
     --input-color: var(--color-accent);
