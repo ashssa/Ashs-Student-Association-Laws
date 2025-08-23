@@ -139,7 +139,9 @@
 .sources-content p {
     @apply font-mono text-sm pb-[1em] px-8
 }
-
 .sources-content h3 {
     border-left: none;
+}
+.sources-content > h3 > a {
+    @apply link link-hover
 }
