@@ -2930,7 +2930,7 @@ a[target="_blank"]::after {
   font-family: "Noto Sans", "GlowSans", "Noto Sans TC";
   letter-spacing: 0.05em;
   word-spacing: 0.5em;
-  width: 3.5em;
+  min-width: 3.5em;
   flex-shrink: 0;
   word-break: keep-all;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
