@@ -49,7 +49,7 @@
     font-family: "Noto Sans", "GlowSans", "Noto Sans TC";
     letter-spacing: 0.05em;
     word-spacing: 0.5em;
-    width: 3.5em; /* 縮小條號寬度，以便容納更長的縮排 */
+    min-width: 3.5em; /* 縮小條號寬度，以便容納更長的縮排 */
     flex-shrink: 0; /* 防止條號被壓縮 */
     word-break: keep-all;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); /* 用陰影使文字平滑 */
