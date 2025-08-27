@@ -3163,8 +3163,8 @@ mjx-container > svg {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 100%;
   font-weight: inherit;
+  max-width: fit-content;
 }
 .attachments a {
   font-family: inherit;
