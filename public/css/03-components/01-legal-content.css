@@ -22,7 +22,7 @@
 .regulation-content h4::before {
     font-family: "Noto Sans";
     content: "• ";
-    color: var(--color-primary	);
+    color: var(--color-primary);
     font-weight: 900;
     margin-right: 0.45rem; /* 在編號和內容之間添加一些間距 */    
     /* font-size: 1.2em;
