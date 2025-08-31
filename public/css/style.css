@@ -2948,6 +2948,7 @@ a[target="_blank"]::after {
 }
 .art-note {
   margin: inherit;
+  margin-bottom: 0;
 }
 .par {
   line-height: 1.7;
