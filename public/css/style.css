@@ -3308,6 +3308,12 @@ mjx-container > svg {
 .toast-success .toast-title, .toast-success .toast-message {
   color: var(--color-secondary-content) !important;
 }
+#main-header .nav-list {
+  height: calc(100vh - 90px);
+  flex-wrap: nowrap;
+  max-height: fit-content;
+  overflow-y: auto;
+}
 @media (max-width: 768px) {
   .main-content {
     width: 95%;
