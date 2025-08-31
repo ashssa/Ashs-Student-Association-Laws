@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 常數定義 ---
     const HEADER_FILE = '../components/header.html'; // 頁首檔案路徑
     const FOOTER_FILE = '../components/footer.html'; // 頁尾檔案路徑
-    const BUTTONS_FILE = '../components/buttons.html'; // **功能列表檔案路徑**
+    const BUTTONS_FILE = '../components/buttons.html'; // 功能列表檔案路徑
     const HEADER_PLACEHOLDER_ID = 'main-header'; // 頁首佔位符 ID
     const FOOTER_PLACEHOLDER_ID = 'main-footer'; // 頁尾佔位符 ID
-    const BUTTONS_PLACEHOLDER_ID = 'button-container'; // **功能列表佔位符 ID**
+    const BUTTONS_PLACEHOLDER_ID = 'button-container'; // 功能列表佔位符 ID
     const CURRENT_YEAR_SPAN_ID = 'current-year'; // 頁尾年份 span ID
     const LAST_UPDATED_SPAN_ID = 'last-updated'; // 頁尾更新日期 span ID
-    const SCROLL_TO_TOP_BTN_ID = 'scrollToTopBtn'; // 返回頂部按鈕的 ID 常數**
+    const SCROLL_TO_TOP_BTN_ID = 'scrollToTopBtn'; // 返回頂部按鈕的 ID 常數
 
     // --- 取得元素 ---
     const headerPlaceholder = document.getElementById(HEADER_PLACEHOLDER_ID);
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             })
                             .catch(err => {
                                 console.error('複製網址失敗:', err);
-                                toastr.error('複製網址失敗，請手動複製。');
+                                toastr.error('複製網址失敗，請另開新視窗，或手動複製。');
                             });
                     } else {
                         alert('您的瀏覽器不支援複製到剪貼簿的功能，請手動複製。');
@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         // --- 複製連結的程式碼結束 ---
 
+        // 將條內單一「項」par加上 only-one-par 類別
         const artDataElements = document.querySelectorAll('.art-data');
         artDataElements.forEach(artData => {
             const parElements = artData.querySelectorAll('.par');
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('DOMContentLoaded 事件中的程式碼執行完畢。');
     });
 
-    // --- **新增：返回頂部按鈕的邏輯** ---
+    // --- 新增：返回頂部按鈕的邏輯 ---
     if (scrollToTopBtn) {
         window.onscroll = function() {
             scrollFunction();
