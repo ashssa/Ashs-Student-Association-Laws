@@ -1,0 +1,5 @@
+#main-header .nav-list{
+    height: calc(100vh - 90px);
+    flex-wrap: nowrap; /* 防止斷行，這是為了左導覽列漢堡選單加的 */
+    @apply max-h-fit overflow-y-auto;
+}
