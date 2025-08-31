@@ -7,10 +7,11 @@
     max-width: 900px; /* 限制內容最大寬度，方便閱讀 */
     width: 90%; /* 在較小螢幕上佔用 90% 寬度 */
     margin: 2rem auto; /* 上下邊距 2rem，左右自動 (實現水平置中) */
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
     /* background-color: #ffffff; 內容區塊白色背景 */
     border-radius: 8px; /* 圓角 */
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 細緻的陰影 */
+    @apply mt-24 print:mt-0 ;
 }
 .main-content hr {
     display: block;
