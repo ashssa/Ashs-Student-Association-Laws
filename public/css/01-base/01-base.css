@@ -25,3 +25,8 @@ body {
 p {
     margin: 0rem;
 }
+/* --- 選中文字反白顏色調整 --- */
+/*.main-content*/ ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-content);
+}

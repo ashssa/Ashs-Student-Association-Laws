@@ -2724,6 +2724,10 @@ body {
 p {
   margin: 0rem;
 }
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-accent-content);
+}
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5,100..900;1,62.5,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
