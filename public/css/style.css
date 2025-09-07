@@ -2487,6 +2487,9 @@
     --tw-font-weight: var(--font-weight-thin);
     font-weight: var(--font-weight-thin);
   }
+  .text-balance {
+    text-wrap: balance;
+  }
   .break-keep {
     word-break: keep-all;
   }
@@ -3183,6 +3186,7 @@ mjx-container > svg {
   flex-grow: 0;
   word-break: break-word;
   display: inline-block !important;
+  text-wrap: pretty;
 }
 .attachments > li > a[target="_blank"]::after {
   content: "";

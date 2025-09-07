@@ -115,6 +115,7 @@
     flex-grow: 0; /* 標題佔用剩餘空間 */
     word-break: break-word;
     display: inline-block !important; /* 覆蓋之前的 display */
+    /* @apply text-pretty */
 }
 .attachments > li > a[target="_blank"]::after {
     content: "";
