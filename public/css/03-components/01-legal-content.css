@@ -54,6 +54,7 @@
     word-break: keep-all;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); /* 用陰影使文字平滑 */
     -webkit-font-smoothing: antialiased; /* 文字顯示反鋸齒 */
+    margin-left: -0.6rem;
 }
 .art-data {
     margin: 0 0 0.4rem 0.3rem;

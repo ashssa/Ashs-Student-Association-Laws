@@ -1,5 +1,14 @@
-#main-header .nav-list{
+/* 04-header：大多數頁首的樣式都放在 header.html 內 */
+
+/* 使各選單在高度不足時，可以滾動 */
+#main-header .nav-list {
     height: calc(100vh - 90px);
     flex-wrap: nowrap; /* 防止斷行，這是為了左導覽列漢堡選單加的 */
     @apply max-h-fit overflow-y-auto;
+}
+
+/* 讓錨點定位時，不會被 header 蓋住 */
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth; /* 這是為了在點擊的時侯有平滑滾動效果 */
 }

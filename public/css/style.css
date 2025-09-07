@@ -2483,6 +2483,10 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-thin {
+    --tw-font-weight: var(--font-weight-thin);
+    font-weight: var(--font-weight-thin);
+  }
   .break-keep {
     word-break: keep-all;
   }
@@ -2511,6 +2515,12 @@
   }
   .text-base-content {
     color: var(--color-base-content);
+  }
+  .text-base-content\/40 {
+    color: var(--color-base-content);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-base-content) 40%, transparent);
+    }
   }
   .text-base-content\/90 {
     color: var(--color-base-content);
@@ -2589,6 +2599,11 @@
     --fontsize: 0.75rem;
     --btn-p: 0.75rem;
     --size: calc(var(--size-field, 0.25rem) * 8);
+  }
+  .btn-xs {
+    --fontsize: 0.6875rem;
+    --btn-p: 0.5rem;
+    --size: calc(var(--size-field, 0.25rem) * 6);
   }
   .badge-primary {
     --badge-color: var(--color-primary);
@@ -2904,6 +2919,7 @@ a[target="_blank"]::after {
   word-break: keep-all;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
   -webkit-font-smoothing: antialiased;
+  margin-left: -0.6rem;
 }
 .art-data {
   margin: 0 0 0.4rem 0.3rem;
@@ -3279,6 +3295,10 @@ mjx-container > svg {
   flex-wrap: nowrap;
   max-height: fit-content;
   overflow-y: auto;
+}
+html {
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
 }
 @media (max-width: 768px) {
   .main-content {
