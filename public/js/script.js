@@ -75,6 +75,62 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+        // --- 函數：處理 span.art 並加上錨點與連結 ---
+    /*
+     * 遍歷所有 class 為 "art" 的 span 元素，為其加上錨點 ID 並將其內容包裝成連結。
+     */
+    function addAnchorAndLinkToArtSpans() {
+    console.group(`開始執行 addAnchorAndLinkToArtSpans 函數`);
+
+    const artSpans = document.querySelectorAll('span.art');
+    console.log(`偵測到 ${artSpans.length} 個 .art 元素。`);
+
+    console.groupCollapsed("錨點生成詳情");
+    artSpans.forEach((span, index) => {
+        const spanText = span.textContent.trim();
+        let anchorId = '';
+        const match = spanText.match(/^第(\d+)條(?:之(\d+))?$/);
+
+        if (match) {
+            const n = match[1];
+            const m = match[2];
+            anchorId = `article-${n}${m ? `-${m}` : ''}`;
+            console.log(`[Span ${index}] "${spanText}" 格式正確，生成錨點 ID: ${anchorId}`);
+        } else {
+            anchorId = `article-no-${index+1}`;
+            console.warn(`[Span ${index}] "${spanText}" 格式不符，使用索引生成錨點 ID: ${anchorId}`);
+        }
+
+        // 創建錨點元素 (<a>)
+        const anchor = document.createElement('a');
+        // anchor.setAttribute('id', anchorId);
+        anchor.setAttribute('href', `#${anchorId}`); // href 屬性對於錨點本身通常不是必需的，除非你想讓它能被點擊跳轉到自己。不過呢，這裡確實就是要讓他被點擊能跳轉到自己
+        anchor.classList.add('btn', 'btn-xs', 'btn-ghost', 'text-xs', 'text-base-content/40', 'font-thin');
+        anchor.textContent = '#'; // 錨點的顯示文字
+
+        // 將錨點插入到 span 的內部第一個元素之前
+        if (span.firstChild) {
+            span.insertBefore(anchor, span.firstChild);
+            console.log(`[Span ${index}] 將錨點 <a id="${anchorId}">#</a> 插入到 span 的第一個子元素前。`);
+        } else {
+            // 如果 span 是空的，直接將錨點 append 到 span 裡面
+            span.appendChild(anchor);
+            console.log(`[Span ${index}] span 為空，將錨點 <a id="${anchorId}">#</a> 直接插入到 span 內部。`);
+        }
+
+        // 移除之前在 span 前插入連結的邏輯，因為現在是將錨點插入到 span 內部
+        if (!span.id) {
+            span.id = anchorId;
+            console.log(`[Span ${index}] 為 span 設定 ID: ${anchorId}`);
+        } else {
+            console.log(`[Span ${index}] span 已有 ID "${span.id}"，未重複設定。`);
+        }
+    });
+    console.groupEnd("錨點生成詳情");
+    console.log('.art 元素的錨點處理完成。');
+    console.groupEnd(`開始執行 addAnchorAndLinkToArtSpans 函數`);
+}
+
     // --- 執行載入 ---
     Promise.allSettled([
         loadHtmlFragment(HEADER_FILE, headerPlaceholder, '頁首'),
@@ -87,6 +143,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         console.log('頁首、頁尾與功能列表載入流程完成。');
+
+        addAnchorAndLinkToArtSpans(); // 處理 span.art 元素
+
+        // addAnchorAndLinkToArtSpans 執行完畢，處理頁面載入後的平滑捲動
+        const hash = window.location.hash;
+        if (hash) {
+            const targetElement = document.querySelector(hash);
+            if (targetElement) {
+                console.log(`找到錨點 ${hash}，準備捲動。`);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // 'start' 使元素的頂部與視口的頂部對齊
+                });
+            } else {
+                console.warn(`找不到 ID 為 ${hash} 的元素。`);
+            }
+        }
 
     const backBtn = document.getElementById('backBtn');
     console.log('即將啟動myBtn（回上頁按鈕）');
