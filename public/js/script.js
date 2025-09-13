@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const anchor = document.createElement('a');
         // anchor.setAttribute('id', anchorId);
         anchor.setAttribute('href', `#${anchorId}`); // href 屬性對於錨點本身通常不是必需的，除非你想讓它能被點擊跳轉到自己。不過呢，這裡確實就是要讓他被點擊能跳轉到自己
-        anchor.classList.add('btn', 'btn-xs', 'btn-ghost', 'text-xs', 'text-base-content/40', 'font-thin');
-        anchor.textContent = '#'; // 錨點的顯示文字
+        anchor.classList.add('law-btn-anchor');
+        anchor.textContent = '＃'; // 錨點的顯示文字
 
         // 將錨點插入到 span 的內部第一個元素之前
         if (span.firstChild) {

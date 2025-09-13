@@ -53,16 +53,18 @@
         display: block; /* 在小螢幕上顯示 <br> 標籤，強制換行 */
     }
     #scrollToTopBtn:hover {
-        /* background-color: var(--color-primary	); 鼠標懸停時的顏色 */
+        /* background-color: var(--color-primary); 鼠標懸停時的顏色 */
         transform: scale(1); /* 鼠標懸停時稍微放大 */
         /* opacity: 0.75; 調整不透明度 */
-}
+    }
 }
 
 /* --- 針對支援 text-autospace 的瀏覽器啟用混排文字間距 --- */
 @supports (text-autospace: normal) {
-    .par {
-
+    .par, .sub , .item, .amendment-history li {
         text-autospace: normal;
+    }
+    .art, .att-no {
+        text-autospace: no-autospace;
     }
 }
