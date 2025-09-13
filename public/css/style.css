@@ -3186,7 +3186,6 @@ mjx-container > svg {
   flex-grow: 0;
   word-break: break-word;
   display: inline-block !important;
-  text-wrap: pretty;
 }
 .attachments > li > a[target="_blank"]::after {
   content: "";
@@ -3356,6 +3355,11 @@ html {
   }
   #scrollToTopBtn:hover {
     transform: scale(1);
+  }
+}
+@supports (text-autospace: normal) {
+  .par {
+    text-autospace: normal;
   }
 }
 @layer base {
