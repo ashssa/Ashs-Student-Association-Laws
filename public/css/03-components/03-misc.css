@@ -27,7 +27,15 @@
     opacity: 1; /* 調整不透明度 */
 }
 
-/* --- 02. 共用模組載入動畫 --- */
+/* --- 02. 法規錨點按鈕 */
+.law-btn-anchor{
+    @apply btn btn-xs btn-ghost text-xs text-base-content/45 font-bold;
+    @apply px-1; /* 複寫 daisy ui 內建的 btn 寬度 */
+    font-family: "Noto Sans TC";
+    margin-top: -0.2rem; /* 微調錨點按鈕位置，對齊文字中線 */
+}
+
+/* --- 03. 共用模組載入動畫 --- */
 .site-header p{
     @apply px-2 h-18 w-full my-2 fixed
 }
