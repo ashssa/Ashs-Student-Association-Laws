@@ -2999,7 +2999,7 @@ a[target="_blank"]::after {
 .regulation-content {
   counter-reset: oldArtNo;
 }
-.oldArt {
+.old-art, .oldArt {
   font-weight: bold;
   font-family: "Noto Sans TC", sans-serif;
   flex-shrink: 0;
@@ -3007,25 +3007,25 @@ a[target="_blank"]::after {
   counter-increment: oldArtNo;
   counter-reset: oldSub;
 }
-.oldArt::before {
+.old-art::before, .oldArt::before {
   content: counter(oldArtNo, cjk-ideographic) "、";
 }
-.oldSub {
+.old-sub, .oldSub {
   font-family: "Noto Sans TC", sans-serif;
   counter-increment: oldSub;
   padding-left: calc(var(--spacing) * 12);
   text-indent: calc(var(--spacing) * -12);
 }
-.oldSub::before {
+.old-sub::before, .oldSub::before {
   content: "（" counter(oldSub, cjk-ideographic) "）";
 }
-.oldPar {
+.old-par, .oldPar {
   margin: 0 0.3rem 0 0;
 }
-.oldPar::before {
+.old-par::before, .oldPar::before {
   content: "";
 }
-.oldTableDiv {
+.old-table-div, .oldTableDiv {
   background-color: red;
   max-width: fit-content;
   overflow-x: auto;
@@ -3036,12 +3036,12 @@ a[target="_blank"]::after {
   border-color: var(--color-base-200);
   background-color: var(--color-base-100);
 }
-.oldTable {
+.old-table, .oldTable {
   margin-inline: auto;
   border-radius: var(--radius-box);
   border-radius: var(--radius-box);
 }
-.oldTable td {
+.old-table td, .oldTable td {
   border-radius: var(--radius-box);
   border-radius: var(--radius-box);
   border-radius: var(--radius-box);
@@ -3052,7 +3052,7 @@ a[target="_blank"]::after {
   white-space: nowrap;
   color: var(--color-base-content);
 }
-.tableBut直書 {
+.table-but-直書, .tableBut直書 {
   writing-mode: vertical-lr;
   text-align: center;
 }
@@ -3186,7 +3186,6 @@ mjx-container > svg {
   flex-grow: 0;
   word-break: break-word;
   display: inline-block !important;
-  text-wrap: pretty;
 }
 .attachments > li > a[target="_blank"]::after {
   content: "";
@@ -3356,6 +3355,11 @@ html {
   }
   #scrollToTopBtn:hover {
     transform: scale(1);
+  }
+}
+@supports (text-autospace: normal) {
+  .par {
+    text-autospace: normal;
   }
 }
 @layer base {

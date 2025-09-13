@@ -58,3 +58,11 @@
         /* opacity: 0.75; 調整不透明度 */
 }
 }
+
+/* --- 針對支援 text-autospace 的瀏覽器啟用混排文字間距 --- */
+@supports (text-autospace: normal) {
+    .par {
+
+        text-autospace: normal;
+    }
+}
