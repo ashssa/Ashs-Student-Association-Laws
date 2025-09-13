@@ -61,7 +61,7 @@
 
 /* --- 針對支援 text-autospace 的瀏覽器啟用混排文字間距 --- */
 @supports (text-autospace: normal) {
-    .par, .sub , .item, .amendment-history li {
+    .par, .sub , .item, .old-par, .old-sub, .old-item, .amendment-history li {
         text-autospace: normal;
     }
     .art, .att-no {
