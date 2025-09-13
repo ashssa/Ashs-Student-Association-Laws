@@ -3500,8 +3500,11 @@ html {
   }
 }
 @supports (text-autospace: normal) {
-  .par {
+  .par, .sub , .item, .amendment-history li {
     text-autospace: normal;
+  }
+  .art, .att-no {
+    text-autospace: no-autospace;
   }
 }
 @layer base {
